@@ -1,7 +1,9 @@
-package br.com.brasilcardfacil.www.brasilcardfacil;
+package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.com.brasilcardfacil.www.brasilcardfacil.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -9,5 +11,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        getSupportActionBar().hide();
     }
 }
