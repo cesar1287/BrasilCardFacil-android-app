@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "505841223573",
+    "firebase_url": "https://brasilcard-facil-11756.firebaseio.com",
+    "project_id": "brasilcard-facil-11756",
+    "storage_bucket": "brasilcard-facil-11756.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505841223573:android:b21022703871fd88",
+        "android_client_info": {
+          "package_name": "br.com.brasilcardfacil.www.brasilcardfacil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505841223573-ukud7kg13drlvlq3ao53qo4moc7joecs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfMbTeQKKbuG4hiyoO0jcQuybGncj7ml0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
