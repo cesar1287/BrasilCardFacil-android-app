@@ -42,7 +42,7 @@
         android:background="@drawable/facebook"
         android:layout_below="@+id/SignIn_or_image"
         android:scaleX="0.7"
-        android:scaleY="0.5"/>
+        android:scaleY="0.5" />
 
     <Button
         android:id="@+id/SignIn_google"
