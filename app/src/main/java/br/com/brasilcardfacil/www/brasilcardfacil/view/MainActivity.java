@@ -141,6 +141,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }else if (id == R.id.action_account) {
+            startActivity(new Intent(this, AccountActivity.class));
             return true;
         }
 
@@ -162,9 +166,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_bronze) {
 
         } else if (id == R.id.nav_config) {
-
+            startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_account) {
-
+            startActivity(new Intent(this, AccountActivity.class));
         }else if (id == R.id.nav_logout) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
