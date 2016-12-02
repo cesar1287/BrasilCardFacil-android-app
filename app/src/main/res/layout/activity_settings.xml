@@ -4,10 +4,105 @@
     android:id="@+id/activity_settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.SettingsActivity">
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.SettingsActivity">
+    android:paddingTop="@dimen/activity_vertical_margin"-->
 
+    <ImageView
+        android:id="@+id/settings_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/banner"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"/>
+
+    <Switch
+        android:text="@string/settings_localizacao"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/switch1"
+        android:checked="true"
+        android:textOn="@string/settings_on"
+        android:textOff="@string/settings_off"
+        android:showText="true"
+        android:switchPadding="50sp"
+        android:layout_below="@+id/switch3"
+        android:layout_centerHorizontal="true" />
+
+    <Switch
+        android:text="@string/settings_notificao"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/switch2"
+        android:checked="true"
+        android:textOn="@string/settings_on"
+        android:textOff="@string/settings_off"
+        android:showText="true"
+        android:layout_below="@+id/switch4"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1" />
+
+    <Switch
+        android:text="@string/settings_banner_ads"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/switch3"
+        android:checked="false"
+        android:textOn="@string/settings_on"
+        android:textOff="@string/settings_off"
+        android:showText="true"
+        android:layout_below="@+id/switch2"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1" />
+
+    <Switch
+        android:text="@string/settings_som"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/switch4"
+        android:checked="true"
+        android:textOn="@string/settings_on"
+        android:textOff="@string/settings_off"
+        android:showText="true"
+        android:layout_below="@+id/settings_banner"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1" />
+
+    <TextView
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/textView" />
 </RelativeLayout>

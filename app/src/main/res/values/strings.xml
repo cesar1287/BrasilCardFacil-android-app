@@ -24,4 +24,10 @@
     <string name="sair">Sair</string>
     <string name="screen_settings">Configurações</string>
     <string name="screen_account">Conta</string>
+    <string name="settings_localizacao">Localização</string>
+    <string name="settings_notificao">Notificação</string>
+    <string name="settings_banner_ads">Banner Ads</string>
+    <string name="settings_som">Som</string>
+    <string name="settings_on">on</string>
+    <string name="settings_off">off</string>
 </resources>
