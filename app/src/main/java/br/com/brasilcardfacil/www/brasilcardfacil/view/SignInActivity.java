@@ -1,6 +1,7 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
     public static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
+
+    private static final String PREF_NAME = "LoginActivityPreferences";
 
     CallbackManager callbackManager;
     private FirebaseAuth mAuth;
@@ -181,6 +184,18 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                     Toast.LENGTH_SHORT).show();
                         }else{
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
+
+                            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sp.edit();
+
+                            editor.putString("id", user.getUid());
+                            editor.putString("name", user.getDisplayName());
+                            editor.putString("email", user.getEmail());
+                            editor.putString("profile_pic", user.getPhotoUrl().toString());
+                            editor.apply();
                             finish();
                         }
 
@@ -208,6 +223,18 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                                     Toast.LENGTH_SHORT).show();
                         }else{
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
+
+                            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sp.edit();
+
+                            editor.putString("id", user.getUid());
+                            editor.putString("name", user.getDisplayName());
+                            editor.putString("email", user.getEmail());
+                            editor.putString("profile_pic", user.getPhotoUrl().toString());
+                            editor.apply();
                             finish();
                         }
                         // ...
