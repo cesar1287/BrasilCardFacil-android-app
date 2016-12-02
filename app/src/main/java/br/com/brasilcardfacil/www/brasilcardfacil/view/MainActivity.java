@@ -3,9 +3,12 @@ package br.com.brasilcardfacil.www.brasilcardfacil.view;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,9 +19,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -56,7 +62,6 @@ public class MainActivity extends AppCompatActivity
                     startActivity(new Intent(MainActivity.this, SignInActivity.class));
                     finish();
                 }
-                // ...
             }
         };
 
@@ -80,6 +85,16 @@ public class MainActivity extends AppCompatActivity
         profilePic = sp.getString("profile_pic","falhou");
 
         View hView =  navigationView.getHeaderView(0);
+        final ImageView nav_image = (ImageView)hView.findViewById(R.id.imageView);
+        Glide.with(this).load(profilePic).asBitmap().into(new BitmapImageViewTarget(nav_image) {
+            @Override
+            protected void setResource(Bitmap resource) {
+                RoundedBitmapDrawable circularBitmapDrawable =
+                        RoundedBitmapDrawableFactory.create(getResources(), resource);
+                circularBitmapDrawable.setCircular(true);
+                nav_image.setImageDrawable(circularBitmapDrawable);
+            }
+        });
         TextView nav_nome = (TextView)hView.findViewById(R.id.header_name);
         nav_nome.setText(name);
         TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
@@ -138,17 +153,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_diamond) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_gold) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_silver) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_bronze) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_config) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_account) {
+
+        }else if (id == R.id.nav_logout) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 

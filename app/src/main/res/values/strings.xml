@@ -5,11 +5,21 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_account">Conta</string>
 
     <string name="facebook_app_id">560542227472715</string>
 
     <string name="message_logout">Tem certeza que deseja sair?</string>
     <string name="yes_logout">Sim</string>
     <string name="no_logout">Não</string>
+    <string name="plano_diamante">Plano Diamante</string>
+    <string name="plano_ouro">Plano Ouro</string>
+    <string name="plano_prata">Plano Prata</string>
+    <string name="plano_bronze">Plano Bronze</string>
+    <string name="group_menu_planos">Planos</string>
+    <string name="group_menu_opcoes">Opções</string>
+    <string name="conta">Conta</string>
+    <string name="configuracoes">Configurações</string>
+    <string name="sair">Sair</string>
 </resources>
