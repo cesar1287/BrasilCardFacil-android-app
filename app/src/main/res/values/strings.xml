@@ -22,4 +22,6 @@
     <string name="conta">Conta</string>
     <string name="configuracoes">Configurações</string>
     <string name="sair">Sair</string>
+    <string name="screen_settings">Configurações</string>
+    <string name="screen_account">Conta</string>
 </resources>
