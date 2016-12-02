@@ -8,4 +8,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="facebook_app_id">560542227472715</string>
+
+    <string name="message_logout">Tem certeza que deseja sair?</string>
+    <string name="yes_logout">Sim</string>
+    <string name="no_logout">Não</string>
 </resources>
