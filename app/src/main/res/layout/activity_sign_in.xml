@@ -14,8 +14,7 @@
         android:id="@+id/SignIn_or_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/or_image"
-        android:scaleX="0.7"
+        android:src="@drawable/sign_with_0000_ou"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
 
@@ -23,34 +22,34 @@
         android:id="@+id/SignIn_criar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/criar_conta"
-        android:scaleY="0.5"
-        android:layout_above="@+id/SignIn_or_image"/>
+        android:background="@drawable/sign_with_0001_criar_conta"
+        android:layout_above="@+id/SignIn_or_image"
+        android:layout_marginBottom="25sp"/>
 
     <Button
         android:id="@+id/SignIn_entrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/entrar"
-        android:scaleY="0.5"
-        android:layout_above="@+id/SignIn_criar"/>
+        android:background="@drawable/sign_with_0002_entrar"
+        android:layout_above="@+id/SignIn_criar"
+        android:layout_marginBottom="25sp"/>
 
     <Button
         android:id="@+id/SignIn_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/facebook"
+        android:background="@drawable/sign_with_0003_facebook"
         android:layout_below="@+id/SignIn_or_image"
         android:scaleX="0.7"
-        android:scaleY="0.5" />
+        android:layout_marginTop="25sp"/>
 
     <Button
         android:id="@+id/SignIn_google"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/google"
+        android:background="@drawable/sign_with_0005_google"
         android:layout_below="@id/SignIn_facebook"
         android:scaleX="0.7"
-        android:scaleY="0.5"/>
+        android:layout_marginTop="25sp"/>
 
 </RelativeLayout>

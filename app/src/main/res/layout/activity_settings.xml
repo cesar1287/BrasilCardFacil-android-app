@@ -14,7 +14,7 @@
         android:id="@+id/settings_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/banner"
+        android:src="@drawable/planos_0002s_0001_banner_family11"
         android:scaleType="fitStart"
         android:adjustViewBounds="true"/>
 
