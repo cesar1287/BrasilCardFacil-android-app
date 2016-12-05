@@ -47,6 +47,7 @@
             android:layout_marginLeft="30dp"/>
 
         <Button
+            android:id="@+id/main_gold"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".25"

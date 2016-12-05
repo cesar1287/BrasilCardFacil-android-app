@@ -45,7 +45,16 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.DiamondPlanActivity"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.GoldPlanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.SilverPlanActivity"
+            android:label="@string/title_activity_silver_plan"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

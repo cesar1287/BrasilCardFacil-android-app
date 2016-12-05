@@ -108,6 +108,14 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
             }
         });
+
+        Button btGold = (Button) findViewById(R.id.main_gold);
+        btGold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, GoldPlanActivity.class));
+            }
+        });
     }
 
     @Override
