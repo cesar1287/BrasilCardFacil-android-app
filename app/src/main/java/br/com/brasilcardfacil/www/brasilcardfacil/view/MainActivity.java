@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,6 +100,14 @@ public class MainActivity extends AppCompatActivity
         nav_nome.setText(name);
         TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
         nav_email.setText(email);
+
+        Button btDiamond = (Button) findViewById(R.id.main_diamond);
+        btDiamond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
+            }
+        });
     }
 
     @Override

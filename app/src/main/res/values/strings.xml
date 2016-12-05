@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BrasilCard Facil</string>
+    <string name="app_name">BrasilCard fácil</string>
     <string name="title_activity_main"><b>BrasilCard</b> fácil</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -30,4 +30,5 @@
     <string name="settings_som">Som</string>
     <string name="settings_on">on</string>
     <string name="settings_off">off</string>
+    <string name="settings_log_out">Log Out</string>
 </resources>

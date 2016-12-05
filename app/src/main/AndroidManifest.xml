@@ -42,7 +42,10 @@
             android:name=".view.AccountActivity"
             android:label="@string/screen_account"
             android:parentActivityName=".view.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.DiamondPlanActivity"
+            android:theme="@style/AppTheme.Dialog"/>
     </application>
 
 </manifest>

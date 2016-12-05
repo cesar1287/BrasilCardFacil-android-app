@@ -18,8 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/planos_0002s_0001_banner_family11"
+        android:scaleX="1.02"
         android:scaleType="fitStart"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true"
+        android:layout_marginTop="4sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +30,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/main_diamente"
+            android:id="@+id/main_diamond"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".25"

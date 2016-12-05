@@ -14,7 +14,9 @@
         android:id="@+id/settings_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/planos_0002s_0001_banner_family11"
+        android:src="@drawable/settings_0002s_0001_banner_family11"
+        android:scaleX="1.02"
+        android:layout_marginTop="4sp"
         android:scaleType="fitStart"
         android:adjustViewBounds="true"/>
 
@@ -23,7 +25,7 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:id="@+id/switch1"
         android:checked="true"
         android:textOn="@string/settings_on"
@@ -38,7 +40,7 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:id="@+id/switch2"
         android:checked="true"
         android:textOn="@string/settings_on"
@@ -55,7 +57,7 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:id="@+id/switch3"
         android:checked="false"
         android:textOn="@string/settings_on"
@@ -72,7 +74,7 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="30sp"
         android:id="@+id/switch4"
         android:checked="true"
         android:textOn="@string/settings_on"
@@ -84,25 +86,24 @@
         android:layout_alignRight="@+id/switch1"
         android:layout_alignEnd="@+id/switch1" />
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/switch1"
-        android:layout_alignEnd="@+id/switch1" />
-
     <TextView
-        android:text="Logout"
+        android:text="@string/settings_log_out"
         android:textColor="@color/black"
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button2"
+        android:layout_marginBottom="35sp"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/switch1"
-        android:layout_alignStart="@+id/switch1"
-        android:layout_marginBottom="13dp"
-        android:id="@+id/textView" />
+        android:layout_alignStart="@+id/switch1" />
+
+    <ImageButton
+        android:id="@+id/setting_btLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_0003s_0002_log_out_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="29sp"
+        android:layout_alignRight="@+id/switch1"
+        android:layout_alignEnd="@+id/switch1" />
 </RelativeLayout>
