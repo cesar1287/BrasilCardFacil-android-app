@@ -31,5 +31,4 @@
     <string name="settings_on">on</string>
     <string name="settings_off">off</string>
     <string name="settings_log_out">Log Out</string>
-    <string name="title_activity_silver_plan">SilverPlanActivity</string>
 </resources>

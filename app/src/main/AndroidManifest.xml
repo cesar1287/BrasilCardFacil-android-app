@@ -53,8 +53,12 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.SilverPlanActivity"
-            android:theme="@style/AppTheme.Dialog"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.BronzePlanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog"/>
     </application>
 
 </manifest>

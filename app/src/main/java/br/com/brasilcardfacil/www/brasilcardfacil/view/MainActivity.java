@@ -124,6 +124,14 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, SilverPlanActivity.class));
             }
         });
+
+        Button btBronze = (Button) findViewById(R.id.main_bronze);
+        btBronze.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BronzePlanActivity.class));
+            }
+        });
     }
 
     @Override

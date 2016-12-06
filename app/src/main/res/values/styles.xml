@@ -30,7 +30,7 @@
         <item name="windowFixedHeightMinor">90%</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/BrasilCardFacil</item>
+        <item name="android:windowBackground">@drawable/dialog_border</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
