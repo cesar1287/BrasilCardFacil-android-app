@@ -17,8 +17,8 @@
     <string name="plano_ouro">Plano Ouro</string>
     <string name="plano_prata">Plano Prata</string>
     <string name="plano_bronze">Plano Bronze</string>
-    <string name="group_menu_planos">Planos</string>
-    <string name="group_menu_opcoes">Opções</string>
+    <string name="group_menu_planos"><b>Planos</b></string>
+    <string name="group_menu_opcoes"><b>Opções</b></string>
     <string name="conta">Conta</string>
     <string name="configuracoes">Configurações</string>
     <string name="sair">Sair</string>

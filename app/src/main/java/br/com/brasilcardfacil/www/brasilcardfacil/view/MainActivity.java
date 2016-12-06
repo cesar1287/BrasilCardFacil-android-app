@@ -191,13 +191,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_diamond) {
-            // Handle the camera action
+            startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
         } else if (id == R.id.nav_gold) {
-
+            startActivity(new Intent(MainActivity.this, GoldPlanActivity.class));
         } else if (id == R.id.nav_silver) {
-
+            startActivity(new Intent(MainActivity.this, SilverPlanActivity.class));
         } else if (id == R.id.nav_bronze) {
-
+            startActivity(new Intent(MainActivity.this, BronzePlanActivity.class));
         } else if (id == R.id.nav_config) {
             startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_account) {
