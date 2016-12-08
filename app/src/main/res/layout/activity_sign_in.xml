@@ -22,6 +22,8 @@
         android:id="@+id/SignIn_criar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
         android:background="@drawable/sign_with_0001_criar_conta"
         android:layout_above="@+id/SignIn_or_image"
         android:layout_marginBottom="25sp"/>
@@ -30,6 +32,8 @@
         android:id="@+id/SignIn_entrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
         android:background="@drawable/sign_with_0002_entrar"
         android:layout_above="@+id/SignIn_criar"
         android:layout_marginBottom="25sp"/>

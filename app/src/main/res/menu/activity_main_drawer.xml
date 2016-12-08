@@ -5,19 +5,15 @@
         <menu>
             <item
                 android:id="@+id/nav_diamond"
-                android:icon="@drawable/ic_numeric_1_box_outline_white_48dp"
                 android:title="@string/plano_diamante" />
             <item
                 android:id="@+id/nav_gold"
-                android:icon="@drawable/ic_numeric_2_box_outline_white_48dp"
                 android:title="@string/plano_ouro" />
             <item
                 android:id="@+id/nav_silver"
-                android:icon="@drawable/ic_numeric_3_box_outline_white_48dp"
                 android:title="@string/plano_prata" />
             <item
                 android:id="@+id/nav_bronze"
-                android:icon="@drawable/ic_numeric_4_box_outline_white_48dp"
                 android:title="@string/plano_bronze" />
         </menu>
     </item>
