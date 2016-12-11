@@ -31,4 +31,5 @@
     <string name="settings_on">on</string>
     <string name="settings_off">off</string>
     <string name="settings_log_out">Log Out</string>
+    <string name="screen_comprar_plano">Comprar plano</string>
 </resources>

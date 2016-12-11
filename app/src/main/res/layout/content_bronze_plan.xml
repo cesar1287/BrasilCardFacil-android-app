@@ -55,7 +55,7 @@
             android:layout_below="@+id/bronze_plan_button_buy1"/>
 
         <ImageButton
-            android:id="@+id/silver_plan_button_buy2"
+            android:id="@+id/bronze_plan_button_buy2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/plano_button_buy"

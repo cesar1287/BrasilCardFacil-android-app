@@ -20,6 +20,7 @@
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -57,7 +58,13 @@
         <activity
             android:name=".view.BronzePlanActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.WebViewPlansActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/screen_comprar_plano"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
