@@ -32,10 +32,16 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
 
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
@@ -49,11 +55,19 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleApiClient mGoogleApiClient;
 
+    private DatabaseReference mDatabase;
+
+    String Uid, name , email, profile_pic;
+
+    SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(getApplication());
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         callbackManager = CallbackManager.Factory.create();
         mAuth = FirebaseAuth.getInstance();
@@ -188,17 +202,9 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                             FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
                             FirebaseUser user = mAuth.getCurrentUser();
-                            SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sp.edit();
 
-                            editor.putString("id", user.getUid());
-                            editor.putString("name", user.getDisplayName());
-                            editor.putString("email", user.getEmail());
-                            editor.putString("profile_pic", user.getPhotoUrl().toString());
-                            editor.apply();
-                            finish();
+                            finishLogin(user);
                         }
-
                         // ...
                     }
                 });
@@ -227,19 +233,71 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                             FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
                             FirebaseUser user = mAuth.getCurrentUser();
-                            SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sp.edit();
 
-                            editor.putString("id", user.getUid());
-                            editor.putString("name", user.getDisplayName());
-                            editor.putString("email", user.getEmail());
-                            editor.putString("profile_pic", user.getPhotoUrl().toString());
-                            editor.apply();
-                            finish();
+                            finishLogin(user);
                         }
                         // ...
                     }
                 });
+    }
+
+    public void finishLogin(FirebaseUser user){
+
+        Uid = user.getUid();
+        name = user.getDisplayName();
+        email = user.getEmail();
+        profile_pic = user.getPhotoUrl().toString();
+
+        mDatabase.child("users").child(Uid).addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // Get user value
+                        User user = dataSnapshot.getValue(User.class);
+
+                        // [START_EXCLUDE]
+                        if (user == null) {
+
+                            writeNewUser(Uid, name, email, "", "", "", "", profile_pic);
+
+                            sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sp.edit();
+
+                            editor.putString("id", Uid);
+                            editor.putString("name", name);
+                            editor.putString("email", email);
+                            editor.putString("profile_pic", profile_pic);
+                            editor.apply();
+                            finish();
+                        } else {
+
+                            sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sp.edit();
+
+                            editor.putString("id", Uid);
+                            editor.putString("name", name);
+                            editor.putString("email", email);
+                            editor.putString("profile_pic", profile_pic);
+                            editor.putString("phone", user.phone);
+                            editor.putString("birth", user.birth);
+                            editor.putString("sex", user.sex);
+                            editor.apply();
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.w(TAG, "getUser:onCancelled", databaseError.toException());
+                    }
+                });
+    }
+
+    private void writeNewUser(String userId, String name, String email, String birth, String sex, String phone, String plan, String profile_pic) {
+
+        User user = new User(name, email, birth, phone, sex, plan, profile_pic);
+
+        mDatabase.child("users").child(userId).setValue(user);
     }
 
     private void signIn() {

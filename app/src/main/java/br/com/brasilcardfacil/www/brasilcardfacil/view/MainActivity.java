@@ -79,28 +79,6 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        id = sp.getString("id", "0");
-        name = sp.getString("name","falhou");
-        email = sp.getString("email","falhou");
-        profilePic = sp.getString("profile_pic","falhou");
-
-        View hView =  navigationView.getHeaderView(0);
-        final ImageView nav_image = (ImageView)hView.findViewById(R.id.imageView);
-        Glide.with(this).load(profilePic).asBitmap().into(new BitmapImageViewTarget(nav_image) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(getResources(), resource);
-                circularBitmapDrawable.setCircular(true);
-                nav_image.setImageDrawable(circularBitmapDrawable);
-            }
-        });
-        TextView nav_nome = (TextView)hView.findViewById(R.id.header_name);
-        nav_nome.setText(name);
-        TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
-        nav_email.setText(email);
-
         Button btDiamond = (Button) findViewById(R.id.main_diamond);
         btDiamond.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +116,28 @@ public class MainActivity extends AppCompatActivity
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+
+        SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        id = sp.getString("id", "0");
+        name = sp.getString("name","falhou");
+        email = sp.getString("email","falhou");
+        profilePic = sp.getString("profile_pic","falhou");
+
+        View hView =  navigationView.getHeaderView(0);
+        final ImageView nav_image = (ImageView)hView.findViewById(R.id.imageView);
+        Glide.with(this).load(profilePic).asBitmap().into(new BitmapImageViewTarget(nav_image) {
+            @Override
+            protected void setResource(Bitmap resource) {
+                RoundedBitmapDrawable circularBitmapDrawable =
+                        RoundedBitmapDrawableFactory.create(getResources(), resource);
+                circularBitmapDrawable.setCircular(true);
+                nav_image.setImageDrawable(circularBitmapDrawable);
+            }
+        });
+        TextView nav_nome = (TextView)hView.findViewById(R.id.header_name);
+        nav_nome.setText(name);
+        TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
+        nav_email.setText(email);
     }
 
     @Override
