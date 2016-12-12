@@ -55,7 +55,8 @@
             android:orientation="horizontal"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5sp">
 
             <ImageView
                 android:layout_width="0dp"
@@ -79,6 +80,7 @@
                 android:id="@+id/acc_edit1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@color/BrasilCardFacil"
                 android:layout_weight="0.12"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/user_0003s_0020_adjust"
@@ -105,7 +107,9 @@
             android:id="@+id/acc_linear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp">
 
             <ImageView
                 android:layout_width="0dp"
@@ -132,6 +136,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.12"
+                android:background="@color/BrasilCardFacil"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/user_0003s_0020_adjust"
                 android:layout_margin="5dp"/>
@@ -156,7 +161,9 @@
             android:id="@+id/acc_linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp">
 
             <ImageView
                 android:layout_width="0dp"
@@ -184,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.12"
                 android:layout_alignParentRight="true"
+                android:background="@color/BrasilCardFacil"
                 android:src="@drawable/user_0003s_0020_adjust"
                 android:layout_margin="5dp"/>
         </LinearLayout>
@@ -207,7 +215,9 @@
             android:id="@+id/acc_linear3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp">
 
             <ImageView
                 android:layout_width="0dp"
@@ -233,6 +243,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.12"
+                android:background="@color/BrasilCardFacil"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/user_0003s_0020_adjust"
                 android:layout_margin="5dp"/>
@@ -280,12 +291,15 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/btSalvar"
-            android:text="Salvar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"/>
+            android:src="@drawable/user_0000_save_button"
+            android:background="@color/BrasilCardFacil"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20sp"/>
 
     </RelativeLayout>
 

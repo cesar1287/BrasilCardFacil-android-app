@@ -7,7 +7,6 @@ import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -110,7 +109,7 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        Button btSalvar = (Button) findViewById(R.id.btSalvar);
+        ImageButton btSalvar = (ImageButton) findViewById(R.id.btSalvar);
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
