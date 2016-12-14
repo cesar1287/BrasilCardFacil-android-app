@@ -25,10 +25,6 @@
                 android:icon="@drawable/user_0016_user"
                 android:title="@string/conta"/>
             <item
-                android:id="@+id/nav_config"
-                android:icon="@drawable/user_0017_setting"
-                android:title="@string/configuracoes" />
-            <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/user_0015_sair"
                 android:title="@string/sair" />
