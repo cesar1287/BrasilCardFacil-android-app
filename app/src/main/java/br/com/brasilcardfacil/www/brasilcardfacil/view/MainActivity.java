@@ -81,13 +81,14 @@ public class MainActivity extends AppCompatActivity
 
         SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
-        name = sp.getString("name","falhou");
-        email = sp.getString("email","falhou");
-        profilePic = sp.getString("profile_pic","falhou");
+        name = sp.getString("name","Carregando...");
+        email = sp.getString("email","Carregando...");
+        profilePic = sp.getString("profile_pic","Carregando...");
 
         View hView =  navigationView.getHeaderView(0);
         final ImageView nav_image = (ImageView)hView.findViewById(R.id.imageView);
-        Glide.with(this).load(profilePic).asBitmap().into(new BitmapImageViewTarget(nav_image) {
+        Glide.with(this).load(profilePic)
+                .asBitmap().into(new BitmapImageViewTarget(nav_image) {
             @Override
             protected void setResource(Bitmap resource) {
                 RoundedBitmapDrawable circularBitmapDrawable =
@@ -173,10 +174,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
-            return true;
-        }else if (id == R.id.action_account) {
+        if (id == R.id.action_account) {
             startActivity(new Intent(this, AccountActivity.class));
             return true;
         }
@@ -198,8 +196,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this, SilverPlanActivity.class));
         } else if (id == R.id.nav_bronze) {
             startActivity(new Intent(MainActivity.this, BronzePlanActivity.class));
-        } else if (id == R.id.nav_config) {
-            startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_account) {
             startActivity(new Intent(this, AccountActivity.class));
         }else if (id == R.id.nav_logout) {
