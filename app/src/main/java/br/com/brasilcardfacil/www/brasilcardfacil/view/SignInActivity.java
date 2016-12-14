@@ -107,7 +107,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
                     @Override
                     public void onCancel() {
-                        Toast.makeText(SignInActivity.this, "Login Cancel", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignInActivity.this, "Login com o Facebook cancelado", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -119,14 +119,21 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         setContentView(R.layout.activity_sign_in);
 
         Button btEntrar = (Button) findViewById(R.id.SignIn_entrar);
+        Button btCriar = (Button) findViewById(R.id.SignIn_criar);
         Button btFacebook = (Button) findViewById(R.id.SignIn_facebook);
         Button btGoogle = (Button) findViewById(R.id.SignIn_google);
 
         btEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignInActivity.this, MainActivity.class));
-                finish();
+                startActivity(new Intent(SignInActivity.this, SignInEmailPassActivity.class));
+            }
+        });
+
+        btCriar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignInActivity.this, NewUserActivity.class));
             }
         });
 
@@ -194,8 +201,11 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(SignInActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
+                                            "\n" +
+                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
+                                            "Tente novamente com outro método de login.",
+                                    Toast.LENGTH_LONG).show();
                         }else{
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
 
@@ -225,8 +235,11 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(SignInActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
+                                            "\n" +
+                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
+                                            "Tente novamente com outro método de login.",
+                                    Toast.LENGTH_LONG).show();
                         }else{
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
 

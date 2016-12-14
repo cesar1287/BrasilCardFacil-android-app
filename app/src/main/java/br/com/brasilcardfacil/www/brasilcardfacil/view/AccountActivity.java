@@ -41,9 +41,9 @@ public class AccountActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
-        name = sp.getString("name","falhou");
-        mEmail = sp.getString("email","falhou");
-        profilePic = sp.getString("profile_pic","falhou");
+        name = sp.getString("name","Carregando...");
+        mEmail = sp.getString("email","Carregando...");
+        profilePic = sp.getString("profile_pic","Carregando...");
         mBirth = sp.getString("birth", "");
         mPhone = sp.getString("phone","");
         mSex = sp.getString("sex","");
@@ -113,7 +113,7 @@ public class AccountActivity extends AppCompatActivity {
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                writeNewUser(user.getUid(), user.getDisplayName(), email.getText().toString(),
+                writeNewUser(user.getUid(), name, email.getText().toString(),
                         born.getText().toString(), sex.getText().toString(), phone.getText().toString(), "", profilePic );
             }
         });
