@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
 
 public class NewUserActivity extends AppCompatActivity {
 
@@ -127,11 +128,8 @@ public class NewUserActivity extends AppCompatActivity {
     }
 
     public boolean verifyEmptyField(String name, String email, String pass){
-        if(name.isEmpty() || email.isEmpty() || pass.isEmpty()) {
-            return true;
-        }else{
-            return false;
-        }
+
+        return (name.isEmpty() || email.isEmpty() || pass.isEmpty());
     }
 
     public void finishLogin(FirebaseUser user){
@@ -149,7 +147,7 @@ public class NewUserActivity extends AppCompatActivity {
                         // [START_EXCLUDE]
                         if (user == null) {
 
-                            writeNewUser(Uid, name, email, "", "", "", "", profile_pic);
+                            FirebaseHelper.writeNewUser(mDatabase, Uid, name, email, "", "", "", "", profile_pic);
 
                             sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
@@ -182,12 +180,5 @@ public class NewUserActivity extends AppCompatActivity {
                         Log.w(TAG, "getUser:onCancelled", databaseError.toException());
                     }
                 });
-    }
-
-    private void writeNewUser(String userId, String name, String email, String birth, String sex, String phone, String plan, String profile_pic) {
-
-        User user = new User(name, email, birth, phone, sex, plan, profile_pic);
-
-        mDatabase.child("users").child(userId).setValue(user);
     }
 }
