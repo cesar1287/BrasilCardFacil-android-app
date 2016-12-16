@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class NewUserActivity extends AppCompatActivity {
 
@@ -72,7 +73,7 @@ public class NewUserActivity extends AppCompatActivity {
         btCriar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!verifyEmptyField(etName.getText().toString(), etEmail.getText().toString(), etPass.getText().toString())) {
+                if(!Utility.verifyEmptyField(etName.getText().toString(), etEmail.getText().toString(), etPass.getText().toString())) {
 
                     name = etName.getText().toString();
 
@@ -125,11 +126,6 @@ public class NewUserActivity extends AppCompatActivity {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
-    }
-
-    public boolean verifyEmptyField(String name, String email, String pass){
-
-        return (name.isEmpty() || email.isEmpty() || pass.isEmpty());
     }
 
     public void finishLogin(FirebaseUser user){
