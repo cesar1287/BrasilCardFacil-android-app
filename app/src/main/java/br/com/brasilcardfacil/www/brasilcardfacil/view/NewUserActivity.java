@@ -74,38 +74,37 @@ public class NewUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!Utility.verifyEmptyField(etName.getText().toString(), etEmail.getText().toString(), etPass.getText().toString())) {
+                            name = etName.getText().toString();
 
-                    name = etName.getText().toString();
+                            mAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etPass.getText().toString())
+                                    .addOnCompleteListener(NewUserActivity.this, new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                    mAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etPass.getText().toString())
-                            .addOnCompleteListener(NewUserActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                                            // If sign in fails, display a message to the user. If sign in succeeds
+                                            // the auth state listener will be notified and logic to handle the
+                                            // signed in user can be handled in the listener.
+                                            if (!task.isSuccessful()) {
+                                                Toast.makeText(NewUserActivity.this, "Falha ao entrar\n" +
+                                                                "\n" +
+                                                                "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
+                                                                "Tente novamente com outro método de login.",
+                                                        Toast.LENGTH_LONG).show();
+                                            }else{
+                                                Toast.makeText(NewUserActivity.this, "Usuário criado com sucesso.",
+                                                        Toast.LENGTH_SHORT).show();
 
-                                    // If sign in fails, display a message to the user. If sign in succeeds
-                                    // the auth state listener will be notified and logic to handle the
-                                    // signed in user can be handled in the listener.
-                                    if (!task.isSuccessful()) {
-                                        Toast.makeText(NewUserActivity.this, "Falha ao entrar\n" +
-                                                        "\n" +
-                                                        "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
-                                                        "Tente novamente com outro método de login.",
-                                                Toast.LENGTH_LONG).show();
-                                    }else{
-                                        Toast.makeText(NewUserActivity.this, "Usuário criado com sucesso.",
-                                                Toast.LENGTH_SHORT).show();
+                                                FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-                                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                                                FirebaseUser user = mAuth.getCurrentUser();
 
-                                        FirebaseUser user = mAuth.getCurrentUser();
+                                                finishLogin(user);
 
-                                        finishLogin(user);
-
-                                        finish();
-                                    }
-                                }
-                            });
+                                                finish();
+                                            }
+                                        }
+                                    });
                 }else{
                     Toast.makeText(NewUserActivity.this, "Todos os campos são obrigatórios, tente novamente.",
                             Toast.LENGTH_SHORT).show();
