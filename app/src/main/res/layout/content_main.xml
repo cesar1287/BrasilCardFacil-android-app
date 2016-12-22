@@ -17,7 +17,7 @@
         android:id="@+id/main_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/planos_0002s_0001_banner_family11"
+        android:src="@drawable/menu_0006_banner_menu"
         android:scaleX="1.02"
         android:scaleType="fitStart"
         android:adjustViewBounds="true"
@@ -30,13 +30,13 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/main_diamond"
+            android:id="@+id/main_partners"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".25"
-            android:background="@drawable/planos_0003_brasilcard_facil_diamante"
-            android:scaleY="0.7"
-            android:scaleX="0.6"/>
+            android:layout_weight=".5"
+            android:background="@drawable/menu_0007_parceiros"
+            android:scaleY="0.6"
+            android:scaleX="0.5"/>
 
         <View
             android:layout_width="match_parent"
@@ -47,47 +47,13 @@
             android:layout_marginLeft="30dp"/>
 
         <Button
-            android:id="@+id/main_gold"
+            android:id="@+id/main_plans"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".25"
-            android:background="@drawable/planos_0003s_0001_brasilcard_facil_ouro"
-            android:scaleY="0.7"
-            android:scaleX="0.6"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".01"
-            android:background="@color/divisor"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"/>
-
-        <Button
-            android:id="@+id/main_silver"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".25"
-            android:background="@drawable/planos_0003s_0002_brasilcard_facil_prata"
-            android:scaleY="0.7"
-            android:scaleX="0.6"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".01"
-            android:background="@color/divisor"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"/>
-
-        <Button
-            android:id="@+id/main_bronze"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".25"
-            android:background="@drawable/planos_0003s_0003_brasilcard_facil_bronze"
-            android:scaleY="0.7"
-            android:scaleX="0.6"/>
+            android:layout_weight=".5"
+            android:background="@drawable/menu_0008_planos1"
+            android:scaleY="0.6"
+            android:scaleX="0.5"/>
     </LinearLayout>
 
 </RelativeLayout>

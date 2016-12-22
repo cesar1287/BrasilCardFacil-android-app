@@ -102,23 +102,23 @@ public class MainActivity extends AppCompatActivity
         TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
         nav_email.setText(email);
 
-        Button btDiamond = (Button) findViewById(R.id.main_diamond);
+        Button btDiamond = (Button) findViewById(R.id.main_partners);
         btDiamond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
+                //startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
             }
         });
 
-        Button btGold = (Button) findViewById(R.id.main_gold);
+        Button btGold = (Button) findViewById(R.id.main_plans);
         btGold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, GoldPlanActivity.class));
+                startActivity(new Intent(MainActivity.this, PlansActivity.class));
             }
         });
 
-        Button btSilver = (Button) findViewById(R.id.main_silver);
+        /*Button btSilver = (Button) findViewById(R.id.main_silver);
         btSilver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, BronzePlanActivity.class));
             }
-        });
+        });*/
     }
 
     @Override
