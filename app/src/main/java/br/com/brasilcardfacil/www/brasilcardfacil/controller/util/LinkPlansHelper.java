@@ -12,4 +12,8 @@ public class LinkPlansHelper {
     public static final String bronze_1_plan = "http://www.brasilcardfacil.com.br/page34.html";
     public static final String bronze_2_plan = "http://www.brasilcardfacil.com.br/page35.html";
     public static final String bronze_3_plan = "http://www.brasilcardfacil.com.br/page36.html";
+
+    public static final String cheers_plan = "http://www.brasilcardfacil.com.br/page69.html";
+    public static final String total_plan = "http://www.brasilcardfacil.com.br/page68.html";
+    public static final String funeral_plan = "http://www.brasilcardfacil.com.br/page70.html";
 }
