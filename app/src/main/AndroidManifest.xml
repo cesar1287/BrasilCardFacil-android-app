@@ -67,10 +67,29 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".view.NewUserActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".view.SignInEmailPassActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".view.PlansActivity"
+            android:label="@string/screen_plans"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.CheersPlanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.FuneralPlanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:name=".view.TotalPlanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dialog"/>
     </application>
 
 </manifest>
