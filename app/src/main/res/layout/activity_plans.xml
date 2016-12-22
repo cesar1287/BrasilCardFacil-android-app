@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plans"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.PlansActivity">
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" -->
+
+    <ImageView
+        android:id="@+id/plan_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/planos_0002s_0001_banner_family11"
+        android:scaleX="1.02"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="4sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/plan_banner"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/plan_total"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".33"
+            android:background="@drawable/planos_0007_total"
+            android:scaleY="0.55"
+            android:scaleX="0.7"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".01"
+            android:background="@color/divisor"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/plan_cheers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".33"
+            android:background="@drawable/planos_0008_saude"
+            android:scaleY="0.55"
+            android:scaleX="0.7"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".01"
+            android:background="@color/divisor"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/plan_funeral"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".33"
+            android:background="@drawable/planos_0009_funeraria"
+            android:scaleY="0.55"
+            android:scaleX="0.7"/>
+    </LinearLayout>
+
+</RelativeLayout>
