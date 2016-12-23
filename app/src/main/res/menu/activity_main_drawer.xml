@@ -4,17 +4,14 @@
     <item android:title="@string/group_menu_planos">
         <menu>
             <item
-                android:id="@+id/nav_diamond"
-                android:title="@string/plano_diamante" />
+                android:id="@+id/nav_total"
+                android:title="@string/plano_total" />
             <item
-                android:id="@+id/nav_gold"
-                android:title="@string/plano_ouro" />
+                android:id="@+id/nav_cheers"
+                android:title="@string/plano_cheers" />
             <item
-                android:id="@+id/nav_silver"
-                android:title="@string/plano_prata" />
-            <item
-                android:id="@+id/nav_bronze"
-                android:title="@string/plano_bronze" />
+                android:id="@+id/nav_funeral"
+                android:title="@string/plano_funeral" />
         </menu>
     </item>
 

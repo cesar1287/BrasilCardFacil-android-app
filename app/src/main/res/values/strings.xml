@@ -13,9 +13,9 @@
     <string name="message_logout">Tem certeza que deseja sair?</string>
     <string name="yes_logout">Sim</string>
     <string name="no_logout">Não</string>
-    <string name="plano_diamante"><b>BrasilCard</b> fácil Diamante</string>
-    <string name="plano_ouro"><b>BrasilCard</b> fácil Ouro</string>
-    <string name="plano_prata"><b>BrasilCard</b> fácil Prata</string>
+    <string name="plano_total"><b>BrasilCard</b> fácil Total</string>
+    <string name="plano_cheers"><b>BrasilCard</b> fácil Saúde</string>
+    <string name="plano_funeral"><b>BrasilCard</b> fácil Funerário</string>
     <string name="plano_bronze"><b>BrasilCard</b> fácil Bronze</string>
     <string name="group_menu_planos"><b>Planos</b></string>
     <string name="group_menu_opcoes"><b>Opções</b></string>
@@ -33,4 +33,5 @@
     <string name="settings_log_out">Log Out</string>
     <string name="screen_comprar_plano">Comprar plano</string>
     <string name="screen_plans">Planos</string>
+    <string name="screen_partners">Parceiros</string>
 </resources>

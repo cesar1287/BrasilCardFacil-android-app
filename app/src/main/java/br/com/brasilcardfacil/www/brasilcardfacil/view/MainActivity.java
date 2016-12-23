@@ -102,37 +102,21 @@ public class MainActivity extends AppCompatActivity
         TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
         nav_email.setText(email);
 
-        Button btDiamond = (Button) findViewById(R.id.main_partners);
-        btDiamond.setOnClickListener(new View.OnClickListener() {
+        Button btPartners = (Button) findViewById(R.id.main_partners);
+        btPartners.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
+                startActivity(new Intent(MainActivity.this, PartnerActivity.class));
             }
         });
 
-        Button btGold = (Button) findViewById(R.id.main_plans);
-        btGold.setOnClickListener(new View.OnClickListener() {
+        Button btPlans = (Button) findViewById(R.id.main_plans);
+        btPlans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PlansActivity.class));
             }
         });
-
-        /*Button btSilver = (Button) findViewById(R.id.main_silver);
-        btSilver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SilverPlanActivity.class));
-            }
-        });
-
-        Button btBronze = (Button) findViewById(R.id.main_bronze);
-        btBronze.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, BronzePlanActivity.class));
-            }
-        });*/
     }
 
     @Override
@@ -188,14 +172,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_diamond) {
-            startActivity(new Intent(MainActivity.this, DiamondPlanActivity.class));
-        } else if (id == R.id.nav_gold) {
-            startActivity(new Intent(MainActivity.this, GoldPlanActivity.class));
-        } else if (id == R.id.nav_silver) {
-            startActivity(new Intent(MainActivity.this, SilverPlanActivity.class));
-        } else if (id == R.id.nav_bronze) {
-            startActivity(new Intent(MainActivity.this, BronzePlanActivity.class));
+        if (id == R.id.nav_total) {
+            startActivity(new Intent(this, TotalPlanActivity.class));
+        } else if (id == R.id.nav_cheers) {
+            startActivity(new Intent(this, CheersPlanActivity.class));
+        } else if (id == R.id.nav_funeral) {
+            startActivity(new Intent(this, FuneralPlanActivity.class));
         } else if (id == R.id.nav_account) {
             startActivity(new Intent(this, AccountActivity.class));
         }else if (id == R.id.nav_logout) {
