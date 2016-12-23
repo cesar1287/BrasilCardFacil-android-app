@@ -44,22 +44,6 @@
             android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.DiamondPlanActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog" />
-        <activity
-            android:name=".view.GoldPlanActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog" />
-        <activity
-            android:name=".view.SilverPlanActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog" />
-        <activity
-            android:name=".view.BronzePlanActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog" />
-        <activity
             android:name=".view.WebViewPlansActivity"
             android:label="@string/screen_comprar_plano"
             android:parentActivityName=".view.MainActivity"
@@ -85,11 +69,16 @@
         <activity
             android:name=".view.FuneralPlanActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.TotalPlanActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.PartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
