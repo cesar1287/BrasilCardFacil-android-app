@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -73,6 +75,25 @@ public class SignInEmailPassActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!Utility.verifyEmptyField(etEmail.getText().toString(), etPass.getText().toString())){
                     mAuth.signInWithEmailAndPassword(etEmail.getText().toString(), etPass.getText().toString())
+                            .addOnFailureListener(SignInEmailPassActivity.this, new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(SignInEmailPassActivity.this, "Usuário e/ou senha incorreto(s).",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnSuccessListener(SignInEmailPassActivity.this, new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+                                    FirebaseUser user = mAuth.getCurrentUser();
+
+                                    finishLogin(user);
+
+                                    finish();
+                                }
+                            })
                             .addOnCompleteListener(SignInEmailPassActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -81,19 +102,8 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                                     // If sign in fails, display a message to the user. If sign in succeeds
                                     // the auth state listener will be notified and logic to handle the
                                     // signed in user can be handled in the listener.
-                                    if (!task.isSuccessful()) {
+                                    if (task.isSuccessful()) {
                                         Log.w(TAG, "signInWithEmail:failed", task.getException());
-                                        Toast.makeText(SignInEmailPassActivity.this, "Usuário e/ou senha incorreto(s).",
-                                                Toast.LENGTH_SHORT).show();
-                                    }else{
-                                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-                                        FirebaseUser user = mAuth.getCurrentUser();
-
-                                        finishLogin(user);
-
-                                        finish();
-
                                         startActivity(new Intent(SignInEmailPassActivity.this, MainActivity.class));
                                         finish();
                                     }
