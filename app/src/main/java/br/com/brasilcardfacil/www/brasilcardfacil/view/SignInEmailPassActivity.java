@@ -103,7 +103,6 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                                     // the auth state listener will be notified and logic to handle the
                                     // signed in user can be handled in the listener.
                                     if (task.isSuccessful()) {
-                                        Log.w(TAG, "signInWithEmail:failed", task.getException());
                                         startActivity(new Intent(SignInEmailPassActivity.this, MainActivity.class));
                                         finish();
                                     }
@@ -163,5 +162,13 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                         Log.w(TAG, "getUser:onCancelled", databaseError.toException());
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(this, SignInActivity.class));
+        finish();
     }
 }
