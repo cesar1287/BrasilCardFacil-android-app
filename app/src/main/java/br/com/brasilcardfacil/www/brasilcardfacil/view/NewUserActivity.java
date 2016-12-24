@@ -11,9 +11,15 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -77,30 +83,55 @@ public class NewUserActivity extends AppCompatActivity {
                             name = etName.getText().toString();
 
                             mAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etPass.getText().toString())
-                                    .addOnCompleteListener(NewUserActivity.this, new OnCompleteListener<AuthResult>() {
+                                    .addOnFailureListener(NewUserActivity.this, new OnFailureListener() {
                                         @Override
-                                        public void onComplete(@NonNull Task<AuthResult> task) {
-                                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-
-                                            // If sign in fails, display a message to the user. If sign in succeeds
-                                            // the auth state listener will be notified and logic to handle the
-                                            // signed in user can be handled in the listener.
-                                            if (!task.isSuccessful()) {
+                                        public void onFailure(@NonNull Exception e) {
+                                            if(e instanceof FirebaseAuthWeakPasswordException){
+                                                Toast.makeText(NewUserActivity.this, "Sua senha precisa ter pelo menos 6 caracteres, digite novamente.",
+                                                        Toast.LENGTH_LONG).show();
+                                                etPass.setText("");
+                                                etPass.requestFocus();
+                                            }else if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                                                Toast.makeText(NewUserActivity.this, "Email inválido, digite novamente.",
+                                                        Toast.LENGTH_SHORT).show();
+                                                etEmail.setText("");
+                                                etEmail.requestFocus();
+                                            }else if(e instanceof FirebaseAuthUserCollisionException){
                                                 Toast.makeText(NewUserActivity.this, "Falha ao entrar\n" +
                                                                 "\n" +
                                                                 "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
                                                                 "Tente novamente com outro método de login.",
                                                         Toast.LENGTH_LONG).show();
+                                                etEmail.setText("");
+                                                etEmail.requestFocus();
                                             }else{
-                                                Toast.makeText(NewUserActivity.this, "Usuário criado com sucesso.",
+                                                Toast.makeText(NewUserActivity.this, "Erro desconhecido, tente novamente e contate o administrador.",
                                                         Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnSuccessListener(NewUserActivity.this, new OnSuccessListener<AuthResult>() {
+                                        @Override
+                                        public void onSuccess(AuthResult authResult) {
+                                            Toast.makeText(NewUserActivity.this, "Usuário criado com sucesso.",
+                                                    Toast.LENGTH_SHORT).show();
 
-                                                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                                            FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-                                                FirebaseUser user = mAuth.getCurrentUser();
+                                            FirebaseUser user = mAuth.getCurrentUser();
 
-                                                finishLogin(user);
+                                            finishLogin(user);
+                                        }
+                                    })
+                                    .addOnCompleteListener(NewUserActivity.this, new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task){
+                                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
+                                            // If sign in fails, display a message to the user. If sign in succeeds
+                                            // the auth state listener will be notified and logic to handle the
+                                            // signed in user can be handled in the listener.
+                                            if (task.isSuccessful()) {
                                                 finish();
                                             }
                                         }
