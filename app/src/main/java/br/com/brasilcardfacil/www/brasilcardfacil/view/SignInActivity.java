@@ -25,11 +25,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DataSnapshot;
@@ -113,7 +116,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
                     @Override
                     public void onError(FacebookException exception) {
-                        Toast.makeText(SignInActivity.this, exception.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignInActivity.this, "Erro desconhecido com o login com o Facebook, tente novamente e contate o administrador.", Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -181,10 +184,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
-            } /*else {
+            } else {
                 // Google Sign In failed, update UI appropriately
-                // ...
-            }*/
+                Toast.makeText(SignInActivity.this, "Falha ao logar com a conta Google, tente novamente.", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -193,6 +196,31 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential)
+                .addOnFailureListener(SignInActivity.this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        if(e instanceof FirebaseAuthUserCollisionException){
+                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
+                                            "\n" +
+                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
+                                            "Tente novamente com outro método de login.",
+                                    Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(SignInActivity.this, "Erro desconhecido, tente novamente e contate o administrador.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnSuccessListener(SignInActivity.this, new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+                        finishLogin(user);
+                    }
+                })
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -201,23 +229,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
-                                            "\n" +
-                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
-                                            "Tente novamente com outro método de login.",
-                                    Toast.LENGTH_LONG).show();
-                        }else{
+                        if (task.isSuccessful()) {
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
-
-                            FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-                            finishLogin(user);
+                            finish();
                         }
-                        // ...
                     }
                 });
     }
@@ -227,6 +242,31 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
+                .addOnFailureListener(SignInActivity.this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        if(e instanceof FirebaseAuthUserCollisionException){
+                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
+                                            "\n" +
+                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
+                                            "Tente novamente com outro método de login.",
+                                    Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(SignInActivity.this, "Erro desconhecido, tente novamente e contate o administrador.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnSuccessListener(SignInActivity.this, new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+                        finishLogin(user);
+                    }
+                })
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -235,23 +275,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
-                                            "\n" +
-                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
-                                            "Tente novamente com outro método de login.",
-                                    Toast.LENGTH_LONG).show();
-                        }else{
+                        if (task.isSuccessful()) {
                             startActivity(new Intent(SignInActivity.this, MainActivity.class));
-
-                            FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-                            finishLogin(user);
+                            finish();
                         }
-                        // ...
                     }
                 });
     }
@@ -283,7 +310,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                             editor.putString("email", email);
                             editor.putString("profile_pic", profile_pic);
                             editor.apply();
-                            finish();
                         } else {
 
                             sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
@@ -297,7 +323,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                             editor.putString("birth", user.birth);
                             editor.putString("sex", user.sex);
                             editor.apply();
-                            finish();
                         }
                     }
 
