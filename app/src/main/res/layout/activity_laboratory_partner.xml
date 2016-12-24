@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_laboratory_partner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.LaboratoryPartnerActivity">
+
+    <ImageView
+        android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/parceiros_0006_banner_lab"
+        android:scaleX="1.02"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="4sp"/>
+
+    <EditText
+        android:id="@+id/search_clinic_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_banner"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/button_border"
+        android:layout_marginStart="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginRight="20sp"
+        android:hint="@string/procurar_por_nome"
+        android:gravity="end|center"
+        android:drawableRight="@android:drawable/ic_menu_search"
+        android:drawableEnd="@android:drawable/ic_menu_search"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="16sp"
+        android:paddingRight="16sp"
+        android:paddingLeft="16sp"
+        android:paddingStart="16sp"
+        android:layout_below="@+id/search_clinic_hospital"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:src="@drawable/parceiros_0009_2"
+            android:scaleY="0.9"
+            android:scaleX="0.9"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:src="@drawable/parceiros_0009_2"
+            android:scaleY="0.9"
+            android:scaleX="0.9"/>
+    </LinearLayout>
+
+</RelativeLayout>
