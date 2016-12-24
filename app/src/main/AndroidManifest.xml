@@ -78,6 +78,41 @@
             android:name=".view.PartnerActivity"
             android:label="@string/screen_partners"
             android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.ClinicHospitalPartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.DentistryPartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.VeterinaryPartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.LaboratoryPartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.TradePartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.AdvocacyPartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.FuneralPartnerActivity"
+            android:label="@string/screen_partners"
+            android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait"/>
     </application>
 

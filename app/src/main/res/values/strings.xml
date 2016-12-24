@@ -34,4 +34,5 @@
     <string name="screen_comprar_plano">Comprar plano</string>
     <string name="screen_plans">Planos</string>
     <string name="screen_partners">Parceiros</string>
+    <string name="procurar_por_nome">Procurar por nome</string>
 </resources>
