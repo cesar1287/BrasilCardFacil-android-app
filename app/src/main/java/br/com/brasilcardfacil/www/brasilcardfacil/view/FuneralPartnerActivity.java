@@ -1,7 +1,6 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
 import android.app.ProgressDialog;
-import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,26 +34,9 @@ public class FuneralPartnerActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        loadList();
-
         dialog = ProgressDialog.show(this,"","Carregando parceiros, por favor aguarde!!!", true, false);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
-                if(frag == null) {
-                    frag = new PartnerFragment();
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.funeral_fragment_container, frag, "mainFrag");
-                    ft.commit();
-                }
-
-                dialog.dismiss();
-            }
-        }, 5000);
+        loadList();
     }
 
     public List<Partner> getPartnersList(){
@@ -82,6 +64,28 @@ public class FuneralPartnerActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(FuneralPartnerActivity.this, "Algo deu errado ao carregar os parceiros, " +
                         "por favor contate o administrador.", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+        partner.addListenerForSingleValueEvent(new ValueEventListener() {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+                if(frag == null) {
+                    frag = new PartnerFragment();
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.funeral_fragment_container, frag, "mainFrag");
+                    ft.commit();
+                }
+
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(FuneralPartnerActivity.this, "Algo deu errado ao carregar os parceiros, " +
+                        "por favor contate o administrador.", Toast.LENGTH_LONG).show();
+                finish();
             }
         });
     }
