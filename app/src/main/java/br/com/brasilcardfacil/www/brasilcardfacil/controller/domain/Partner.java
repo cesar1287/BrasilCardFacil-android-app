@@ -4,7 +4,13 @@ import java.io.Serializable;
 
 public class Partner implements Serializable{
 
-    private String name, url_logo, description, address, phone, site;
+    private String name;
+    private String url_logo;
+    private String description;
+    private String latitude;
+    private String longitude;
+    private String phone;
+    private String site;
 
     public String getName() {
         return name;
@@ -16,6 +22,14 @@ public class Partner implements Serializable{
 
     public String getUrlLogo() {
         return url_logo;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public void setUrlLogo(String url_logo) {
@@ -30,12 +44,12 @@ public class Partner implements Serializable{
         this.description = description;
     }
 
-    public String getAddress() {
-        return address;
+    public String getLatitude() {
+        return latitude;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
     public String getPhone() {
