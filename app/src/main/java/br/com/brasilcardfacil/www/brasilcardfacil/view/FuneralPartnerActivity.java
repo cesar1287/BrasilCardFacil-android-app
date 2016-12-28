@@ -1,8 +1,18 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
+import android.app.ProgressDialog;
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,50 +24,65 @@ import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.PartnerFra
 public class FuneralPartnerActivity extends AppCompatActivity {
 
     PartnerFragment frag;
+    private DatabaseReference mDatabase;
+    final List<Partner> partners = new ArrayList<>();
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_funeral_partner);
 
-        frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
-        if(frag == null) {
-            frag = new PartnerFragment();
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.funeral_fragment_container, frag, "mainFrag");
-            ft.commit();
-        }
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        loadList();
+
+        dialog = ProgressDialog.show(this,"","Carregando parceiros, por favor aguarde!!!", true, false);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+                if(frag == null) {
+                    frag = new PartnerFragment();
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.funeral_fragment_container, frag, "mainFrag");
+                    ft.commit();
+                }
+
+                dialog.dismiss();
+            }
+        }, 5000);
     }
 
     public List<Partner> getPartnersList(){
 
-        Partner p1 = new Partner();
-        p1.setName("teste");
-        Partner p2 = new Partner();
-        p2.setName("teste");
-        Partner p3 = new Partner();
-        p3.setName("teste");
-        Partner p4 = new Partner();
-        p4.setName("teste");
-        Partner p5 = new Partner();
-        p5.setName("teste");
-        Partner p6 = new Partner();
-        p6.setName("teste");
-        Partner p7 = new Partner();
-        p7.setName("teste");
-        Partner p8 = new Partner();
-        p8.setName("teste");
-
-        List<Partner> partners = new ArrayList<>();
-        partners.add(p1);
-        partners.add(p2);
-        partners.add(p3);
-        partners.add(p4);
-        partners.add(p5);
-        partners.add(p6);
-        partners.add(p7);
-        partners.add(p8);
-
         return partners;
+    }
+
+    public void loadList(){
+        Query partner = mDatabase.child("funeraria").orderByChild("name");
+
+        partner.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Partner p;
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    p = new Partner();
+                    p.setName((String)postSnapshot.child("name").getValue());
+                    p.setUrlLogo((String)postSnapshot.child("url_logo").getValue());
+                    partners.add(p);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(FuneralPartnerActivity.this, "Algo deu errado ao carregar os parceiros, " +
+                        "por favor contate o administrador.", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
