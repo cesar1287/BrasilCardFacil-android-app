@@ -3,12 +3,13 @@ package br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -21,7 +22,6 @@ public class PartnerAdapter extends RecyclerView.Adapter<PartnerAdapter.MyViewHo
     private List<Partner> mList;
     private LayoutInflater mLayoutInflater;
     private RecyclerViewOnClickListenerHack mRecyclerViewOnClickListenerHack;
-    ContextMenu.ContextMenuInfo info;
     private Context c;
 
     public PartnerAdapter(Context c, List<Partner> l){
@@ -29,8 +29,6 @@ public class PartnerAdapter extends RecyclerView.Adapter<PartnerAdapter.MyViewHo
         mList = l;
         mLayoutInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
-    PartnerAdapter(){}
 
     @Override
     public PartnerAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -43,7 +41,9 @@ public class PartnerAdapter extends RecyclerView.Adapter<PartnerAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
         Log.i("LOG", "onBindViewHolder()");
-        //myViewHolder.picPartner.setText(mList.get(position).getUrlLogo());
+        Glide.with(c)
+                .load(mList.get((position)).getUrlLogo())
+                .into(myViewHolder.picPartner);
         myViewHolder.namePartner.setText(mList.get(position).getName());
     }
 
@@ -74,13 +74,5 @@ public class PartnerAdapter extends RecyclerView.Adapter<PartnerAdapter.MyViewHo
                 mRecyclerViewOnClickListenerHack.onClickListener(v, getAdapterPosition());
             }
         }
-
-        /*@Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            /*new AtividadeAdapter().info = menuInfo;
-            menu.setHeaderTitle("Selecione a ação desejada");
-            menu.add(0, R.id.itemContextMenuEditar, 0, "Editar");//groupId, itemId, order, title
-            menu.add(0, R.id.itemContextMenuDeletar, 0, "Deletar");
-        }*/
     }
 }
