@@ -17,7 +17,13 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter.PartnerAdapter;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.interfaces.RecyclerViewOnClickListenerHack;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.AdvocacyPartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.ClinicHospitalPartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.DentistryPartnerActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.FuneralPartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.LaboratoryPartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.TradePartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.VeterinaryPartnerActivity;
 
 public class PartnerFragment extends Fragment implements RecyclerViewOnClickListenerHack {
 
@@ -39,8 +45,21 @@ public class PartnerFragment extends Fragment implements RecyclerViewOnClickList
         gridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-
-        mList = ((FuneralPartnerActivity) getActivity()).getPartnersList();
+        if(getActivity() instanceof FuneralPartnerActivity) {
+            mList = ((FuneralPartnerActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof TradePartnerActivity){
+            mList = ((TradePartnerActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof ClinicHospitalPartnerActivity){
+            mList = ((ClinicHospitalPartnerActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof DentistryPartnerActivity){
+            mList = ((DentistryPartnerActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof VeterinaryPartnerActivity){
+            mList = ((VeterinaryPartnerActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof LaboratoryPartnerActivity){
+            mList = ((LaboratoryPartnerActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof AdvocacyPartnerActivity){
+            mList = ((AdvocacyPartnerActivity) getActivity()).getPartnersList();
+        }
         adapter = new PartnerAdapter(getActivity(), mList);
         adapter.setRecyclerViewOnClickListenerHack(this);
         mRecyclerView.setAdapter( adapter );
