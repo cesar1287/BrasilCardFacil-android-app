@@ -81,37 +81,37 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.ClinicHospitalPartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_clinic"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.DentistryPartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_dentistry"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.VeterinaryPartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_veterinary"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.LaboratoryPartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_lab"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.TradePartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_trade"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.AdvocacyPartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_advocacy"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".view.FuneralPartnerActivity"
-            android:label="@string/screen_partners"
+            android:label="@string/screen_funeral"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait"/>
     </application>

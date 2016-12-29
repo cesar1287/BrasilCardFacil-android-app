@@ -35,4 +35,11 @@
     <string name="screen_plans">Planos</string>
     <string name="screen_partners">Parceiros</string>
     <string name="procurar_por_nome">Procurar por nome</string>
+    <string name="screen_clinic">Clínicas e Hospitais</string>
+    <string name="screen_dentistry">Odontologia</string>
+    <string name="screen_veterinary">Veterinária</string>
+    <string name="screen_lab">Laboratórios</string>
+    <string name="screen_trade">Comércio</string>
+    <string name="screen_advocacy">Advocacia</string>
+    <string name="screen_funeral">Funerária</string>
 </resources>
