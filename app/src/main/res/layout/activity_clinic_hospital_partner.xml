@@ -35,31 +35,14 @@
         android:drawableRight="@android:drawable/ic_menu_search"
         android:drawableEnd="@android:drawable/ic_menu_search"/>
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/clinic_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingEnd="16sp"
-        android:paddingRight="16sp"
-        android:paddingLeft="16sp"
-        android:paddingStart="16sp"
-        android:layout_below="@+id/search_clinic_hospital"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/search_clinic_hospital"
+        android:layout_marginBottom="20sp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".5"
-            android:src="@drawable/parceiros_0009_2"
-            android:scaleY="0.9"
-            android:scaleX="0.9"/>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight=".5"
-            android:src="@drawable/parceiros_0009_2"
-            android:scaleY="0.9"
-            android:scaleX="0.9"/>
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
