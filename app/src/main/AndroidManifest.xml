@@ -14,6 +14,10 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAR-3tFfSUYWXm1jNMh3W1YOItIiE6is9s"/>
+
         <activity
             android:name=".view.SplashScreenActivity"
             android:screenOrientation="portrait"
@@ -108,12 +112,13 @@
             android:name=".view.AdvocacyPartnerActivity"
             android:label="@string/screen_advocacy"
             android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.FuneralPartnerActivity"
             android:label="@string/screen_funeral"
             android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.PartnerDetailsActivity"></activity>
     </application>
 
 </manifest>

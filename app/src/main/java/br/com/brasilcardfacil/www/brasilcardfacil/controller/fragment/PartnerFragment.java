@@ -1,6 +1,7 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -22,6 +23,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.view.ClinicHospitalPartnerActi
 import br.com.brasilcardfacil.www.brasilcardfacil.view.DentistryPartnerActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.FuneralPartnerActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.LaboratoryPartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerDetailsActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.TradePartnerActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.VeterinaryPartnerActivity;
 
@@ -29,7 +31,6 @@ public class PartnerFragment extends Fragment implements RecyclerViewOnClickList
 
     RecyclerView mRecyclerView;
     public List<Partner> mList;
-    public int positionOnLongClick;
     public PartnerAdapter adapter;
 
     @Override
@@ -72,7 +73,9 @@ public class PartnerFragment extends Fragment implements RecyclerViewOnClickList
 
     @Override
     public void onClickListener(View view, int position) {
-        positionOnLongClick = position;
+        Intent intent = new Intent(getActivity(), PartnerDetailsActivity.class);
+        intent.putExtra("partner", mList.get(position));
+        startActivity(intent);
     }
 
     private static class RecyclerViewTouchListener implements RecyclerView.OnItemTouchListener {
@@ -106,7 +109,8 @@ public class PartnerFragment extends Fragment implements RecyclerViewOnClickList
         }
 
         @Override
-        public void onTouchEvent(RecyclerView rv, MotionEvent e) {}
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+        }
 
         @Override
         public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
