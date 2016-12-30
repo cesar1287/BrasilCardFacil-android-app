@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 
 public class MapViewFragment extends Fragment {
 
@@ -25,6 +26,8 @@ public class MapViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
+
+        final Partner partner = (Partner) getArguments().getSerializable("partner");
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
@@ -42,13 +45,24 @@ public class MapViewFragment extends Fragment {
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
 
-                // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(-34, 151);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
+                googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-                // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
-                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                googleMap.getUiSettings().setZoomControlsEnabled(false);
+                googleMap.getUiSettings().setZoomGesturesEnabled(false);
+                googleMap.getUiSettings().setScrollGesturesEnabled(false);
+                googleMap.getUiSettings().setTiltGesturesEnabled(false);
+                googleMap.getUiSettings().setRotateGesturesEnabled(false);
+
+                if(partner!=null) {
+                    // For dropping a marker at a point on the Map
+                    LatLng address = new LatLng(partner.getLatitude(), partner.getLongitude());
+                    googleMap.addMarker(new MarkerOptions().position(address).title("Marker Title").snippet(partner.getName()));
+
+
+                    // For zooming automatically to the location of the marker
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(address).zoom(16).build();
+                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                }
             }
         });
 
