@@ -13,10 +13,9 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAR-3tFfSUYWXm1jNMh3W1YOItIiE6is9s"/>
+            android:value="AIzaSyAR-3tFfSUYWXm1jNMh3W1YOItIiE6is9s" />
 
         <activity
             android:name=".view.SplashScreenActivity"
@@ -84,41 +83,12 @@
             android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.ClinicHospitalPartnerActivity"
-            android:label="@string/screen_clinic"
-            android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
+            android:name=".view.PartnerDetailsActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".view.DentistryPartnerActivity"
-            android:label="@string/screen_dentistry"
+            android:name=".view.PartnerCategoryActivity"
             android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.VeterinaryPartnerActivity"
-            android:label="@string/screen_veterinary"
-            android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.LaboratoryPartnerActivity"
-            android:label="@string/screen_lab"
-            android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.TradePartnerActivity"
-            android:label="@string/screen_trade"
-            android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.AdvocacyPartnerActivity"
-            android:label="@string/screen_advocacy"
-            android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.FuneralPartnerActivity"
-            android:label="@string/screen_funeral"
-            android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".view.PartnerDetailsActivity"></activity>
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
