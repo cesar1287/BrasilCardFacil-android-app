@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class PartnerActivity extends AppCompatActivity {
 
@@ -19,7 +20,9 @@ public class PartnerActivity extends AppCompatActivity {
         btClinicHosp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, ClinicHospitalPartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.CLINIC);
+                startActivity(intent);
             }
         });
 
@@ -27,7 +30,9 @@ public class PartnerActivity extends AppCompatActivity {
         btOdonto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, DentistryPartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.DENTISTRY);
+                startActivity(intent);
             }
         });
 
@@ -35,7 +40,9 @@ public class PartnerActivity extends AppCompatActivity {
         btVeteri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, VeterinaryPartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.VETERINARY);
+                startActivity(intent);
             }
         });
 
@@ -43,7 +50,9 @@ public class PartnerActivity extends AppCompatActivity {
         btComer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, TradePartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.TRADE);
+                startActivity(intent);
             }
         });
 
@@ -51,7 +60,9 @@ public class PartnerActivity extends AppCompatActivity {
         btLab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, LaboratoryPartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.LABORATORY);
+                startActivity(intent);
             }
         });
 
@@ -59,7 +70,9 @@ public class PartnerActivity extends AppCompatActivity {
         btAdvo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, AdvocacyPartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.ADVOCACY);
+                startActivity(intent);
             }
         });
 
@@ -67,7 +80,9 @@ public class PartnerActivity extends AppCompatActivity {
         btFuneral.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PartnerActivity.this, FuneralPartnerActivity.class));
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.FUNERAL);
+                startActivity(intent);
             }
         });
     }
