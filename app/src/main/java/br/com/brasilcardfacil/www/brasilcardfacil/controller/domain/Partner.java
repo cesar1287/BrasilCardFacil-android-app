@@ -7,8 +7,8 @@ public class Partner implements Serializable{
     private String name;
     private String url_logo;
     private String description;
-    private String latitude;
-    private String longitude;
+    private Double latitude;
+    private Double longitude;
     private String phone;
     private String site;
 
@@ -24,11 +24,11 @@ public class Partner implements Serializable{
         return url_logo;
     }
 
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
@@ -44,11 +44,11 @@ public class Partner implements Serializable{
         this.description = description;
     }
 
-    public String getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
