@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_partner_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerCategoryActivity">
+
+    <ImageView
+        android:id="@+id/partner_category_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/parceiros_0006_banner_comercio"
+        android:scaleX="1.02"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="4sp"/>
+
+    <EditText
+        android:id="@+id/search_clinic_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/partner_category_banner"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/button_border"
+        android:layout_marginStart="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginRight="20sp"
+        android:hint="@string/procurar_por_nome"
+        android:gravity="end|center"
+        android:drawableRight="@android:drawable/ic_menu_search"
+        android:drawableEnd="@android:drawable/ic_menu_search"/>
+
+    <RelativeLayout
+        android:id="@+id/partners_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/search_clinic_hospital"
+        android:layout_marginBottom="20sp">
+
+    </RelativeLayout>
+
+</RelativeLayout>
