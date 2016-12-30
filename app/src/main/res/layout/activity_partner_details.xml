@@ -55,7 +55,7 @@
 
             <RelativeLayout
                 android:id="@+id/map_fragment_container"
-                android:layout_width="250sp"
+                android:layout_width="280sp"
                 android:layout_height="150sp"
                 android:layout_below="@id/partner_details_description"
                 android:layout_centerHorizontal="true">

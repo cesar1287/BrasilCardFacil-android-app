@@ -24,6 +24,9 @@ public class PartnerDetailsActivity extends AppCompatActivity {
         frag = (MapViewFragment) getSupportFragmentManager().findFragmentByTag("mapFrag");
         if(frag == null) {
             frag = new MapViewFragment();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("partner", partner);
+            frag.setArguments(bundle);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.map_fragment_container, frag, "mapFrag");
             ft.commit();
