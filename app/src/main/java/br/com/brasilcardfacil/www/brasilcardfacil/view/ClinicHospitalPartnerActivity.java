@@ -27,6 +27,11 @@ public class ClinicHospitalPartnerActivity extends AppCompatActivity {
     final List<Partner> partners = new ArrayList<>();
     private ProgressDialog dialog;
 
+    ValueEventListener valueEventListener;
+    ValueEventListener singleValueEventListener;
+
+    Query partner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +50,9 @@ public class ClinicHospitalPartnerActivity extends AppCompatActivity {
     }
 
     public void loadList(){
-        Query partner = mDatabase.child("clinica").orderByChild("name");
+        partner = mDatabase.child("clinica").orderByChild("name");
 
-        partner.addValueEventListener(new ValueEventListener() {
+        valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -56,6 +61,9 @@ public class ClinicHospitalPartnerActivity extends AppCompatActivity {
                     p = new Partner();
                     p.setName((String)postSnapshot.child("name").getValue());
                     p.setUrlLogo((String)postSnapshot.child("url_logo").getValue());
+                    p.setDescription((String)postSnapshot.child("description").getValue());
+                    p.setPhone((String)postSnapshot.child("phone").getValue());
+                    p.setSite((String)postSnapshot.child("site").getValue());
                     partners.add(p);
                 }
             }
@@ -66,9 +74,9 @@ public class ClinicHospitalPartnerActivity extends AppCompatActivity {
                         "por favor contate o administrador.", Toast.LENGTH_LONG).show();
                 finish();
             }
-        });
+        };
 
-        partner.addListenerForSingleValueEvent(new ValueEventListener() {
+        singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
                 if(frag == null) {
@@ -87,6 +95,18 @@ public class ClinicHospitalPartnerActivity extends AppCompatActivity {
                         "por favor contate o administrador.", Toast.LENGTH_LONG).show();
                 finish();
             }
-        });
+        };
+
+        partner.addValueEventListener(valueEventListener);
+
+        partner.addListenerForSingleValueEvent(singleValueEventListener);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        partner.removeEventListener(valueEventListener);
+        partner.removeEventListener(singleValueEventListener);
     }
 }

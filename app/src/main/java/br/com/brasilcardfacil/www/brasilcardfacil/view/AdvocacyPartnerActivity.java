@@ -27,6 +27,11 @@ public class AdvocacyPartnerActivity extends AppCompatActivity {
     final List<Partner> partners = new ArrayList<>();
     private ProgressDialog dialog;
 
+    Query partner;
+
+    ValueEventListener valueEventListener;
+    ValueEventListener singleValueEventListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +50,9 @@ public class AdvocacyPartnerActivity extends AppCompatActivity {
     }
 
     public void loadList(){
-        Query partner = mDatabase.child("funeraria").orderByChild("name");
+        partner = mDatabase.child("funeraria").orderByChild("name");
 
-        partner.addValueEventListener(new ValueEventListener() {
+        valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -66,9 +71,9 @@ public class AdvocacyPartnerActivity extends AppCompatActivity {
                         "por favor contate o administrador.", Toast.LENGTH_LONG).show();
                 finish();
             }
-        });
+        };
 
-        partner.addListenerForSingleValueEvent(new ValueEventListener() {
+        singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
                 if(frag == null) {
@@ -87,6 +92,18 @@ public class AdvocacyPartnerActivity extends AppCompatActivity {
                         "por favor contate o administrador.", Toast.LENGTH_LONG).show();
                 finish();
             }
-        });
+        };
+
+        partner.addValueEventListener(valueEventListener);
+
+        partner.addListenerForSingleValueEvent(singleValueEventListener);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        partner.removeEventListener(valueEventListener);
+        partner.removeEventListener(singleValueEventListener);
     }
 }

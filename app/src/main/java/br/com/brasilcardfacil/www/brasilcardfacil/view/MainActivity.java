@@ -215,6 +215,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void signOutFirebase() {
-        FirebaseAuth.getInstance().signOut();
+        mAuth.signOut();
     }
 }
