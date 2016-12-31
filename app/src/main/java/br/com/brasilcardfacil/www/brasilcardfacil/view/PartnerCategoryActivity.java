@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -45,6 +44,8 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
     ValueEventListener valueEventListener;
     ValueEventListener singleValueEventListener;
+
+    String name_partner, search_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +99,9 @@ public class PartnerCategoryActivity extends AppCompatActivity {
         if(count!=0){
             for (Iterator<Partner> i = partners.iterator(); i.hasNext();) {
                 Partner partner = i.next();
-                if (!partner.getName().contains(sequence)) {
+                name_partner = partner.getName().toLowerCase();
+                search_name = String.valueOf(sequence).toLowerCase();
+                if (!name_partner.contains(search_name)) {
                     i.remove();
                 }
             }
