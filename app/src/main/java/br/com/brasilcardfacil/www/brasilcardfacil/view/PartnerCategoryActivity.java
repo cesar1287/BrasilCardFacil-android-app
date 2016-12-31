@@ -6,6 +6,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,6 +21,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
@@ -28,7 +33,10 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
     PartnerFragment frag;
     private DatabaseReference mDatabase;
-    final List<Partner> partners = new ArrayList<>();
+
+    List<Partner> partners = new ArrayList<>();
+    List<Partner> partners_aux = new ArrayList<>();
+
     private ProgressDialog dialog;
     ImageView banner;
     String category;
@@ -50,6 +58,24 @@ public class PartnerCategoryActivity extends AppCompatActivity {
         dialog = ProgressDialog.show(this,"","Carregando parceiros, por favor aguarde!!!", true, false);
 
         loadList();
+
+        EditText editTextSearch = (EditText) findViewById(R.id.search_partner_category);
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //TODO
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                execSearch(s, count);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //TODO
+            }
+        });
     }
 
     @Override
@@ -63,6 +89,29 @@ public class PartnerCategoryActivity extends AppCompatActivity {
     public List<Partner> getPartnersList(){
 
         return partners;
+    }
+
+    public void execSearch(CharSequence sequence, int count){
+
+        partners = new ArrayList<>(partners_aux);
+
+        if(count!=0){
+            for (Iterator<Partner> i = partners.iterator(); i.hasNext();) {
+                Partner partner = i.next();
+                if (!partner.getName().contains(sequence)) {
+                    i.remove();
+                }
+            }
+
+            frag.mList.clear();
+            frag.mList.addAll(getPartnersList());
+            frag.adapter.notifyDataSetChanged();
+        }else{
+
+            frag.mList.clear();
+            frag.mList.addAll(getPartnersList());
+            frag.adapter.notifyDataSetChanged();
+        }
     }
 
     public void loadList(){
@@ -95,6 +144,9 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
         singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                partners_aux = new ArrayList<>(partners);
+
                 frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
                 if(frag == null) {
                     frag = new PartnerFragment();
