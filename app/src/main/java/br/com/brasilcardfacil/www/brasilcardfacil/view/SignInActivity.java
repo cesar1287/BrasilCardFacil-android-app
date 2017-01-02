@@ -111,12 +111,12 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
                     @Override
                     public void onCancel() {
-                        Toast.makeText(SignInActivity.this, "Login com o Facebook cancelado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignInActivity.this, R.string.error_facebook_login_canceled, Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onError(FacebookException exception) {
-                        Toast.makeText(SignInActivity.this, "Erro desconhecido com o login com o Facebook, tente novamente e contate o administrador.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignInActivity.this, R.string.error_facebook_login_unknown_error, Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -186,7 +186,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 firebaseAuthWithGoogle(account);
             } else {
                 // Google Sign In failed, update UI appropriately
-                Toast.makeText(SignInActivity.this, "Falha ao logar com a conta Google, tente novamente.", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignInActivity.this, R.string.error_failed_signin_google_account, Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -200,13 +200,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         if(e instanceof FirebaseAuthUserCollisionException){
-                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
-                                            "\n" +
-                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
-                                            "Tente novamente com outro método de login.",
+                            Toast.makeText(SignInActivity.this, R.string.error_failed_signin_email_exists,
                                     Toast.LENGTH_LONG).show();
                         }else{
-                            Toast.makeText(SignInActivity.this, "Erro desconhecido, tente novamente e contate o administrador.",
+                            Toast.makeText(SignInActivity.this, R.string.error_unknown_error,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -246,13 +243,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         if(e instanceof FirebaseAuthUserCollisionException){
-                            Toast.makeText(SignInActivity.this, "Falha ao entrar\n" +
-                                            "\n" +
-                                            "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
-                                            "Tente novamente com outro método de login.",
+                            Toast.makeText(SignInActivity.this, R.string.error_failed_signin_email_exists,
                                     Toast.LENGTH_LONG).show();
                         }else{
-                            Toast.makeText(SignInActivity.this, "Erro desconhecido, tente novamente e contate o administrador.",
+                            Toast.makeText(SignInActivity.this, R.string.error_unknown_error,
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -343,6 +337,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         // An unresolvable error has occurred and Google APIs (including Sign-In) will not
         // be available.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
-        Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.error_google_play_services, Toast.LENGTH_SHORT).show();
     }
 }

@@ -137,7 +137,7 @@ public class AccountActivity extends AppCompatActivity {
         editor.apply();
         finish();
 
-        Toast.makeText(this, "Dados salvos com sucesso", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.data_saved_sucess, Toast.LENGTH_SHORT).show();
         finish();
     }
 }

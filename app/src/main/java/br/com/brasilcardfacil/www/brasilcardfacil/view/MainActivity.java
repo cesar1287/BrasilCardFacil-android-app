@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity
             builder.setMessage(R.string.message_logout)
                     .setPositiveButton(R.string.yes_logout, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            Toast.makeText(MainActivity.this, "Saindo...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.msg_logout, Toast.LENGTH_SHORT).show();
                             Thread mThread = new Thread(){
                                 @Override
                                 public void run() {

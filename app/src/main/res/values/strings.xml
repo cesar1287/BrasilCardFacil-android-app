@@ -42,7 +42,19 @@
     <string name="screen_trade">Comércio</string>
     <string name="screen_advocacy">Advocacia</string>
     <string name="screen_funeral">Funerária</string>
-    
     <string name="error_loading_partners">Algo deu errado ao carregar os parceiros, por favor contate o administrador.</string>
     <string name="loading_partners_pls_wait">Carregando parceiros, por favor aguarde!!!</string>
+    <string name="data_saved_sucess">Dados salvos com sucesso.</string>
+    <string name="msg_logout">Saindo…</string>
+    <string name="error_all_fields_required">Todos os campos são obrigatórios, tente novamente.</string>
+    <string name="user_created_successfully">Usuário criado com sucesso.</string>
+    <string name="error_unknown_error">Erro desconhecido, tente novamente e contate o administrador.</string>
+    <string name="error_failed_signin_email_exists">Falha ao entrar\n\nEsse e-mail já está sendo usado em nosso sistema e dispositivo.\nTente novamente com outro método de login.</string>
+    <string name="error_invalid_email">Email inválido, digite novamente.</string>
+    <string name="error_password_too_small">Sua senha precisa ter pelo menos 6 caracteres, digite novamente.</string>
+    <string name="error_google_play_services">Erro no Google Play Services.</string>
+    <string name="error_facebook_login_canceled">Login com o Facebook cancelado.</string>
+    <string name="error_facebook_login_unknown_error">Erro desconhecido com o login com o Facebook, tente novamente e contate o administrador.</string>
+    <string name="error_failed_signin_google_account">Falha ao logar com a conta Google, tente novamente.</string>
+    <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
 </resources>

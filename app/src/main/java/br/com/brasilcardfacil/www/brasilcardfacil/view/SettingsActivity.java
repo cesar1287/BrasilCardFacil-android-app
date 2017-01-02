@@ -32,7 +32,7 @@ public class SettingsActivity extends AppCompatActivity {
                 builder.setMessage(R.string.message_logout)
                         .setPositiveButton(R.string.yes_logout, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                Toast.makeText(SettingsActivity.this, "Saindo...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingsActivity.this, R.string.msg_logout, Toast.LENGTH_SHORT).show();
                                 Thread mThread = new Thread(){
                                     @Override
                                     public void run() {

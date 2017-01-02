@@ -86,25 +86,22 @@ public class NewUserActivity extends AppCompatActivity {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             if(e instanceof FirebaseAuthWeakPasswordException){
-                                                Toast.makeText(NewUserActivity.this, "Sua senha precisa ter pelo menos 6 caracteres, digite novamente.",
+                                                Toast.makeText(NewUserActivity.this, R.string.error_password_too_small,
                                                         Toast.LENGTH_LONG).show();
                                                 etPass.setText("");
                                                 etPass.requestFocus();
                                             }else if (e instanceof FirebaseAuthInvalidCredentialsException) {
-                                                Toast.makeText(NewUserActivity.this, "Email inválido, digite novamente.",
+                                                Toast.makeText(NewUserActivity.this, R.string.error_invalid_email,
                                                         Toast.LENGTH_SHORT).show();
                                                 etEmail.setText("");
                                                 etEmail.requestFocus();
                                             }else if(e instanceof FirebaseAuthUserCollisionException){
-                                                Toast.makeText(NewUserActivity.this, "Falha ao entrar\n" +
-                                                                "\n" +
-                                                                "Esse e-mail já está sendo usado em nosso sistema e dispositivo.\n" +
-                                                                "Tente novamente com outro método de login.",
+                                                Toast.makeText(NewUserActivity.this, R.string.error_failed_signin_email_exists,
                                                         Toast.LENGTH_LONG).show();
                                                 etEmail.setText("");
                                                 etEmail.requestFocus();
                                             }else{
-                                                Toast.makeText(NewUserActivity.this, "Erro desconhecido, tente novamente e contate o administrador.",
+                                                Toast.makeText(NewUserActivity.this, R.string.error_unknown_error,
                                                         Toast.LENGTH_SHORT).show();
                                             }
                                         }
@@ -112,7 +109,7 @@ public class NewUserActivity extends AppCompatActivity {
                                     .addOnSuccessListener(NewUserActivity.this, new OnSuccessListener<AuthResult>() {
                                         @Override
                                         public void onSuccess(AuthResult authResult) {
-                                            Toast.makeText(NewUserActivity.this, "Usuário criado com sucesso.",
+                                            Toast.makeText(NewUserActivity.this, R.string.user_created_successfully,
                                                     Toast.LENGTH_SHORT).show();
 
                                             FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -136,7 +133,7 @@ public class NewUserActivity extends AppCompatActivity {
                                         }
                                     });
                 }else{
-                    Toast.makeText(NewUserActivity.this, "Todos os campos são obrigatórios, tente novamente.",
+                    Toast.makeText(NewUserActivity.this, R.string.error_all_fields_required,
                             Toast.LENGTH_SHORT).show();
                 }
             }

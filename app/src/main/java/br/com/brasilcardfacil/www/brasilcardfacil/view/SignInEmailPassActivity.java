@@ -79,7 +79,7 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                             .addOnFailureListener(SignInEmailPassActivity.this, new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(SignInEmailPassActivity.this, "Usuário e/ou senha incorreto(s).",
+                                    Toast.makeText(SignInEmailPassActivity.this, R.string.error_user_password_incorrect,
                                             Toast.LENGTH_SHORT).show();
                                 }
                             })
@@ -110,7 +110,7 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                                 }
                             });
                 }else{
-                    Toast.makeText(SignInEmailPassActivity.this, "Todos os campos são obrigatórios, tente novamente.",
+                    Toast.makeText(SignInEmailPassActivity.this, R.string.error_all_fields_required,
                             Toast.LENGTH_SHORT).show();
                 }
             }
