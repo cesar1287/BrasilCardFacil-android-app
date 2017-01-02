@@ -162,7 +162,7 @@ public class NewUserActivity extends AppCompatActivity {
         Uid = user.getUid();
         email = user.getEmail();
 
-        mDatabase.child("users").child(Uid).addListenerForSingleValueEvent(
+        mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_USERS).child(Uid).addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

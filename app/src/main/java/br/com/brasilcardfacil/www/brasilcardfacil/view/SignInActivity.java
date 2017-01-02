@@ -290,7 +290,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         email = user.getEmail();
         profile_pic = user.getPhotoUrl().toString();
 
-        mDatabase.child("users").child(Uid).addListenerForSingleValueEvent(
+        mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_USERS).child(Uid).addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

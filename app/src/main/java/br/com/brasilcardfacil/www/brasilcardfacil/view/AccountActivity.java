@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -123,7 +124,7 @@ public class AccountActivity extends AppCompatActivity {
 
         User user = new User(name, email, birth, phone, sex, plan, profile_pic);
 
-        mDatabase.child("users").child(userId).setValue(user);
+        mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_USERS).child(userId).setValue(user);
 
         SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

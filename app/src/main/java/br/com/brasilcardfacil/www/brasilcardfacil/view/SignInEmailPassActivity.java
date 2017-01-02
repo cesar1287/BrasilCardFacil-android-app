@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class SignInEmailPassActivity extends AppCompatActivity {
@@ -135,7 +136,7 @@ public class SignInEmailPassActivity extends AppCompatActivity {
         Uid = user.getUid();
         email = user.getEmail();
 
-        mDatabase.child("users").child(Uid).addListenerForSingleValueEvent(
+        mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_USERS).child(Uid).addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
