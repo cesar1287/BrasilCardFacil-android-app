@@ -42,4 +42,7 @@
     <string name="screen_trade">Comércio</string>
     <string name="screen_advocacy">Advocacia</string>
     <string name="screen_funeral">Funerária</string>
+    
+    <string name="error_loading_partners">Algo deu errado ao carregar os parceiros, por favor contate o administrador.</string>
+    <string name="loading_partners_pls_wait">Carregando parceiros, por favor aguarde!!!</string>
 </resources>

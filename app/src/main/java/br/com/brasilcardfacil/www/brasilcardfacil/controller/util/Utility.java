@@ -11,6 +11,11 @@ public class Utility {
     public static final String ADVOCACY = "advocacy";
     public static final String FUNERAL = "funeral";
 
+    public static final String FIREBASE_DATABASE_ORDERBY = "name";
+
+    public static final String FIREBASE_DATABASE_CLINIC = "clinica";
+    public static final String FIREBASE_DATABASE_TRADE = "comercio";
+
     public static boolean verifyEmptyField(String email, String pass){
 
         return (email.isEmpty() || pass.isEmpty());
