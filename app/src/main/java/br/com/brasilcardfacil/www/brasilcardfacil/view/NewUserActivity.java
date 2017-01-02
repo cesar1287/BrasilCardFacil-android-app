@@ -33,7 +33,6 @@ import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 public class NewUserActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
     private DatabaseReference mDatabase;
 
@@ -51,19 +50,6 @@ public class NewUserActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         mAuth = FirebaseAuth.getInstance();
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                } else {
-                    // User is signed out
-                }
-            }
-        };
-
 
         final EditText etName = (EditText) findViewById(R.id.editTextName);
         final EditText etEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -132,20 +118,6 @@ public class NewUserActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
     }
 
     public void finishLogin(FirebaseUser user){

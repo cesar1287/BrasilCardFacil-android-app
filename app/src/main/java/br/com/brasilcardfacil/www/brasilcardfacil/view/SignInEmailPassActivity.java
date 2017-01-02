@@ -31,7 +31,6 @@ import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 public class SignInEmailPassActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
     private static final String PREF_NAME = "LoginActivityPreferences";
 
@@ -49,18 +48,6 @@ public class SignInEmailPassActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                } else {
-                    // User is signed out
-                }
-            }
-        };
 
         final EditText etEmail = (EditText) findViewById(R.id.SigneditTextEmail);
         final EditText etPass = (EditText) findViewById(R.id.SigneditTextPass);
@@ -109,20 +96,6 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
     }
 
     public void finishLogin(FirebaseUser user){
