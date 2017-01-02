@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.LinkPlansHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class CheersPlanActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class CheersPlanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent diamond_plan = new Intent(CheersPlanActivity.this, WebViewPlansActivity.class);
-                diamond_plan.putExtra("link", LinkPlansHelper.cheers_plan);
+                diamond_plan.putExtra(Utility.KEY_CONTENT_EXTRA_PLANS, LinkPlansHelper.cheers_plan);
                 startActivity(diamond_plan);
             }
         });

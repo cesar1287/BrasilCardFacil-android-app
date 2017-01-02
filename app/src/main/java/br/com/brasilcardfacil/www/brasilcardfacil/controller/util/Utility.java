@@ -11,6 +11,8 @@ public class Utility {
     public static final String ADVOCACY = "advocacy";
     public static final String FUNERAL = "funeral";
 
+    public static final String KEY_CONTENT_EXTRA_PLANS = "link";
+
     public static boolean verifyEmptyField(String email, String pass){
 
         return (email.isEmpty() || pass.isEmpty());

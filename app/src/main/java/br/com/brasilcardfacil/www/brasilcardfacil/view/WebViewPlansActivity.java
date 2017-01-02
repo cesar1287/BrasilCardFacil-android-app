@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class WebViewPlansActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class WebViewPlansActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view_plans);
 
-        link = getIntent().getStringExtra("link");
+        link = getIntent().getStringExtra(Utility.KEY_CONTENT_EXTRA_PLANS);
 
         runOnUiThread(new Runnable() {
             @Override
