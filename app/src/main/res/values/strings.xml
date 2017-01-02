@@ -43,6 +43,8 @@
     <string name="screen_advocacy">Advocacia</string>
     <string name="screen_funeral">Funerária</string>
     <string name="error_loading_partners">Algo deu errado ao carregar os parceiros, por favor contate o administrador.</string>
+    <string name="error_signin">Algo deu errado ao fazer login, tente novamente.</string>
+    <string name="error_create_new_account">Algo deu errado ao tentar criar a conta, tente novamente.</string>
     <string name="loading_partners_pls_wait">Carregando parceiros, por favor aguarde!!!</string>
     <string name="data_saved_sucess">Dados salvos com sucesso.</string>
     <string name="msg_logout">Saindo…</string>

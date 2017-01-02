@@ -2,7 +2,6 @@ package br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,14 +32,13 @@ public class PartnerAdapter extends RecyclerView.Adapter<PartnerAdapter.MyViewHo
     @Override
     public PartnerAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
-        Log.i("LOG", "onCreateViewHolder()");
         View v = mLayoutInflater.inflate(R.layout.item_partner, viewGroup, false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
-        Log.i("LOG", "onBindViewHolder()");
+
         Glide.with(c)
                 .load(mList.get((position)).getUrlLogo())
                 .into(myViewHolder.picPartner);

@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -38,7 +37,6 @@ public class NewUserActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
-    public static final String TAG = "NewUserActivity";
     private static final String PREF_NAME = "LoginActivityPreferences";
 
     String Uid, name , email, profile_pic = "";
@@ -60,12 +58,9 @@ public class NewUserActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
                     // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
-                // ...
             }
         };
 
@@ -122,7 +117,6 @@ public class NewUserActivity extends AppCompatActivity {
                                     .addOnCompleteListener(NewUserActivity.this, new OnCompleteListener<AuthResult>() {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task){
-                                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
                                             // If sign in fails, display a message to the user. If sign in succeeds
                                             // the auth state listener will be notified and logic to handle the
@@ -199,7 +193,7 @@ public class NewUserActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        Log.w(TAG, "getUser:onCancelled", databaseError.toException());
+                        Toast.makeText(NewUserActivity.this, R.string.error_create_new_account, Toast.LENGTH_LONG).show();
                     }
                 });
     }
