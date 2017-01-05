@@ -59,4 +59,9 @@
     <string name="error_facebook_login_unknown_error">Erro desconhecido com o login com o Facebook, tente novamente e contate o administrador.</string>
     <string name="error_failed_signin_google_account">Falha ao logar com a conta Google, tente novamente.</string>
     <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
+    <string name="screen_partners_map">Parceiros próximos</string>
+    <string name="error_permission_localization_denied">"Sua localização não pôde ser carregada, a permissão foi negada, por favor reinicie essa tela e aceite para uma melhor experiência com essa funcionalidade."</string>
+    <string name="menu_item_partners">Parceiros</string>
+    <string name="menu_item_nearby">Parceiros próximos</string>
+    <string name="group_menu_partners"><b>Parceiros</b></string>
 </resources>

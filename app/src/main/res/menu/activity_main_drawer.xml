@@ -11,7 +11,19 @@
                 android:title="@string/plano_cheers" />
             <item
                 android:id="@+id/nav_funeral"
-                android:title="@string/plano_funeral" />
+                android:title="@string/plano_funeral"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/group_menu_partners">
+        <menu>
+            <item
+                android:id="@+id/nav_partners"
+                android:title="@string/menu_item_partners"/>
+
+            <item
+                android:id="@+id/nav_nearby"
+                android:title="@string/menu_item_nearby"/>
         </menu>
     </item>
 
