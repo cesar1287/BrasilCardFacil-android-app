@@ -130,6 +130,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     p.setName((String)postSnapshot.child("name").getValue());
                     p.setUrlLogo((String)postSnapshot.child("url_logo").getValue());
                     p.setDescription((String)postSnapshot.child("description").getValue());
+                    p.setAddress((String)postSnapshot.child("address").getValue());
                     p.setPhone((String)postSnapshot.child("phone").getValue());
                     p.setSite((String)postSnapshot.child("site").getValue());
                     p.setLatitude((Double) postSnapshot.child("latitude").getValue());
