@@ -11,6 +11,7 @@ public class FirebaseHelper {
     public static final String FIREBASE_DATABASE_CLINIC = "clinica";
     public static final String FIREBASE_DATABASE_TRADE = "comercio";
     public static final String FIREBASE_DATABASE_USERS = "users";
+    public static final String FIREBASE_DATABASE_PARTNERS_LOCALIZATION = "parceiros_localizacao";
 
     public static void writeNewUser(DatabaseReference mDatabase, String userId, String name, String email, String birth, String sex, String phone, String plan, String profile_pic) {
 
