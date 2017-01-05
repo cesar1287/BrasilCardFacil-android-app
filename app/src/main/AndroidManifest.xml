@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.brasilcardfacil.www.brasilcardfacil">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -84,10 +86,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnerDetailsActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnerCategoryActivity"
             android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnersMapActivity"
+            android:label="@string/screen_partners_map"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
     </application>
 
