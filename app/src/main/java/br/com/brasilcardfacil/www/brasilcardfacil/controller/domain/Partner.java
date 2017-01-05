@@ -7,10 +7,19 @@ public class Partner implements Serializable{
     private String name;
     private String url_logo;
     private String description;
+    private String address;
     private Double latitude;
     private Double longitude;
     private String phone;
     private String site;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String getName() {
         return name;
