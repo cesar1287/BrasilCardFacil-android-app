@@ -3,6 +3,7 @@ package br.com.brasilcardfacil.www.brasilcardfacil.view;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -42,6 +43,8 @@ public class PartnerDetailsActivity extends AppCompatActivity {
         tv_name.setText(partner.getName());
         TextView tv_description = (TextView) findViewById(R.id.partner_details_description);
         tv_description.setText(partner.getDescription());
+        TextView tv_address = (TextView) findViewById(R.id.partner_details_address);
+        tv_address.setText(partner.getAddress());
         TextView tv_phone = (TextView) findViewById(R.id.partner_details_phone);
         tv_phone.setText(partner.getPhone());
         TextView tv_site = (TextView) findViewById(R.id.partner_details_site);
