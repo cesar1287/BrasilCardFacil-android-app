@@ -30,13 +30,13 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/main_partners"
+            android:id="@+id/main_plans"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5"
-            android:background="@drawable/menu_0007_parceiros"
-            android:scaleY="0.6"
-            android:scaleX="0.5"/>
+            android:layout_weight=".33"
+            android:background="@drawable/menu_0007_planos"
+            android:scaleY="0.3"
+            android:scaleX="0.6"/>
 
         <View
             android:layout_width="match_parent"
@@ -47,13 +47,30 @@
             android:layout_marginLeft="30dp"/>
 
         <Button
-            android:id="@+id/main_plans"
+            android:id="@+id/main_partners"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5"
-            android:background="@drawable/menu_0008_planos1"
-            android:scaleY="0.6"
-            android:scaleX="0.5"/>
+            android:layout_weight=".33"
+            android:background="@drawable/menu_0008_parceiros"
+            android:scaleY="0.3"
+            android:scaleX="0.7"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".01"
+            android:background="@color/divisor"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/main_nearby"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".33"
+            android:background="@drawable/menu_0009_proximos"
+            android:scaleY="0.3"
+            android:scaleX="0.7"/>
     </LinearLayout>
 
 </RelativeLayout>

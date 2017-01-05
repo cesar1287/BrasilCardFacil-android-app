@@ -113,6 +113,14 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, PlansActivity.class));
             }
         });
+
+        Button btNearby = (Button) findViewById(R.id.main_nearby);
+        btNearby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PartnersMapActivity.class));
+            }
+        });
     }
 
     @Override
@@ -174,7 +182,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this, CheersPlanActivity.class));
         } else if (id == R.id.nav_funeral) {
             startActivity(new Intent(this, FuneralPlanActivity.class));
-        } else if (id == R.id.nav_account) {
+        } else if (id == R.id.nav_partners) {
+            startActivity(new Intent(MainActivity.this, PartnerActivity.class));
+        }else if (id == R.id.nav_nearby) {
+            startActivity(new Intent(MainActivity.this, PartnersMapActivity.class));
+        }else if (id == R.id.nav_account) {
             startActivity(new Intent(this, AccountActivity.class));
         }else if (id == R.id.nav_logout) {
 
