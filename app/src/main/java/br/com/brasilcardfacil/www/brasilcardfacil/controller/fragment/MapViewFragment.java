@@ -56,7 +56,7 @@ public class MapViewFragment extends Fragment {
                 if(partner!=null) {
                     // For dropping a marker at a point on the Map
                     LatLng address = new LatLng(partner.getLatitude(), partner.getLongitude());
-                    googleMap.addMarker(new MarkerOptions().position(address).title("Marker Title").snippet(partner.getName()));
+                    googleMap.addMarker(new MarkerOptions().position(address).title(partner.getName()).snippet(partner.getName()));
 
 
                     // For zooming automatically to the location of the marker
