@@ -32,8 +32,8 @@
             android:layout_height="0dp"
             android:layout_weight=".33"
             android:background="@drawable/planos_0007_total"
-            android:scaleY="0.43"
-            android:scaleX="0.7"/>
+            android:scaleY="0.46"
+            android:scaleX="0.72"/>
 
         <View
             android:layout_width="match_parent"
@@ -49,8 +49,8 @@
             android:layout_height="0dp"
             android:layout_weight=".33"
             android:background="@drawable/planos_0008_saude"
-            android:scaleY="0.43"
-            android:scaleX="0.7"/>
+            android:scaleY="0.46"
+            android:scaleX="0.72"/>
 
         <View
             android:layout_width="match_parent"
@@ -66,8 +66,8 @@
             android:layout_height="0dp"
             android:layout_weight=".33"
             android:background="@drawable/planos_0009_funeraria"
-            android:scaleY="0.43"
-            android:scaleX="0.7"/>
+            android:scaleY="0.46"
+            android:scaleX="0.72"/>
     </LinearLayout>
 
 </RelativeLayout>
