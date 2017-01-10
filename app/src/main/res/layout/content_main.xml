@@ -35,7 +35,7 @@
             android:layout_height="0dp"
             android:layout_weight=".33"
             android:background="@drawable/menu_0007_planos"
-            android:scaleY="0.3"
+            android:scaleY="0.35"
             android:scaleX="0.6"/>
 
         <View
@@ -52,8 +52,8 @@
             android:layout_height="0dp"
             android:layout_weight=".33"
             android:background="@drawable/menu_0008_parceiros"
-            android:scaleY="0.3"
-            android:scaleX="0.7"/>
+            android:scaleY="0.36"
+            android:scaleX="0.77"/>
 
         <View
             android:layout_width="match_parent"
@@ -69,8 +69,8 @@
             android:layout_height="0dp"
             android:layout_weight=".33"
             android:background="@drawable/menu_0009_proximos"
-            android:scaleY="0.3"
-            android:scaleX="0.7"/>
+            android:scaleY="0.36"
+            android:scaleX="0.77"/>
     </LinearLayout>
 
 </RelativeLayout>
