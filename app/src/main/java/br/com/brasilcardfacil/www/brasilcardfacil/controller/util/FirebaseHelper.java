@@ -9,7 +9,12 @@ public class FirebaseHelper {
     public static final String FIREBASE_DATABASE_ORDERBY = "name";
 
     public static final String FIREBASE_DATABASE_CLINIC = "clinica";
+    public static final String FIREBASE_DATABASE_DENTISTRY = "odontologia";
+    public static final String FIREBASE_DATABASE_VETERINARY = "veterinaria";
+    public static final String FIREBASE_DATABASE_LAB = "lab";
+    public static final String FIREBASE_DATABASE_ADVOCACY = "advocacia";
     public static final String FIREBASE_DATABASE_TRADE = "comercio";
+    public static final String FIREBASE_DATABASE_FUNERAL = "funeraria";
     public static final String FIREBASE_DATABASE_USERS = "users";
     public static final String FIREBASE_DATABASE_PARTNERS_LOCALIZATION = "parceiros_localizacao";
 

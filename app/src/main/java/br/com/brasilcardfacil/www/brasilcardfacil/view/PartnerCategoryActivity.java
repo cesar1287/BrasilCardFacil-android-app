@@ -200,7 +200,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     } else {
                         banner.setImageResource(R.drawable.parceiros_0006_banner_advocacia);
                     }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLINIC).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_ADVOCACY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
                 case Utility.VETERINARY:
                     actionBar.setTitle(R.string.screen_veterinary);
@@ -209,7 +209,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     } else {
                         banner.setImageResource(R.drawable.parceiros_0006_banner_veterinaria);
                     }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLINIC).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_VETERINARY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
                 case Utility.LABORATORY:
                     actionBar.setTitle(R.string.screen_lab);
@@ -218,7 +218,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     } else {
                         banner.setImageResource(R.drawable.parceiros_0006_banner_lab);
                     }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLINIC).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_LAB).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
                 case Utility.TRADE:
                     actionBar.setTitle(R.string.screen_trade);
@@ -236,7 +236,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     } else {
                         banner.setImageResource(R.drawable.parceiros_0006_banner_odonto);
                     }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLINIC).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_DENTISTRY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
                 case Utility.FUNERAL:
                     actionBar.setTitle(R.string.screen_funeral);
@@ -245,7 +245,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     } else {
                         banner.setImageResource(R.drawable.parceiros_0006_banner_funeraria);
                     }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLINIC).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_FUNERAL).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
             }
         }
