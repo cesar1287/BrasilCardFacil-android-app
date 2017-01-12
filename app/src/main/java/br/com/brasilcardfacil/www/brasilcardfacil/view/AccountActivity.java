@@ -1,5 +1,6 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
@@ -7,6 +8,7 @@ import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,6 +30,8 @@ public class AccountActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
+    InputMethodManager imm;
+
     private static final String PREF_NAME = "LoginActivityPreferences";
     String id, name, mEmail, profilePic, mPhone, mBirth, mSex;
 
@@ -39,6 +43,8 @@ public class AccountActivity extends AppCompatActivity {
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
@@ -80,6 +86,9 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 email.setEnabled(true);
                 email.requestFocus();
+                email.setSelection(email.getText().length());
+                imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
             }
         });
 
@@ -89,6 +98,9 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 phone.setEnabled(true);
                 phone.requestFocus();
+                phone.setSelection(phone.getText().length());
+                imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
             }
         });
 
@@ -98,6 +110,9 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 born.setEnabled(true);
                 born.requestFocus();
+                born.setSelection(born.getText().length());
+                imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
             }
         });
 
@@ -107,6 +122,9 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 sex.setEnabled(true);
                 sex.requestFocus();
+                sex.setSelection(sex.getText().length());
+                imm.hideSoftInputFromWindow(v.getWindowToken(),0);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
             }
         });
 
