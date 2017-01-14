@@ -86,4 +86,21 @@
     <string name="image_brasilcardfacil_screen_splash">Image BrasilCardfacil screen splash</string>
     <string name="partner_logo">partner logo</string>
     <string name="hint_name">Nome</string>
+    <string name="banner_text_screen_cheers_plan">banner text screen cheers plan</string>
+    <string name="buy_button_screen_cheers_plan">buy button screen cheers plan</string>
+    <string name="banner_text_screen_funeral">banner text screen funeral</string>
+    <string name="buy_button_screen_funeral">buy button screen funeral</string>
+    <string name="create_account_screen_new_user">create account screen new user</string>
+    <string name="create_screen_new_user">create screen new user</string>
+    <string name="banner_screen_plans">banner screen plans</string>
+    <string name="divisor_screen_sign_in">divisor screen sign in</string>
+    <string name="banner_screen_menu">banner screen menu</string>
+    <string name="user_pic_screen_account">user pic screen account</string>
+    <string name="email_screen_account">email screen account</string>
+    <string name="edit_screen_account">edit screen account</string>
+    <string name="phone_screen_account">phone screen account</string>
+    <string name="born_screen_account">born screen account</string>
+    <string name="sex_screen_account">sex screen account</string>
+    <string name="plan_description_screen_account">plan description screen account</string>
+    <string name="save_screen_account">save screen account</string>
 </resources>
