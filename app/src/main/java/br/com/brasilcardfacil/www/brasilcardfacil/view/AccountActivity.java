@@ -35,16 +35,27 @@ public class AccountActivity extends AppCompatActivity {
 
     String id, name, mEmail, profilePic, mPhone, mBirth, mSex;
 
+    EditText email, phone, born, sex;
+
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        setupUI();
+
+        setupListeners();
+    }
+
+    public void setupUI(){
 
         SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
@@ -68,17 +79,20 @@ public class AccountActivity extends AppCompatActivity {
         TextView nav_nome = (TextView) findViewById(R.id.acc_name);
         nav_nome.setText(name);
 
-        final EditText email = (EditText) findViewById(R.id.acc_email);
+        email = (EditText) findViewById(R.id.acc_email);
         email.setText(mEmail);
 
-        final EditText phone = (EditText) findViewById(R.id.acc_phone);
+        phone = (EditText) findViewById(R.id.acc_phone);
         phone.setText(mPhone);
 
-        final EditText born = (EditText) findViewById(R.id.acc_born);
+        born = (EditText) findViewById(R.id.acc_born);
         born.setText(mBirth);
 
-        final EditText sex = (EditText) findViewById(R.id.acc_sex);
+        sex = (EditText) findViewById(R.id.acc_sex);
         sex.setText(mSex);
+    }
+
+    public void setupListeners(){
 
         final ImageButton btEmail = (ImageButton) findViewById(R.id.acc_edit1);
         btEmail.setOnClickListener(new View.OnClickListener() {
