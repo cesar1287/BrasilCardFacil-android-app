@@ -21,6 +21,11 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        setupListeners();
+    }
+
+    public void setupListeners(){
+
         ImageButton btLogout = (ImageButton) findViewById(R.id.setting_btLogout);
 
         btLogout.setOnClickListener(new View.OnClickListener() {

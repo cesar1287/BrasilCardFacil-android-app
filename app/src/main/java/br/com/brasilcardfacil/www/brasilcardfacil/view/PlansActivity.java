@@ -15,6 +15,11 @@ public class PlansActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plans);
 
+        setupListeners();
+    }
+
+    public void setupListeners(){
+
         Button btCheers = (Button) findViewById(R.id.plan_cheers);
         btCheers.setOnClickListener(new View.OnClickListener() {
             @Override

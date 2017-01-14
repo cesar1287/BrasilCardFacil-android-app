@@ -17,6 +17,11 @@ public class TotalPlanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_plan);
 
+        setupListeners();
+    }
+
+    public void setupListeners(){
+
         ImageButton btBuy = (ImageButton) findViewById(R.id.total_plan_button_buy);
         btBuy.setOnClickListener(new View.OnClickListener() {
             @Override
