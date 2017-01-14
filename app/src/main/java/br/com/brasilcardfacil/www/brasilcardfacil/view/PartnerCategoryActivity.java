@@ -55,11 +55,29 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        configUI();
+        setupUI();
 
         dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_partners_pls_wait), true, false);
 
         loadList();
+
+        setupListeners();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        partner.removeEventListener(valueEventListener);
+        partner.removeEventListener(singleValueEventListener);
+    }
+
+    public List<Partner> getPartnersList() {
+
+        return partners;
+    }
+
+    public void setupListeners(){
 
         EditText editTextSearch = (EditText) findViewById(R.id.search_partner_category);
         editTextSearch.addTextChangedListener(new TextWatcher() {
@@ -78,19 +96,6 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                 //TODO
             }
         });
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        partner.removeEventListener(valueEventListener);
-        partner.removeEventListener(singleValueEventListener);
-    }
-
-    public List<Partner> getPartnersList(){
-
-        return partners;
     }
 
     public void execSearch(CharSequence sequence, int count){
@@ -174,7 +179,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
         partner.addListenerForSingleValueEvent(singleValueEventListener);
     }
 
-    public void configUI(){
+    public void setupUI(){
 
         ActionBar actionBar = getSupportActionBar();
 

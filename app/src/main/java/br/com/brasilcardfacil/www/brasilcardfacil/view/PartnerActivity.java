@@ -16,6 +16,11 @@ public class PartnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partner);
 
+        setupListeners();
+    }
+
+    public void setupListeners(){
+
         ImageButton btClinicHosp = (ImageButton) findViewById(R.id.partner_med_hosp);
         btClinicHosp.setOnClickListener(new View.OnClickListener() {
             @Override

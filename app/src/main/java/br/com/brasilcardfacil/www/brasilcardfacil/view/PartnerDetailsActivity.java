@@ -15,12 +15,19 @@ public class PartnerDetailsActivity extends AppCompatActivity {
 
     MapViewFragment frag;
 
+    Partner partner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partner_details);
 
-        Partner partner = (Partner) getIntent().getSerializableExtra("partner");
+        partner = (Partner) getIntent().getSerializableExtra("partner");
+
+        setupUI();
+    }
+
+    public void setupUI(){
 
         frag = (MapViewFragment) getSupportFragmentManager().findFragmentByTag("mapFrag");
         if(frag == null) {
