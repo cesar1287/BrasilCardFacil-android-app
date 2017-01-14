@@ -64,4 +64,26 @@
     <string name="menu_item_partners">Parceiros</string>
     <string name="menu_item_nearby">Parceiros próximos</string>
     <string name="group_menu_partners"><b>Parceiros</b></string>
+    <string name="contentDescriptionBannerParceiros">Banner exibição de parceiros</string>
+    <string name="banner_screen_settings">Banner screen settings</string>
+    <string name="logout_screen_settings">logout screen settings</string>
+    <string name="login_screen_signin">login screen signin</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_email">Email</string>
+    <string name="entrar_screen_signin">entrar screen signin</string>
+    <string name="user_img_screen_main">Foto usuario tela principal</string>
+    <string name="banner_screen_partners">Banner screen partners</string>
+    <string name="image_clinic_screen_partner">Image clinic screen partner</string>
+    <string name="dentistry_image_screen_partner">Dentistry image screen partner</string>
+    <string name="veterinary_image_screen_partner">Veterinary image screen partner</string>
+    <string name="lab_image_screen_partner">Lab image screen partner</string>
+    <string name="trade_image_screen_partner">Trade image screen partner</string>
+    <string name="advocacy_image_screen_partner">Advocacy image screen partner</string>
+    <string name="funeral_image_screen_partner">Funeral image screen partner</string>
+    <string name="banner_screen_partner_details">Banner screen partner details</string>
+    <string name="banner_text_screen_total_plan">Banner text screen total plan</string>
+    <string name="buy_button_screen_total_plan">Buy button screen total plan</string>
+    <string name="image_brasilcardfacil_screen_splash">Image BrasilCardfacil screen splash</string>
+    <string name="partner_logo">partner logo</string>
+    <string name="hint_name">Nome</string>
 </resources>
