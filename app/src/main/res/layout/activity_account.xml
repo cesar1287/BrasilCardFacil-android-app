@@ -158,6 +158,47 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_below="@id/acc_divisor1"
+            android:id="@+id/acc_linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:contentDescription="@string/born_screen_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:src="@drawable/user_0003s_0006_nascimento"
+                android:layout_gravity="center"
+                android:scaleType="fitStart"/>
+
+            <EditText
+                android:id="@+id/acc_born"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.58"
+                android:background="@null"
+                android:inputType="date"
+                android:enabled="false"
+                android:layout_gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+
+            <ImageButton
+                android:contentDescription="@string/edit_screen_account"
+                android:id="@+id/acc_edit3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.12"
+                android:background="@color/BrasilCardFacil"
+                android:src="@drawable/user_0003s_0020_adjust"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/acc_divisor2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -202,8 +243,8 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
 
             <ImageButton
-                android:id="@+id/acc_edit4"
                 android:contentDescription="@string/edit_screen_account"
+                android:id="@+id/acc_edit4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.12"
@@ -266,47 +307,6 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20sp"/>
-
-        <LinearLayout
-            android:id="@+id/acc_linear2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/acc_divisor1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-
-            <ImageView
-                android:contentDescription="@string/born_screen_account"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:src="@drawable/user_0003s_0006_nascimento"
-                android:layout_gravity="center"
-                android:scaleType="fitStart"/>
-
-            <EditText
-                android:id="@+id/acc_born"
-                android:maxLines="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.58"
-                android:background="@null"
-                android:inputType="date"
-                android:enabled="false"
-                android:layout_gravity="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
-
-            <ImageButton
-                android:id="@+id/acc_edit3"
-                android:contentDescription="@string/edit_screen_account"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12"
-                android:background="@color/BrasilCardFacil"
-                android:src="@drawable/user_0003s_0020_adjust"
-                android:layout_margin="5dp"/>
-        </LinearLayout>
 
     </RelativeLayout>
 
