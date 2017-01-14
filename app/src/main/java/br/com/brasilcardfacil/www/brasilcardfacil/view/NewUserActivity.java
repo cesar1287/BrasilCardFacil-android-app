@@ -135,7 +135,7 @@ public class NewUserActivity extends AppCompatActivity {
 
                             FirebaseHelper.writeNewUser(mDatabase, Uid, name, email, "", "", "", "", profile_pic);
 
-                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);
@@ -146,7 +146,7 @@ public class NewUserActivity extends AppCompatActivity {
                             finish();
                         } else {
 
-                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);

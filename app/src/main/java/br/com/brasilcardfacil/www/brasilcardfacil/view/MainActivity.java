@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
@@ -41,6 +42,12 @@ public class MainActivity extends AppCompatActivity
 
     String name, email, profilePic, id;
 
+    Handler handler;
+    Runnable myRunnable;
+
+    SharedPreferences sp;
+    boolean show;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +63,30 @@ public class MainActivity extends AppCompatActivity
         setupUI();
 
         setupListeners();
+
+        sp = getSharedPreferences(Utility.WARNING_SHARED_PREF_NAME, MODE_PRIVATE);
+        show = sp.getBoolean("show", false);
+        if(!show) {
+            setupWarningActivity();
+        }
+    }
+
+    public void setupWarningActivity(){
+
+        handler = new Handler();
+        myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(MainActivity.this, WarningActivity.class));
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putBoolean("show", true);
+                editor.apply();
+
+            }
+        };
+        handler.postDelayed(myRunnable, Utility.TIME_TO_WARNING_ACTIVITY_APPEAR);
     }
 
     public void verifyUserIsLogged(){
@@ -117,7 +148,7 @@ public class MainActivity extends AppCompatActivity
 
     public void setupUI(){
 
-        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+        sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
         name = sp.getString("name","Carregando...");
         email = sp.getString("email","Carregando...");
@@ -156,6 +187,14 @@ public class MainActivity extends AppCompatActivity
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(handler != null) {
+            handler.removeCallbacks(myRunnable);
         }
     }
 
@@ -222,7 +261,7 @@ public class MainActivity extends AppCompatActivity
                                 @Override
                                 public void run() {
                                     signOutFirebase();
-                                    SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                                    SharedPreferences sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sp.edit();
                                     editor.clear();
                                     editor.apply();

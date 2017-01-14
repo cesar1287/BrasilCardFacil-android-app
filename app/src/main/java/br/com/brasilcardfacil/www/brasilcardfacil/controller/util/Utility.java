@@ -13,7 +13,10 @@ public class Utility {
 
     public static final String KEY_CONTENT_EXTRA_PLANS = "link";
 
-    public static final String SHARED_PREF_NAME = "LoginActivityPreferences";
+    public static final String LOGIN_SHARED_PREF_NAME = "LoginActivityPreferences";
+    public static final String WARNING_SHARED_PREF_NAME = "WarningActivityPreferences";
+
+    public static final int TIME_TO_WARNING_ACTIVITY_APPEAR = 3000;
 
     public static boolean verifyEmptyField(String email, String pass){
 

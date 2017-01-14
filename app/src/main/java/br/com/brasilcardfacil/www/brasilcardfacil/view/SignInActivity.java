@@ -259,7 +259,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
                             FirebaseHelper.writeNewUser(mDatabase, Uid, name, email, "", "", "", "", profile_pic);
 
-                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);
@@ -269,7 +269,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                             editor.apply();
                         } else {
 
-                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);

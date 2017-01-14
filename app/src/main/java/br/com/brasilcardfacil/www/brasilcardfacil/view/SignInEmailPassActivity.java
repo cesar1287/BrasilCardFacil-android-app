@@ -109,7 +109,7 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                         User user = dataSnapshot.getValue(User.class);
 
 
-                        sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                        sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                         SharedPreferences.Editor editor = sp.edit();
 
                         editor.putString("id", Uid);

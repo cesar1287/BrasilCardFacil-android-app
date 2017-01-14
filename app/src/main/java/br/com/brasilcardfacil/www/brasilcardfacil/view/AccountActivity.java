@@ -57,7 +57,7 @@ public class AccountActivity extends AppCompatActivity {
 
     public void setupUI(){
 
-        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
         name = sp.getString("name","Carregando...");
         mEmail = sp.getString("email","Carregando...");
@@ -158,7 +158,7 @@ public class AccountActivity extends AppCompatActivity {
 
         mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_USERS).child(userId).setValue(user);
 
-        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
         editor.putString("email", email);

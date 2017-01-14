@@ -41,7 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         signOutFirebase();
-                                        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+                                        SharedPreferences sp = getSharedPreferences(Utility.LOGIN_SHARED_PREF_NAME, MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sp.edit();
                                         editor.clear();
                                         editor.apply();
