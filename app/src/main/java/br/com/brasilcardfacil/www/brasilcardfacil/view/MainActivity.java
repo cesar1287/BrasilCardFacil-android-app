@@ -47,6 +47,19 @@ public class MainActivity extends AppCompatActivity
 
         mAuth = FirebaseAuth.getInstance();
 
+        verifyUserIsLogged();
+
+        setContentView(R.layout.activity_main);
+
+        setupNavigationDrawer();
+
+        setupUI();
+
+        setupListeners();
+    }
+
+    public void verifyUserIsLogged(){
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -58,8 +71,10 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         };
+    }
 
-        setContentView(R.layout.activity_main);
+    public void setupNavigationDrawer(){
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -71,29 +86,9 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
-        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
-        id = sp.getString("id", "0");
-        name = sp.getString("name","Carregando...");
-        email = sp.getString("email","Carregando...");
-        profilePic = sp.getString("profile_pic","Carregando...");
-
-        View hView =  navigationView.getHeaderView(0);
-        final ImageView nav_image = (ImageView)hView.findViewById(R.id.imageView);
-        Glide.with(this).load(profilePic)
-                .asBitmap().into(new BitmapImageViewTarget(nav_image) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(getResources(), resource);
-                circularBitmapDrawable.setCircular(true);
-                nav_image.setImageDrawable(circularBitmapDrawable);
-            }
-        });
-        TextView nav_nome = (TextView)hView.findViewById(R.id.header_name);
-        nav_nome.setText(name);
-        TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
-        nav_email.setText(email);
+    public void setupListeners(){
 
         Button btPartners = (Button) findViewById(R.id.main_partners);
         btPartners.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +113,36 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, PartnersMapActivity.class));
             }
         });
+    }
+
+    public void setupUI(){
+
+        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
+        id = sp.getString("id", "0");
+        name = sp.getString("name","Carregando...");
+        email = sp.getString("email","Carregando...");
+        profilePic = sp.getString("profile_pic","Carregando...");
+
+        View hView =  navigationView.getHeaderView(0);
+        final ImageView nav_image = (ImageView)hView.findViewById(R.id.imageView);
+        Glide.with(this).load(profilePic)
+                .asBitmap().into(new BitmapImageViewTarget(nav_image) {
+            @Override
+            protected void setResource(Bitmap resource) {
+                RoundedBitmapDrawable circularBitmapDrawable =
+                        RoundedBitmapDrawableFactory.create(getResources(), resource);
+                circularBitmapDrawable.setCircular(true);
+                nav_image.setImageDrawable(circularBitmapDrawable);
+            }
+        });
+        TextView nav_nome = (TextView)hView.findViewById(R.id.header_name);
+        nav_nome.setText(name);
+        TextView nav_email = (TextView)hView.findViewById(R.id.header_email);
+        nav_email.setText(email);
+    }
+
+    private void signOutFirebase() {
+        mAuth.signOut();
     }
 
     @Override
@@ -217,9 +242,5 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void signOutFirebase() {
-        mAuth.signOut();
     }
 }
