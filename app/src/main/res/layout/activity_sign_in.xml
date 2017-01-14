@@ -11,6 +11,7 @@
     tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.SignInActivity">
 
     <ImageView
+        android:contentDescription="@string/divisor_screen_sign_in"
         android:id="@+id/SignIn_or_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

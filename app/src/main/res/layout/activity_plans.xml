@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/plan_banner"
+        android:contentDescription="@string/banner_screen_plans"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/planos_0002s_0001_banner_family11"

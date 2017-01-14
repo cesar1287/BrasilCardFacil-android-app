@@ -11,6 +11,7 @@
 
     <ImageView
         android:id="@+id/main_banner"
+        android:contentDescription="@string/banner_screen_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/menu_0006_banner_menu"

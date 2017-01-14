@@ -11,6 +11,7 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/cheers_plan_image"
+                android:contentDescription="@string/banner_text_screen_cheers_plan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/plano_saude_0001_saude_texto"
@@ -18,6 +19,7 @@
 
             <ImageButton
                 android:id="@+id/cheers_plan_button_buy"
+                android:contentDescription="@string/buy_button_screen_cheers_plan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/plano_button_buy"
