@@ -13,6 +13,8 @@ public class Utility {
 
     public static final String KEY_CONTENT_EXTRA_PLANS = "link";
 
+    public static final String SHARED_PREF_NAME = "LoginActivityPreferences";
+
     public static boolean verifyEmptyField(String email, String pass){
 
         return (email.isEmpty() || pass.isEmpty());

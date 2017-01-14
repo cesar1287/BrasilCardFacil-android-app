@@ -45,12 +45,11 @@ import java.util.Arrays;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
     private static final int RC_SIGN_IN = 9001;
-
-    private static final String PREF_NAME = "LoginActivityPreferences";
 
     CallbackManager callbackManager;
     private FirebaseAuth mAuth;
@@ -260,7 +259,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
                             FirebaseHelper.writeNewUser(mDatabase, Uid, name, email, "", "", "", "", profile_pic);
 
-                            sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);
@@ -270,7 +269,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                             editor.apply();
                         } else {
 
-                            sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);

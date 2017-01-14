@@ -12,10 +12,9 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class SettingsActivity extends AppCompatActivity {
-
-    private static final String PREF_NAME = "LoginActivityPreferences";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         signOutFirebase();
-                                        SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                                        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sp.edit();
                                         editor.clear();
                                         editor.apply();

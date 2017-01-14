@@ -32,8 +32,6 @@ public class SignInEmailPassActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private static final String PREF_NAME = "LoginActivityPreferences";
-
     private DatabaseReference mDatabase;
 
     String Uid, email, profile_pic = "";
@@ -111,7 +109,7 @@ public class SignInEmailPassActivity extends AppCompatActivity {
                         User user = dataSnapshot.getValue(User.class);
 
 
-                        sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                        sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                         SharedPreferences.Editor editor = sp.edit();
 
                         editor.putString("id", Uid);

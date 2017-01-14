@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -32,7 +33,6 @@ public class AccountActivity extends AppCompatActivity {
 
     InputMethodManager imm;
 
-    private static final String PREF_NAME = "LoginActivityPreferences";
     String id, name, mEmail, profilePic, mPhone, mBirth, mSex;
 
     @Override
@@ -46,7 +46,7 @@ public class AccountActivity extends AppCompatActivity {
 
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
         name = sp.getString("name","Carregando...");
         mEmail = sp.getString("email","Carregando...");
@@ -144,7 +144,7 @@ public class AccountActivity extends AppCompatActivity {
 
         mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_USERS).child(userId).setValue(user);
 
-        SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
         editor.putString("email", email);

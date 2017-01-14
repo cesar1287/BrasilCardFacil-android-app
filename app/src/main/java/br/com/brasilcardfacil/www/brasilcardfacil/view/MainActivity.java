@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,8 +38,6 @@ public class MainActivity extends AppCompatActivity
 
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
-
-    private static final String PREF_NAME = "LoginActivityPreferences";
 
     String name, email, profilePic, id;
 
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
         id = sp.getString("id", "0");
         name = sp.getString("name","Carregando...");
         email = sp.getString("email","Carregando...");
@@ -198,7 +197,7 @@ public class MainActivity extends AppCompatActivity
                                 @Override
                                 public void run() {
                                     signOutFirebase();
-                                    SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                                    SharedPreferences sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sp.edit();
                                     editor.clear();
                                     editor.apply();

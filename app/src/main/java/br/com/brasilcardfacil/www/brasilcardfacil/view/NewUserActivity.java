@@ -36,8 +36,6 @@ public class NewUserActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
-    private static final String PREF_NAME = "LoginActivityPreferences";
-
     String Uid, name , email, profile_pic = "";
 
     SharedPreferences sp;
@@ -137,7 +135,7 @@ public class NewUserActivity extends AppCompatActivity {
 
                             FirebaseHelper.writeNewUser(mDatabase, Uid, name, email, "", "", "", "", profile_pic);
 
-                            sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);
@@ -148,7 +146,7 @@ public class NewUserActivity extends AppCompatActivity {
                             finish();
                         } else {
 
-                            sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+                            sp = getSharedPreferences(Utility.SHARED_PREF_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sp.edit();
 
                             editor.putString("id", Uid);
