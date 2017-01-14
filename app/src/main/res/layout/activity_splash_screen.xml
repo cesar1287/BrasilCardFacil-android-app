@@ -11,6 +11,7 @@
     tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.SplashScreenActivity">
 
     <ImageView
+        android:contentDescription="@string/image_brasilcardfacil_screen_splash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/loading"

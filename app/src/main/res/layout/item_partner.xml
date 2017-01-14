@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/partner_logo"
+        android:contentDescription="@string/partner_logo"
         android:layout_width="124sp"
         android:layout_height="124sp"
         android:layout_centerHorizontal="true"

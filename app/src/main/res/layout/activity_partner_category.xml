@@ -10,6 +10,7 @@
 
     <ImageView
         android:id="@+id/partner_category_banner"
+        android:contentDescription="@string/contentDescriptionBannerParceiros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/parceiros_0006_banner_comercio"
