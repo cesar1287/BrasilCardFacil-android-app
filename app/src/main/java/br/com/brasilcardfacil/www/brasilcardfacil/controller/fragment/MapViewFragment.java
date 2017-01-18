@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 
 public class MapViewFragment extends Fragment {
@@ -28,6 +29,8 @@ public class MapViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
 
         final Partner partner = (Partner) getArguments().getSerializable("partner");
+
+        final Offer offer = (Offer) getArguments().getSerializable("offer");
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
@@ -57,6 +60,15 @@ public class MapViewFragment extends Fragment {
                     // For dropping a marker at a point on the Map
                     LatLng address = new LatLng(partner.getLatitude(), partner.getLongitude());
                     googleMap.addMarker(new MarkerOptions().position(address).title(partner.getName()).snippet(partner.getName()));
+
+
+                    // For zooming automatically to the location of the marker
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(address).zoom(16).build();
+                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                }else if(offer!=null){
+                    // For dropping a marker at a point on the Map
+                    LatLng address = new LatLng(offer.getLatitude(), offer.getLongitude());
+                    googleMap.addMarker(new MarkerOptions().position(address).title(offer.getName()).snippet(offer.getName()));
 
 
                     // For zooming automatically to the location of the marker
