@@ -144,6 +144,22 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, PartnersMapActivity.class));
             }
         });
+
+        Button btFavs = (Button) findViewById(R.id.main_fav);
+        btFavs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FavActivity.class));
+            }
+        });
+
+        Button btOffer = (Button) findViewById(R.id.main_offer);
+        btOffer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, OfferActivity.class));
+            }
+        });
     }
 
     public void setupUI(){
