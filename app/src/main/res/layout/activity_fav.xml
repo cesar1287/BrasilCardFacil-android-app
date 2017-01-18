@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fav"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.FavActivity">
+
+    <ImageView
+        android:id="@+id/fav_banner"
+        android:contentDescription="@string/banner_favoritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/favoritos_0006_banner_favoritos"
+        android:scaleX="1.02"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="4sp"/>
+
+    <RelativeLayout
+        android:id="@+id/fav_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fav_banner"
+        android:layout_marginBottom="20sp"/>
+
+</RelativeLayout>
