@@ -7,7 +7,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
 public class FirebaseHelper {
 
     public static final String FIREBASE_DATABASE_ORDERBY = "name";
-
+    public static final String FIREBASE_DATABASE_OFFER = "offer";
     public static final String FIREBASE_DATABASE_CLINIC = "clinica";
     public static final String FIREBASE_DATABASE_DENTISTRY = "odontologia";
     public static final String FIREBASE_DATABASE_VETERINARY = "veterinaria";
