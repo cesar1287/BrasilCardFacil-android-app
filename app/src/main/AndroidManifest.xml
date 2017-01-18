@@ -99,7 +99,21 @@
         <activity
             android:name=".view.WarningActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.FavActivity"
+            android:label="@string/screen_fav"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.OfferActivity"
+            android:label="@string/screen_offers"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.OfferDetailsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".view.OfferActivity"/>
     </application>
 
 </manifest>
