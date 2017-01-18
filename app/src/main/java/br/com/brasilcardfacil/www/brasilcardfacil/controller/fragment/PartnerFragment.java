@@ -18,6 +18,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter.PartnerAdapter;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.interfaces.RecyclerViewOnClickListenerHack;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.FavActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerCategoryActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerDetailsActivity;
 
@@ -40,7 +41,11 @@ public class PartnerFragment extends Fragment implements RecyclerViewOnClickList
         gridLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        mList = ((PartnerCategoryActivity) getActivity()).getPartnersList();
+        if(getActivity() instanceof PartnerCategoryActivity) {
+            mList = ((PartnerCategoryActivity) getActivity()).getPartnersList();
+        }else if(getActivity() instanceof FavActivity){
+            mList = ((FavActivity) getActivity()).getPartnersList();
+        }
         adapter = new PartnerAdapter(getActivity(), mList);
         adapter.setRecyclerViewOnClickListenerHack(this);
         mRecyclerView.setAdapter( adapter );
