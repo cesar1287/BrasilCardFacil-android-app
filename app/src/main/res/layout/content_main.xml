@@ -30,15 +30,15 @@
             android:id="@+id/main_plans"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".33"
+            android:layout_weight=".14"
             android:background="@drawable/menu_0007_planos"
-            android:scaleY="0.35"
-            android:scaleX="0.6"/>
+            android:scaleY="0.6"
+            android:scaleX="0.5"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".01"
+            android:layout_weight=".005"
             android:background="@color/divisor"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"/>
@@ -47,15 +47,15 @@
             android:id="@+id/main_partners"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".33"
+            android:layout_weight=".14"
             android:background="@drawable/menu_0008_parceiros"
-            android:scaleY="0.36"
-            android:scaleX="0.77"/>
+            android:scaleY="0.6"
+            android:scaleX="0.6"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".01"
+            android:layout_weight=".005"
             android:background="@color/divisor"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"/>
@@ -64,10 +64,61 @@
             android:id="@+id/main_nearby"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".33"
+            android:layout_weight=".14"
             android:background="@drawable/menu_0009_proximos"
-            android:scaleY="0.36"
-            android:scaleX="0.77"/>
+            android:scaleY="0.6"
+            android:scaleX="0.57"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".005"
+            android:background="@color/divisor"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/main_offer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".14"
+            android:background="@drawable/menu_0010_ofertas"
+            android:scaleY="0.6"
+            android:scaleX="0.54"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".005"
+            android:background="@color/divisor"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/main_fav"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".14"
+            android:background="@drawable/menu_0011_favoritos"
+            android:scaleY="0.58"
+            android:scaleX="0.6"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".005"
+            android:background="@color/divisor"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/main_health"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".14"
+            android:background="@drawable/menu_0012_saude_ativa"
+            android:scaleY="0.58"
+            android:scaleX="0.63"/>
     </LinearLayout>
 
 </RelativeLayout>
