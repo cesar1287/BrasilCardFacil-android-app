@@ -43,9 +43,11 @@
     <string name="screen_advocacy">Advocacia</string>
     <string name="screen_funeral">Funerária</string>
     <string name="error_loading_partners">Algo deu errado ao carregar os parceiros, por favor contate o administrador.</string>
+    <string name="error_loading_offers">Algo deu errado ao carregar as ofertas, por favor contate o administrador.</string>
     <string name="error_signin">Algo deu errado ao fazer login, tente novamente.</string>
     <string name="error_create_new_account">Algo deu errado ao tentar criar a conta, tente novamente.</string>
     <string name="loading_partners_pls_wait">Carregando parceiros, por favor aguarde!!!</string>
+    <string name="loading_offers_pls_wait">Carregando ofertas, por favor aguarde!!!</string>
     <string name="data_saved_sucess">Dados salvos com sucesso.</string>
     <string name="msg_logout">Saindo…</string>
     <string name="error_all_fields_required">Todos os campos são obrigatórios, tente novamente.</string>
@@ -103,4 +105,11 @@
     <string name="sex_screen_account">sex screen account</string>
     <string name="plan_description_screen_account">plan description screen account</string>
     <string name="save_screen_account">save screen account</string>
+    <string name="action_fav">Favorito</string>
+    <string name="screen_fav">Favoritos</string>
+    <string name="banner_favoritos">Banner favoritos</string>
+    <string name="screen_offers">Ofertas</string>
+    <string name="banner_offers">Banner Ofertas</string>
+    <string name="offer_logo">Banner Oferta</string>
+    <string name="banner_screen_offer_details">Banner da oferta</string>
 </resources>
