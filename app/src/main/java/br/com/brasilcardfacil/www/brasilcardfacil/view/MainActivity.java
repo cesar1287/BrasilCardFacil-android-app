@@ -160,6 +160,14 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, OfferActivity.class));
             }
         });
+
+        Button btActiveHealth = (Button) findViewById(R.id.main_health);
+        btActiveHealth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ActiveHealthActivity.class));
+            }
+        });
     }
 
     public void setupUI(){

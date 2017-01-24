@@ -44,7 +44,7 @@ import java.util.Arrays;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
-import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{

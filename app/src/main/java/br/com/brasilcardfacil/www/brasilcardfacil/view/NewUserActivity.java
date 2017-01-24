@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.User;
-import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class NewUserActivity extends AppCompatActivity {
