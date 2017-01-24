@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/active_health_logo"
+        android:contentDescription="@string/active_health_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="2sp"
+        android:scaleX="1.02"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginRight="10sp"/>
+
+    <TextView
+        android:id="@+id/active_health_title"
+        android:textColor="@color/black"
+        android:layout_below="@+id/active_health_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginRight="10sp"
+        android:text=""/>
+
+</RelativeLayout>
