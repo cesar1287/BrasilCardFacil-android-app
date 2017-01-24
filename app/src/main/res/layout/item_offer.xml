@@ -33,17 +33,4 @@
         android:layout_marginRight="10sp"
         android:text=""/>
 
-    <TextView
-        android:id="@+id/offer_place"
-        android:textColor="@color/black"
-        android:layout_below="@+id/offer_name"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginStart="10sp"
-        android:layout_marginLeft="10sp"
-        android:layout_marginEnd="10sp"
-        android:layout_marginRight="10sp"/>
-
 </RelativeLayout>
