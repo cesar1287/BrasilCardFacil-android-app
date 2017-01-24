@@ -18,6 +18,14 @@
     <item android:title="@string/group_menu_partners">
         <menu>
             <item
+                android:id="@+id/nav_fav"
+                android:title="@string/menu_item_fav"/>
+
+            <item
+                android:id="@+id/nav_offer"
+                android:title="@string/menu_item_offer"/>
+
+            <item
                 android:id="@+id/nav_partners"
                 android:title="@string/menu_item_partners"/>
 
