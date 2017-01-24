@@ -20,7 +20,7 @@ import java.util.List;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.PartnersMapViewFragment;
-import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 
 public class PartnersMapActivity extends AppCompatActivity {
 
