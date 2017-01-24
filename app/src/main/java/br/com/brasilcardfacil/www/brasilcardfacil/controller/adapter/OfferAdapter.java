@@ -43,7 +43,6 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.MyViewHolder
                 .load(mList.get((position)).getUrlBanner())
                 .into(myViewHolder.bannerOffer);
         myViewHolder.nameOffer.setText(mList.get(position).getName());
-        myViewHolder.placeOffer.setText(mList.get(position).getAddress());
     }
 
     @Override
@@ -58,13 +57,11 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.MyViewHolder
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener /*View.OnCreateContextMenuListener*/{
         ImageView bannerOffer;
         TextView nameOffer;
-        TextView placeOffer;
 
         MyViewHolder(View itemView) {
             super(itemView);
             bannerOffer = (ImageView) itemView.findViewById(R.id.offer_logo);
             nameOffer = (TextView) itemView.findViewById(R.id.offer_name);
-            placeOffer = (TextView) itemView.findViewById(R.id.offer_place);
 
             itemView.setOnClickListener(this);
         }
