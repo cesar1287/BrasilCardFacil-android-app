@@ -19,7 +19,7 @@ import java.util.List;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.OfferFragment;
-import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 
 public class OfferActivity extends AppCompatActivity {
 
