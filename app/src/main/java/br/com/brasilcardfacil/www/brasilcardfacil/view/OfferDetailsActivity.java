@@ -1,15 +1,24 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
+import android.app.ProgressDialog;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.OfferNotification;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.MapViewFragment;
 
 public class OfferDetailsActivity extends AppCompatActivity {
@@ -18,14 +27,91 @@ public class OfferDetailsActivity extends AppCompatActivity {
     
     Offer offer;
 
+    String db, child;
+
+    Query offer_notification;
+
+    ValueEventListener valueEventListener;
+    ValueEventListener singleValueEventListener;
+
+    private ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offer_details);
 
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        db = getIntent().getStringExtra("db");
+        child = getIntent().getStringExtra("child");
+
         offer = (Offer) getIntent().getSerializableExtra("offer");
 
-        setupUI();
+        if(db != null & child != null){
+
+            dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_offer_pls_wait), true, false);
+            offer_notification = mDatabase.child(db).child(child);
+
+            loadOfferNotification();
+        }else{
+            setupUI();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if(offer_notification!=null) {
+            offer_notification.removeEventListener(valueEventListener);
+            offer_notification.removeEventListener(singleValueEventListener);
+        }
+    }
+
+    private void loadOfferNotification() {
+
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                OfferNotification offerNotification = dataSnapshot.getValue(OfferNotification.class);
+                offer = new Offer();
+
+                offer.setName(offerNotification.name);
+                offer.setDescription(offerNotification.description);
+                offer.setAddress(offerNotification.address);
+                offer.setLatitude(offerNotification.latitude);
+                offer.setLongitude(offerNotification.longitude);
+                offer.setPhone(offerNotification.phone);
+                offer.setAbout(offerNotification.about);
+                offer.setUrlBanner(offerNotification.url_banner);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(OfferDetailsActivity.this, R.string.error_loading_offer, Toast.LENGTH_LONG).show();
+                finish();
+            }
+        };
+
+        singleValueEventListener = new ValueEventListener() {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                setupUI();
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(OfferDetailsActivity.this, R.string.error_loading_offer, Toast.LENGTH_LONG).show();
+                finish();
+            }
+        };
+
+        offer_notification.addValueEventListener(valueEventListener);
+
+        offer_notification.addListenerForSingleValueEvent(singleValueEventListener);
     }
 
     public void setupUI(){
