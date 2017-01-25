@@ -12,13 +12,13 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
-import br.com.brasilcardfacil.www.brasilcardfacil.view.ActiveHealthActivity;
-import br.com.brasilcardfacil.www.brasilcardfacil.view.OfferActivity;
-import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.ActiveHealthDetailsActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.OfferDetailsActivity;
+import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerDetailsActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService{
 
-    String title, body, activity;
+    String title, body, activity, db, child;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -26,6 +26,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
         title = remoteMessage.getNotification().getTitle();
         body = remoteMessage.getNotification().getBody();
         activity = remoteMessage.getData().get("type_notification");
+        db = remoteMessage.getData().get("db");
+        child = remoteMessage.getData().get("child");
 
         sendNotification();
     }
@@ -35,13 +37,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
 
         switch (activity) {
             case "partner":
-                intent = new Intent(this, PartnerActivity.class);
+                intent = new Intent(this, PartnerDetailsActivity.class);
+                intent.putExtra("db", db);
+                intent.putExtra("child", child);
                 break;
             case "offer":
-                intent = new Intent(this, OfferActivity.class);
+                intent = new Intent(this, OfferDetailsActivity.class);
+                intent.putExtra("db", db);
+                intent.putExtra("child", child);
                 break;
             default:
-                intent = new Intent(this, ActiveHealthActivity.class);
+                intent = new Intent(this, ActiveHealthDetailsActivity.class);
+                intent.putExtra("db", db);
+                intent.putExtra("child", child);
                 break;
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
