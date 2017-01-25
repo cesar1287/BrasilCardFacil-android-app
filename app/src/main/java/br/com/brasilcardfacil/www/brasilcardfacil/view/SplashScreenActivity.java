@@ -21,17 +21,26 @@ public class SplashScreenActivity extends AppCompatActivity {
                 String value = getIntent().getExtras().getString(key);
 
                 if (key.equals("type_notification") && value.equals("active health")) {
-                    startActivity(new Intent(this, ActiveHealthActivity.class));
+                    Intent intent = new Intent(this, ActiveHealthDetailsActivity.class);
+                    intent.putExtra("db", getIntent().getExtras().getString("db"));
+                    intent.putExtra("child", getIntent().getExtras().getString("child"));
+                    startActivity(intent);
                     showed = true;
                     finish();
                     break;
                 }else if(key.equals("type_notification") && value.equals("partner")){
-                    startActivity(new Intent(this, PartnerActivity.class));
+                    Intent intent = new Intent(this, PartnerDetailsActivity.class);
+                    intent.putExtra("db", getIntent().getExtras().getString("db"));
+                    intent.putExtra("child", getIntent().getExtras().getString("child"));
+                    startActivity(intent);
                     showed = true;
                     finish();
                     break;
                 }else if(key.equals("type_notification") && value.equals("offer")){
-                    startActivity(new Intent(this, OfferActivity.class));
+                    Intent intent = new Intent(this, OfferDetailsActivity.class);
+                    intent.putExtra("db", getIntent().getExtras().getString("db"));
+                    intent.putExtra("child", getIntent().getExtras().getString("child"));
+                    startActivity(intent);
                     showed = true;
                     finish();
                     break;
