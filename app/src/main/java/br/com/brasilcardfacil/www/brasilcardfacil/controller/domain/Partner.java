@@ -4,14 +4,8 @@ import java.io.Serializable;
 
 public class Partner implements Serializable{
 
-    private String name;
-    private String url_logo;
-    private String description;
-    private String address;
-    private Double latitude;
-    private Double longitude;
-    private String phone;
-    private String site;
+    private String name, url_logo, description, address, phone, site;
+    private Double latitude, longitude;
 
     public String getAddress() {
         return address;
