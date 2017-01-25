@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -42,7 +41,6 @@ public class ActiveHealthAdapter extends RecyclerView.Adapter<ActiveHealthAdapte
         Glide.with(c)
                 .load(mList.get((position)).getUrlBanner())
                 .into(myViewHolder.bannerActiveHealth);
-        myViewHolder.titleActiveHealth.setText(mList.get(position).getTitle());
     }
 
     @Override
@@ -56,12 +54,10 @@ public class ActiveHealthAdapter extends RecyclerView.Adapter<ActiveHealthAdapte
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener /*View.OnCreateContextMenuListener*/{
         ImageView bannerActiveHealth;
-        TextView titleActiveHealth;
 
         MyViewHolder(View itemView) {
             super(itemView);
             bannerActiveHealth = (ImageView) itemView.findViewById(R.id.active_health_logo);
-            titleActiveHealth = (TextView) itemView.findViewById(R.id.active_health_title);
 
             itemView.setOnClickListener(this);
         }
