@@ -120,4 +120,8 @@
     <string name="banner_screen_active_health_details">Banner da tela de detalhes Saúde ativa</string>
     <string name="loading_active_health_pls_wait">Carregando saúde ativa, por favor aguarde!!!</string>
     <string name="error_loading_active_health">Algo deu errado ao carregar a saúde ativa, por favor contate o administrador.</string>
+    <string name="loading_partner_pls_wait">Carregando parceiro, por favor aguarde!!!</string>
+    <string name="error_loading_partner">Algo deu errado ao carregar o parceiro, por favor contate o administrador.</string>
+    <string name="loading_offer_pls_wait">Carregando oferta, por favor aguarde!!!</string>
+    <string name="error_loading_offer">Algo deu errado ao carregar a oferta, por favor contate o administrador.</string>
 </resources>
