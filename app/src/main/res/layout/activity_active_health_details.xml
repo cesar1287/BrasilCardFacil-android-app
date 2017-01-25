@@ -15,7 +15,7 @@
             android:contentDescription="@string/banner_screen_active_health_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/parceiros_0006_banner_parceiros"
+            android:src="@drawable/saude_ativa_0006_banner_art"
             android:scaleX="1.02"
             android:scaleType="fitStart"
             android:adjustViewBounds="true"
