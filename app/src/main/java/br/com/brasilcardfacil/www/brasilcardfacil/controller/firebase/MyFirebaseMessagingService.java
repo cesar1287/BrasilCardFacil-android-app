@@ -58,7 +58,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(getNotificationIcon())
                 .setContentTitle(title)
                 .setContentText(body)
                 .setAutoCancel(true)
@@ -69,5 +69,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private int getNotificationIcon() {
+
+        boolean useWhiteIcon = (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP);
+        return useWhiteIcon ? R.drawable.brasilcard_icon_notification : R.mipmap.ic_launcher;
     }
 }
