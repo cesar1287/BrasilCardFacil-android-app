@@ -116,9 +116,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".14"
-            android:background="@drawable/menu_0012_saude_ativa"
-            android:scaleY="0.58"
-            android:scaleX="0.63"/>
+            android:background="@drawable/menu_0012_dicas"
+            android:scaleY="0.6"
+            android:scaleX="0.4"/>
     </LinearLayout>
 
 </RelativeLayout>
