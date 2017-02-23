@@ -46,7 +46,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
     ValueEventListener valueEventListener;
     ValueEventListener singleValueEventListener;
 
-    String name_partner, search_name;
+    String name_partner, category_partner, search_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,8 +106,9 @@ public class PartnerCategoryActivity extends AppCompatActivity {
             for (Iterator<Partner> i = partners.iterator(); i.hasNext();) {
                 Partner partner = i.next();
                 name_partner = partner.getName().toLowerCase();
+                category_partner = partner.getCategory().toLowerCase();
                 search_name = String.valueOf(sequence).toLowerCase();
-                if (!name_partner.contains(search_name)) {
+                if (!name_partner.contains(search_name) && !category_partner.contains(search_name)) {
                     i.remove();
                 }
             }
@@ -132,14 +133,15 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                 Partner p;
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     p = new Partner();
-                    p.setName((String)postSnapshot.child("name").getValue());
-                    p.setUrlLogo((String)postSnapshot.child("url_logo").getValue());
-                    p.setDescription((String)postSnapshot.child("description").getValue());
-                    p.setAddress((String)postSnapshot.child("address").getValue());
-                    p.setPhone((String)postSnapshot.child("phone").getValue());
-                    p.setSite((String)postSnapshot.child("site").getValue());
-                    p.setLatitude((Double) postSnapshot.child("latitude").getValue());
-                    p.setLongitude((Double) postSnapshot.child("longitude").getValue());
+                    p.setCategory((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_CATEGORY).getValue());
+                    p.setName((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_NAME).getValue());
+                    p.setUrlLogo((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_URL_LOGO).getValue());
+                    p.setDescription((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_DESCRIPTION).getValue());
+                    p.setAddress((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_ADDRESS).getValue());
+                    p.setPhone((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_PHONE).getValue());
+                    p.setSite((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_SITE).getValue());
+                    p.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE).getValue());
+                    p.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE).getValue());
                     partners.add(p);
                 }
             }
@@ -156,11 +158,11 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
                 partners_aux = new ArrayList<>(partners);
 
-                frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+                frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAIN_FRAGMENT);
                 if(frag == null) {
                     frag = new PartnerFragment();
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.partners_fragment_container, frag, "mainFrag");
+                    ft.replace(R.id.partners_fragment_container, frag, Utility.KEY_MAIN_FRAGMENT);
                     ft.commit();
                 }
 

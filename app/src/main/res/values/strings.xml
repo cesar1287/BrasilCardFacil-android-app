@@ -124,4 +124,6 @@
     <string name="error_loading_partner">Algo deu errado ao carregar o parceiro, por favor contate o administrador.</string>
     <string name="loading_offer_pls_wait">Carregando oferta, por favor aguarde!!!</string>
     <string name="error_loading_offer">Algo deu errado ao carregar a oferta, por favor contate o administrador.</string>
+    <string name="message_partner_added_favorities">Parceiro removido dos favoritos</string>
+    <string name="message_partner_removed_favorities">Parceiro adicionado aos favoritos</string>
 </resources>

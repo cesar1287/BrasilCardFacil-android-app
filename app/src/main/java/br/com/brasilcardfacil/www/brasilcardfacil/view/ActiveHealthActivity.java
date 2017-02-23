@@ -20,6 +20,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.ActiveHealth;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.ActiveHealthFragment;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class ActiveHealthActivity extends AppCompatActivity {
 
@@ -72,9 +73,9 @@ public class ActiveHealthActivity extends AppCompatActivity {
                 ActiveHealth activeHealth;
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     activeHealth= new ActiveHealth();
-                    activeHealth.setTitle((String)postSnapshot.child("title").getValue());
-                    activeHealth.setUrlBanner((String)postSnapshot.child("url_banner").getValue());
-                    activeHealth.setDescription((String)postSnapshot.child("description").getValue());
+                    activeHealth.setTitle((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_ACTIVE_HEALTH_TITLE).getValue());
+                    activeHealth.setUrlBanner((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_ACTIVE_HEALTH_URL_BANNER).getValue());
+                    activeHealth.setDescription((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_ACTIVE_HEALTH_DESCRIPTION).getValue());
                     activeHealths.add(activeHealth);
                 }
             }
@@ -89,11 +90,11 @@ public class ActiveHealthActivity extends AppCompatActivity {
         singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                frag = (ActiveHealthFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+                frag = (ActiveHealthFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAIN_FRAGMENT);
                 if(frag == null) {
                     frag = new ActiveHealthFragment();
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.active_health_fragment_container, frag, "mainFrag");
+                    ft.replace(R.id.active_health_fragment_container, frag, Utility.KEY_MAIN_FRAGMENT);
                     ft.commit();
                 }
 

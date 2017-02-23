@@ -18,6 +18,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter.PartnerAdapter;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.interfaces.RecyclerViewOnClickListenerHack;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.FavActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerCategoryActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerDetailsActivity;
@@ -59,7 +60,7 @@ public class PartnerFragment extends Fragment implements RecyclerViewOnClickList
     @Override
     public void onClickListener(View view, int position) {
         Intent intent = new Intent(getActivity(), PartnerDetailsActivity.class);
-        intent.putExtra("partner", mList.get(position));
+        intent.putExtra(Utility.KEY_CONTENT_EXTRA_PARTNER, mList.get(position));
         startActivity(intent);
     }
 

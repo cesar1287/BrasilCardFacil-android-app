@@ -19,7 +19,9 @@ import com.google.firebase.database.ValueEventListener;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.OfferNotification;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.MapViewFragment;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class OfferDetailsActivity extends AppCompatActivity {
 
@@ -43,10 +45,10 @@ public class OfferDetailsActivity extends AppCompatActivity {
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        db = getIntent().getStringExtra("db");
-        child = getIntent().getStringExtra("child");
+        db = getIntent().getStringExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE);
+        child = getIntent().getStringExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD);
 
-        offer = (Offer) getIntent().getSerializableExtra("offer");
+        offer = (Offer) getIntent().getSerializableExtra(Utility.KEY_CONTENT_EXTRA_OFFER);
 
         if(db != null & child != null){
 
@@ -116,14 +118,14 @@ public class OfferDetailsActivity extends AppCompatActivity {
 
     public void setupUI(){
 
-        frag = (MapViewFragment) getSupportFragmentManager().findFragmentByTag("mapFrag");
+        frag = (MapViewFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAP_FRAGMENT);
         if(frag == null) {
             frag = new MapViewFragment();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("offer", offer);
+            bundle.putSerializable(Utility.KEY_CONTENT_EXTRA_OFFER, offer);
             frag.setArguments(bundle);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.map_fragment_container, frag, "mapFrag");
+            ft.replace(R.id.map_fragment_container, frag, Utility.KEY_MAP_FRAGMENT);
             ft.commit();
         }
 

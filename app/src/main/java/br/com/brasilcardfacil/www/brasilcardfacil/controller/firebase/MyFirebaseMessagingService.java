@@ -12,6 +12,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.ActiveHealthDetailsActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.OfferDetailsActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerDetailsActivity;
@@ -25,9 +26,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
 
         title = remoteMessage.getNotification().getTitle();
         body = remoteMessage.getNotification().getBody();
-        activity = remoteMessage.getData().get("type_notification");
-        db = remoteMessage.getData().get("db");
-        child = remoteMessage.getData().get("child");
+        activity = remoteMessage.getData().get(FirebaseHelper.FIREBASE_NOTIFICATION_TYPE);
+        db = remoteMessage.getData().get(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE);
+        child = remoteMessage.getData().get(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD);
 
         sendNotification();
     }
@@ -36,20 +37,28 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
         Intent intent;
 
         switch (activity) {
-            case "partner":
+            case FirebaseHelper.FIREBASE_NOTIFICATION_TYPE_PARTNER:
                 intent = new Intent(this, PartnerDetailsActivity.class);
-                intent.putExtra("db", db);
-                intent.putExtra("child", child);
+                intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE, db);
+                intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD, child);
                 break;
-            case "offer":
+            case FirebaseHelper.FIREBASE_NOTIFICATION_TYPE_OFFER:
                 intent = new Intent(this, OfferDetailsActivity.class);
-                intent.putExtra("db", db);
-                intent.putExtra("child", child);
+                intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE, db);
+                intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD, child);
+                break;
+            case FirebaseHelper.FIREBASE_NOTIFICATION_TYPE_UPDATE:
+                try {
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + Utility.APP_PACKAGE_NAME));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="
+                            + Utility.APP_PACKAGE_NAME));
+                }
                 break;
             default:
                 intent = new Intent(this, ActiveHealthDetailsActivity.class);
-                intent.putExtra("db", db);
-                intent.putExtra("child", child);
+                intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE, db);
+                intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD, child);
                 break;
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

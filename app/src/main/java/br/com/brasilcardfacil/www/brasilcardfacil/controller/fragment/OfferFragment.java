@@ -18,6 +18,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter.OfferAdapter;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.interfaces.RecyclerViewOnClickListenerHack;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.OfferActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.OfferDetailsActivity;
 
@@ -54,7 +55,7 @@ public class OfferFragment extends Fragment implements RecyclerViewOnClickListen
     @Override
     public void onClickListener(View view, int position) {
         Intent intent = new Intent(getActivity(), OfferDetailsActivity.class);
-        intent.putExtra("offer", mList.get(position));
+        intent.putExtra(Utility.KEY_CONTENT_EXTRA_OFFER, mList.get(position));
         startActivity(intent);
     }
 

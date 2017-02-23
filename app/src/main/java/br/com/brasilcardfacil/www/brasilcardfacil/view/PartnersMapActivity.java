@@ -21,6 +21,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.PartnersMapViewFragment;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class PartnersMapActivity extends AppCompatActivity {
 
@@ -58,9 +59,9 @@ public class PartnersMapActivity extends AppCompatActivity {
                 Partner p;
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     p = new Partner();
-                    p.setName((String)postSnapshot.child("name").getValue());
-                    p.setLatitude((Double) postSnapshot.child("latitude").getValue());
-                    p.setLongitude((Double) postSnapshot.child("longitude").getValue());
+                    p.setName((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_NAME).getValue());
+                    p.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE).getValue());
+                    p.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE).getValue());
                     partners.add(p);
                 }
             }
@@ -75,14 +76,14 @@ public class PartnersMapActivity extends AppCompatActivity {
         singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                frag = (PartnersMapViewFragment) getSupportFragmentManager().findFragmentByTag("mapFrag");
+                frag = (PartnersMapViewFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAP_FRAGMENT);
                 if(frag == null) {
                     frag = new PartnersMapViewFragment();
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("partners", (Serializable) partners);
+                    bundle.putSerializable(Utility.KEY_CONTENT_EXTRA_ACTIVE_PARTNERS_NEARBY, (Serializable) partners);
                     frag.setArguments(bundle);
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.partners_map_fragment_container, frag, "mapFrag");
+                    ft.replace(R.id.partners_map_fragment_container, frag, Utility.KEY_MAP_FRAGMENT);
                     ft.commit();
                 }
 

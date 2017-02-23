@@ -30,6 +30,7 @@ import java.util.List;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 import static android.content.Context.LOCATION_SERVICE;
 
@@ -47,7 +48,7 @@ public class PartnersMapViewFragment extends Fragment implements ActivityCompat.
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
 
-        partners = (List<Partner>) getArguments().getSerializable("partners");
+        partners = (List<Partner>) getArguments().getSerializable(Utility.KEY_CONTENT_EXTRA_ACTIVE_PARTNERS_NEARBY);
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);

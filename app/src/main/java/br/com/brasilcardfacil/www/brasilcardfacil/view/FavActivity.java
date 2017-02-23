@@ -12,6 +12,7 @@ import java.util.List;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.PartnerFragment;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 import br.com.brasilcardfacil.www.brasilcardfacil.model.BrasilCardFacilDAO;
 
 public class FavActivity extends AppCompatActivity {
@@ -60,11 +61,11 @@ public class FavActivity extends AppCompatActivity {
 
     public void setupUI(){
 
-        frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+        frag = (PartnerFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAIN_FRAGMENT);
         if(frag == null) {
             frag = new PartnerFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.fav_fragment_container, frag, "mainFrag");
+            ft.replace(R.id.fav_fragment_container, frag, Utility.KEY_MAIN_FRAGMENT);
             ft.commit();
         }
     }

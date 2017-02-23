@@ -20,7 +20,9 @@ import com.google.firebase.database.ValueEventListener;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.PartnerNotification;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.MapViewFragment;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 import br.com.brasilcardfacil.www.brasilcardfacil.model.BrasilCardFacilDAO;
 
 public class PartnerDetailsActivity extends AppCompatActivity {
@@ -49,10 +51,10 @@ public class PartnerDetailsActivity extends AppCompatActivity {
         dao = new BrasilCardFacilDAO(getApplicationContext());
         id_user = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        db = getIntent().getStringExtra("db");
-        child = getIntent().getStringExtra("child");
+        db = getIntent().getStringExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE);
+        child = getIntent().getStringExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD);
 
-        partner = (Partner) getIntent().getSerializableExtra("partner");
+        partner = (Partner) getIntent().getSerializableExtra(Utility.KEY_CONTENT_EXTRA_PARTNER);
 
         if(db != null & child != null){
 
@@ -122,14 +124,14 @@ public class PartnerDetailsActivity extends AppCompatActivity {
 
     public void setupUI(){
 
-        frag = (MapViewFragment) getSupportFragmentManager().findFragmentByTag("mapFrag");
+        frag = (MapViewFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAP_FRAGMENT);
         if(frag == null) {
             frag = new MapViewFragment();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("partner", partner);
+            bundle.putSerializable(Utility.KEY_CONTENT_EXTRA_PARTNER, partner);
             frag.setArguments(bundle);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.map_fragment_container, frag, "mapFrag");
+            ft.replace(R.id.map_fragment_container, frag, Utility.KEY_MAP_FRAGMENT);
             ft.commit();
         }
 
@@ -167,12 +169,12 @@ public class PartnerDetailsActivity extends AppCompatActivity {
                 if(dao.isFav(id_user, partner.getUrlLogo())){
                     dao.delete(id_user, partner.getUrlLogo());
                     item.setIcon(R.drawable.ic_heart_outline_white_48dp);
-                    Toast.makeText(this, "Parceiro removido dos favoritos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.message_partner_added_favorities, Toast.LENGTH_SHORT).show();
                 }else {
                     dao.insertFav(id_user, partner);
                     dao.close();
                     item.setIcon(R.drawable.ic_heart_white_48dp);
-                    Toast.makeText(this, "Parceiro adicionado aos favoritos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.message_partner_removed_favorities, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

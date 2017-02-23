@@ -18,6 +18,8 @@ import com.google.firebase.database.ValueEventListener;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.ActiveHealth;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.ActiveHealthNotification;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class ActiveHealthDetailsActivity extends AppCompatActivity {
 
@@ -39,10 +41,10 @@ public class ActiveHealthDetailsActivity extends AppCompatActivity {
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        db = getIntent().getStringExtra("db");
-        child = getIntent().getStringExtra("child");
+        db = getIntent().getStringExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE);
+        child = getIntent().getStringExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD);
 
-        activeHealth = (ActiveHealth) getIntent().getSerializableExtra("active_health");
+        activeHealth = (ActiveHealth) getIntent().getSerializableExtra(Utility.KEY_CONTENT_EXTRA_ACTIVE_HEALTH);
 
         if(db != null & child != null){
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
 
 public class BrasilCardFacilDAO extends SQLiteOpenHelper {
 
@@ -55,15 +56,15 @@ public class BrasilCardFacilDAO extends SQLiteOpenHelper {
     public void insertFav(String id_user, Partner partner){
 
         ContentValues cv = new ContentValues();
-        cv.put("id_user", id_user);
-        cv.put("url_logo", partner.getUrlLogo());
-        cv.put("name", partner.getName());
-        cv.put("address", partner.getAddress());
-        cv.put("description", partner.getDescription());
-        cv.put("site", partner.getSite());
-        cv.put("phone", partner.getPhone());
-        cv.put("latitude", partner.getLatitude());
-        cv.put("longitude", partner.getLongitude());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_ID_USER, id_user);
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_URL_LOGO, partner.getUrlLogo());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_NAME, partner.getName());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_ADDRESS, partner.getAddress());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_DESCRIPTION, partner.getDescription());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_SITE, partner.getSite());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_PHONE, partner.getPhone());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE, partner.getLatitude());
+        cv.put(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE, partner.getLongitude());
 
         getWritableDatabase().insert(TABELA_FAV, null, cv);
     }
@@ -80,14 +81,14 @@ public class BrasilCardFacilDAO extends SQLiteOpenHelper {
 
             partner = new Partner();
 
-            partner.setUrlLogo(cursor.getString(cursor.getColumnIndex("url_logo")));
-            partner.setName(cursor.getString(cursor.getColumnIndex("name")));
-            partner.setAddress(cursor.getString(cursor.getColumnIndex("address")));
-            partner.setDescription(cursor.getString(cursor.getColumnIndex("description")));
-            partner.setSite(cursor.getString(cursor.getColumnIndex("site")));
-            partner.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
-            partner.setLatitude(cursor.getDouble(cursor.getColumnIndex("latitude")));
-            partner.setLongitude(cursor.getDouble(cursor.getColumnIndex("longitude")));
+            partner.setUrlLogo(cursor.getString(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_URL_LOGO)));
+            partner.setName(cursor.getString(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_NAME)));
+            partner.setAddress(cursor.getString(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_ADDRESS)));
+            partner.setDescription(cursor.getString(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_DESCRIPTION)));
+            partner.setSite(cursor.getString(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_SITE)));
+            partner.setPhone(cursor.getString(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_PHONE)));
+            partner.setLatitude(cursor.getDouble(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE)));
+            partner.setLongitude(cursor.getDouble(cursor.getColumnIndex(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE)));
             partners.add(partner);
         }
         cursor.close();

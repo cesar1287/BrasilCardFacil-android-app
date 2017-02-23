@@ -20,6 +20,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.OfferFragment;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class OfferActivity extends AppCompatActivity {
 
@@ -71,14 +72,14 @@ public class OfferActivity extends AppCompatActivity {
                 Offer offer;
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     offer = new Offer();
-                    offer.setName((String)postSnapshot.child("name").getValue());
-                    offer.setUrlBanner((String)postSnapshot.child("url_banner").getValue());
-                    offer.setDescription((String)postSnapshot.child("description").getValue());
-                    offer.setAddress((String)postSnapshot.child("address").getValue());
-                    offer.setPhone((String)postSnapshot.child("phone").getValue());
-                    offer.setAbout((String)postSnapshot.child("about").getValue());
-                    offer.setLatitude((Double) postSnapshot.child("latitude").getValue());
-                    offer.setLongitude((Double) postSnapshot.child("longitude").getValue());
+                    offer.setName((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_NAME).getValue());
+                    offer.setUrlBanner((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_URL_BANNER).getValue());
+                    offer.setDescription((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_DESCRIPTION).getValue());
+                    offer.setAddress((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_ADDRESS).getValue());
+                    offer.setPhone((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_PHONE).getValue());
+                    offer.setAbout((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_ABOUT).getValue());
+                    offer.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_LATITUDE).getValue());
+                    offer.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_OFFER_LONGITUDE).getValue());
                     offers.add(offer);
                 }
             }
@@ -93,11 +94,11 @@ public class OfferActivity extends AppCompatActivity {
         singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                frag = (OfferFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+                frag = (OfferFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAIN_FRAGMENT);
                 if(frag == null) {
                     frag = new OfferFragment();
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.offer_fragment_container, frag, "mainFrag");
+                    ft.replace(R.id.offer_fragment_container, frag, Utility.KEY_MAIN_FRAGMENT);
                     ft.commit();
                 }
 

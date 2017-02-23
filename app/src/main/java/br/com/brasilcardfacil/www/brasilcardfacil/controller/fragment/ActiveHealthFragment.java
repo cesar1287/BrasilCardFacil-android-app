@@ -18,6 +18,7 @@ import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.adapter.ActiveHealthAdapter;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.ActiveHealth;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.interfaces.RecyclerViewOnClickListenerHack;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.ActiveHealthActivity;
 import br.com.brasilcardfacil.www.brasilcardfacil.view.ActiveHealthDetailsActivity;
 
@@ -54,7 +55,7 @@ public class ActiveHealthFragment extends Fragment implements RecyclerViewOnClic
     @Override
     public void onClickListener(View view, int position) {
         Intent intent = new Intent(getActivity(), ActiveHealthDetailsActivity.class);
-        intent.putExtra("active_health", mList.get(position));
+        intent.putExtra(Utility.KEY_CONTENT_EXTRA_ACTIVE_HEALTH, mList.get(position));
         startActivity(intent);
     }
 

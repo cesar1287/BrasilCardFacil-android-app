@@ -18,6 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Offer;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class MapViewFragment extends Fragment {
 
@@ -28,9 +29,9 @@ public class MapViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
 
-        final Partner partner = (Partner) getArguments().getSerializable("partner");
+        final Partner partner = (Partner) getArguments().getSerializable(Utility.KEY_CONTENT_EXTRA_PARTNER);
 
-        final Offer offer = (Offer) getArguments().getSerializable("offer");
+        final Offer offer = (Offer) getArguments().getSerializable(Utility.KEY_CONTENT_EXTRA_OFFER);
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
