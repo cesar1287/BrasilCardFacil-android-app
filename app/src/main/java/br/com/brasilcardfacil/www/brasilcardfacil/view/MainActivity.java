@@ -261,16 +261,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_total) {
-            startActivity(new Intent(this, TotalPlanActivity.class));
-        } else if (id == R.id.nav_cheers) {
-            startActivity(new Intent(this, CheersPlanActivity.class));
-        } else if (id == R.id.nav_funeral) {
-            startActivity(new Intent(this, FuneralPlanActivity.class));
+        if (id == R.id.nav_plan) {
+            startActivity(new Intent(this, PlansActivity.class));
         } else if (id == R.id.nav_partners) {
             startActivity(new Intent(MainActivity.this, PartnerActivity.class));
-        }else if (id == R.id.nav_nearby) {
+        } else if (id == R.id.nav_nearby) {
             startActivity(new Intent(MainActivity.this, PartnersMapActivity.class));
+        }else if (id == R.id.nav_offer) {
+            startActivity(new Intent(MainActivity.this, OfferActivity.class));
+        }else if (id == R.id.nav_fav) {
+            startActivity(new Intent(MainActivity.this, FavActivity.class));
+        }else if (id == R.id.nav_active_health) {
+            startActivity(new Intent(MainActivity.this, ActiveHealthActivity.class));
         }else if (id == R.id.nav_account) {
             startActivity(new Intent(this, AccountActivity.class));
         }else if (id == R.id.nav_logout) {

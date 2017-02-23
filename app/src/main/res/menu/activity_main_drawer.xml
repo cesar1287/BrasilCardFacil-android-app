@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/group_menu_planos">
-        <menu>
-            <item
-                android:id="@+id/nav_total"
-                android:title="@string/plano_total" />
-            <item
-                android:id="@+id/nav_cheers"
-                android:title="@string/plano_cheers" />
-            <item
-                android:id="@+id/nav_funeral"
-                android:title="@string/plano_funeral"/>
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_plan"
+        android:icon="@drawable/sandwich_0006_planos_sandwich"
+        android:title="@string/menu_item_plan"/>
 
-    <item android:title="@string/group_menu_partners">
-        <menu>
-            <item
-                android:id="@+id/nav_fav"
-                android:title="@string/menu_item_fav"/>
+    <item
+        android:id="@+id/nav_partners"
+        android:icon="@drawable/sandwich_0007_parceiros_sandwich"
+        android:title="@string/menu_item_partners"/>
 
-            <item
-                android:id="@+id/nav_offer"
-                android:title="@string/menu_item_offer"/>
+    <item
+        android:id="@+id/nav_nearby"
+        android:icon="@drawable/sandwich_0008_proximos_sandwich"
+        android:title="@string/menu_item_nearby"/>
 
-            <item
-                android:id="@+id/nav_partners"
-                android:title="@string/menu_item_partners"/>
+    <item
+        android:id="@+id/nav_offer"
+        android:icon="@drawable/sandwich_0009_ofertas_sandwich"
+        android:title="@string/menu_item_offer"/>
 
-            <item
-                android:id="@+id/nav_nearby"
-                android:title="@string/menu_item_nearby"/>
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_fav"
+        android:icon="@drawable/sandwich_0010_favoritos_sandwich"
+        android:title="@string/menu_item_fav"/>
+
+    <item
+        android:id="@+id/nav_active_health"
+        android:icon="@drawable/sandwich_0011_dicas_sandwich"
+        android:title="@string/menu_item_tips"/>
 
     <item android:title="@string/group_menu_opcoes">
         <menu>
