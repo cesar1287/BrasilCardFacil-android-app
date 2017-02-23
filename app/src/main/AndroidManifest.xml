@@ -125,7 +125,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.ActiveHealthActivity"
-            android:label="@string/screen_active_health"
+            android:label="@string/screen_tips"
             android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait" />
         <activity

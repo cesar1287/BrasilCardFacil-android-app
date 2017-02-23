@@ -48,7 +48,7 @@ public class ActiveHealthDetailsActivity extends AppCompatActivity {
 
         if(db != null & child != null){
 
-            dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_active_health_pls_wait), true, false);
+            dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_tips_pls_wait), true, false);
             active_health_notification = mDatabase.child(db).child(child);
 
             loadActiveHealthNotification();
@@ -83,7 +83,7 @@ public class ActiveHealthDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActiveHealthDetailsActivity.this, R.string.error_loading_active_health, Toast.LENGTH_LONG).show();
+                Toast.makeText(ActiveHealthDetailsActivity.this, R.string.error_loading_tips, Toast.LENGTH_LONG).show();
                 finish();
             }
         };
@@ -97,7 +97,7 @@ public class ActiveHealthDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActiveHealthDetailsActivity.this, R.string.error_loading_active_health, Toast.LENGTH_LONG).show();
+                Toast.makeText(ActiveHealthDetailsActivity.this, R.string.error_loading_tips, Toast.LENGTH_LONG).show();
                 finish();
             }
         };

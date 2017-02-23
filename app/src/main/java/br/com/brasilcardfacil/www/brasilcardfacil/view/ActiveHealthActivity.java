@@ -44,7 +44,7 @@ public class ActiveHealthActivity extends AppCompatActivity {
 
         activeHealth = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_ACTIVE_HEALTH).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY_TITLE);
 
-        dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_active_health_pls_wait), true, false);
+        dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_tips_pls_wait), true, false);
 
         loadList();
     }
@@ -82,7 +82,7 @@ public class ActiveHealthActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActiveHealthActivity.this, R.string.error_loading_active_health, Toast.LENGTH_LONG).show();
+                Toast.makeText(ActiveHealthActivity.this, R.string.error_loading_tips, Toast.LENGTH_LONG).show();
                 finish();
             }
         };
@@ -103,7 +103,7 @@ public class ActiveHealthActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ActiveHealthActivity.this, R.string.error_loading_active_health, Toast.LENGTH_LONG).show();
+                Toast.makeText(ActiveHealthActivity.this, R.string.error_loading_tips, Toast.LENGTH_LONG).show();
                 finish();
             }
         };
