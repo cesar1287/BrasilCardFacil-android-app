@@ -30,6 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.FontsOverride;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class MainActivity extends AppCompatActivity
@@ -57,6 +58,10 @@ public class MainActivity extends AppCompatActivity
         verifyUserIsLogged();
 
         setContentView(R.layout.activity_main);
+
+        //set Custom Typeface
+
+        FontsOverride.setDefaultFont(this, "MONOSPACE", "fonts/futura_medium_bt-webfont.ttf");
 
         setupNavigationDrawer();
 
