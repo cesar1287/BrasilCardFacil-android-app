@@ -21,72 +21,74 @@ public class PartnerActivity extends AppCompatActivity {
 
     public void setupListeners(){
 
-        ImageButton btClinicHosp = (ImageButton) findViewById(R.id.partner_med_hosp);
-        btClinicHosp.setOnClickListener(new View.OnClickListener() {
+        ImageButton btFood = (ImageButton) findViewById(R.id.partner_food);
+        btFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.CLINIC);
+                Intent intent = new Intent(PartnerActivity.this, PartnerFoodActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton btOdonto = (ImageButton) findViewById(R.id.partner_odonto);
-        btOdonto.setOnClickListener(new View.OnClickListener() {
+        ImageButton btArtDegign = (ImageButton) findViewById(R.id.partner_art_design);
+        btArtDegign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.DENTISTRY);
+                Intent intent = new Intent(PartnerActivity.this, PartnerArtDesignActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton btVeteri = (ImageButton) findViewById(R.id.partner_veteri);
-        btVeteri.setOnClickListener(new View.OnClickListener() {
+        ImageButton btAuto = (ImageButton) findViewById(R.id.partner_auto);
+        btAuto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.VETERINARY);
+                Intent intent = new Intent(PartnerActivity.this, PartnerAutoActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton btComer = (ImageButton) findViewById(R.id.partner_comercio);
-        btComer.setOnClickListener(new View.OnClickListener() {
+        ImageButton btBeauty = (ImageButton) findViewById(R.id.partner_beauty);
+        btBeauty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.TRADE);
+                Intent intent = new Intent(PartnerActivity.this, PartnerBeautyActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton btLab = (ImageButton) findViewById(R.id.partner_lab);
-        btLab.setOnClickListener(new View.OnClickListener() {
+        ImageButton btConsulting = (ImageButton) findViewById(R.id.partner_consulting);
+        btConsulting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.LABORATORY);
+                Intent intent = new Intent(PartnerActivity.this, PartnerConsultingActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton btAdvo = (ImageButton) findViewById(R.id.partner_advocacia);
-        btAdvo.setOnClickListener(new View.OnClickListener() {
+        ImageButton btEducation = (ImageButton) findViewById(R.id.partner_education);
+        btEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.ADVOCACY);
+                Intent intent = new Intent(PartnerActivity.this, PartnerEducationActivity.class);
                 startActivity(intent);
             }
         });
 
-        ImageButton btFuneral = (ImageButton) findViewById(R.id.partner_funeraria);
-        btFuneral.setOnClickListener(new View.OnClickListener() {
+        ImageButton btSport = (ImageButton) findViewById(R.id.partner_sport);
+        btSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.FUNERAL);
+                Intent intent = new Intent(PartnerActivity.this, PartnerSportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btClothing = (ImageButton) findViewById(R.id.partner_clothing);
+        btClothing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerClothingActivity.class);
                 startActivity(intent);
             }
         });

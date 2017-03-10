@@ -14,7 +14,7 @@
                 android:contentDescription="@string/banner_text_screen_funeral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/plano_funerario_0001_funerario_texto"
+                android:src="@drawable/plano_0001_credito_vida_texto"
                 android:layout_marginTop="30sp"/>
 
             <ImageButton

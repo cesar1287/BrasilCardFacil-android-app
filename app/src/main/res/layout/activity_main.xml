@@ -20,6 +20,7 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
-        app:itemTextAppearance="@style/NavigationDrawerStyle" />
+        app:itemTextAppearance="@style/NavigationDrawerStyle"
+        app:itemTextColor="@color/itemTextColorNavigationDrawer"/>
 
 </android.support.v4.widget.DrawerLayout>

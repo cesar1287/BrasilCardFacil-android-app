@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".33"
-            android:background="@drawable/planos_0009_funeraria"
+            android:background="@drawable/planos_0009_credito_vida"
             android:scaleY="0.46"
             android:scaleX="0.72"/>
     </LinearLayout>

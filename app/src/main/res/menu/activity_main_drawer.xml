@@ -35,11 +35,11 @@
         <menu>
             <item
                 android:id="@+id/nav_account"
-                android:icon="@drawable/user_0016_user"
+                android:icon="@drawable/sandwich_0015_user"
                 android:title="@string/conta"/>
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/user_0015_sair"
+                android:icon="@drawable/sandwich_0014_sair"
                 android:title="@string/sair" />
         </menu>
     </item>

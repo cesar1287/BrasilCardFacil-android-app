@@ -128,4 +128,12 @@
     <string name="message_partner_removed_favorities">Parceiro adicionado aos favoritos</string>
     <string name="menu_item_plan">Planos</string>
     <string name="menu_item_tips">Dicas</string>
+    <string name="screen_food">Alimentação</string>
+    <string name="screen_art_design">Arte e Design</string>
+    <string name="screen_auto">Auto</string>
+    <string name="screen_beauty">Beleza</string>
+    <string name="screen_consulting">Consultoria</string>
+    <string name="screen_education">Educação</string>
+    <string name="screen_sport">Esporte</string>
+    <string name="screen_clothing">Vestuário</string>
 </resources>

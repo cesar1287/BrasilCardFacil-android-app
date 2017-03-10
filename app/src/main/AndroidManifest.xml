@@ -131,6 +131,46 @@
         <activity
             android:name=".view.ActiveHealthDetailsActivity"
             android:parentActivityName=".view.ActiveHealthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerFoodActivity"
+            android:label="@string/screen_food"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerArtDesignActivity"
+            android:label="@string/screen_art_design"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerAutoActivity"
+            android:label="@string/screen_auto"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerBeautyActivity"
+            android:label="@string/screen_beauty"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerConsultingActivity"
+            android:label="@string/screen_consulting"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerEducationActivity"
+            android:label="@string/screen_education"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerSportActivity"
+            android:label="@string/screen_sport"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerClothingActivity"
+            android:label="@string/screen_clothing"
+            android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait"/>
     </application>
 

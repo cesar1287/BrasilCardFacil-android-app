@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerSportActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/main_banner"
+            android:contentDescription="@string/banner_screen_partners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/parceiros_esporte_0010_banner_parceiros"
+            android:scaleX="1.02"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="8sp"/>
+
+        <ImageButton
+            android:id="@+id/food_water_gas"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_banner"
+            android:background="@drawable/parceiros_esporte_0006_academia"
+            android:layout_margin="8sp"
+            android:scaleX="0.35"/>
+
+        <ImageButton
+            android:id="@+id/food_pub_coffee"
+            android:contentDescription="@string/dentistry_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_water_gas"
+            android:background="@drawable/parceiros_esporte_0007_personal"
+            android:layout_margin="8sp"
+            android:scaleX="0.3"/>
+
+        <ImageButton
+            android:id="@+id/food_distributor"
+            android:contentDescription="@string/veterinary_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_pub_coffee"
+            android:background="@drawable/parceiros_esporte_0008_suplemento"
+            android:layout_margin="8sp"
+            android:scaleX="0.41"/>
+
+        <ImageButton
+            android:id="@+id/food_bakery"
+            android:contentDescription="@string/lab_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_distributor"
+            android:background="@drawable/parceiros_esporte_0009_vestuario"
+            android:layout_margin="8sp"
+            android:scaleX="0.33"/>
+    </RelativeLayout>
+</ScrollView>
