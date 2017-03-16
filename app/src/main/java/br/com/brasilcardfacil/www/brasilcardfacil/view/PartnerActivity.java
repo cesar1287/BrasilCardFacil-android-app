@@ -75,6 +75,51 @@ public class PartnerActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btEntertainment = (ImageButton) findViewById(R.id.partner_entertainment);
+        btEntertainment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerEntertainmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btHome = (ImageButton) findViewById(R.id.partner_home);
+        btHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btTourism = (ImageButton) findViewById(R.id.partner_tourism);
+        btTourism.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerTourismActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btHealth = (ImageButton) findViewById(R.id.partner_health);
+        btHealth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerHealthActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btTech = (ImageButton) findViewById(R.id.partner_tech);
+        btTech.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerTechActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btSport = (ImageButton) findViewById(R.id.partner_sport);
         btSport.setOnClickListener(new View.OnClickListener() {
             @Override

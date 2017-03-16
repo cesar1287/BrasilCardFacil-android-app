@@ -98,7 +98,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnerCategoryActivity"
-            android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnersMapActivity"
@@ -170,6 +169,31 @@
         <activity
             android:name=".view.PartnerClothingActivity"
             android:label="@string/screen_clothing"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerEntertainmentActivity"
+            android:label="@string/screen_entertainment"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerHomeActivity"
+            android:label="@string/screen_home"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerTourismActivity"
+            android:label="@string/screen_tourism"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.PartnerHealthActivity"
+            android:label="@string/screen_health"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".view.PartnerTechActivity"
+            android:label="@string/screen_tech"
             android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait"/>
     </application>

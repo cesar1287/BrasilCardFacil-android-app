@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class Partner implements Serializable{
 
-    private String category, name, url_logo, description, address, phone, site;
+    private String subcategory, name, url_logo, description, address, phone, site;
     private Double latitude, longitude;
 
-    public String getCategory() {
-        return category;
+    public String getSubcategory() {
+        return subcategory;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
     }
 
     public String getAddress() {

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
     private ProgressDialog dialog;
     ImageView banner;
-    String category;
+    String category, subcategory;
 
     Query partner;
 
@@ -70,6 +71,22 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
         partner.removeEventListener(valueEventListener);
         partner.removeEventListener(singleValueEventListener);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch (id) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public List<Partner> getPartnersList() {
@@ -106,9 +123,12 @@ public class PartnerCategoryActivity extends AppCompatActivity {
             for (Iterator<Partner> i = partners.iterator(); i.hasNext();) {
                 Partner partner = i.next();
                 name_partner = partner.getName().toLowerCase();
-                category_partner = partner.getCategory().toLowerCase();
+                //category_partner = partner.getCategory().toLowerCase();
                 search_name = String.valueOf(sequence).toLowerCase();
-                if (!name_partner.contains(search_name) && !category_partner.contains(search_name)) {
+                /*if (!name_partner.contains(search_name) && !category_partner.contains(search_name)) {
+                    i.remove();
+                }*/
+                if (!name_partner.contains(search_name)) {
                     i.remove();
                 }
             }
@@ -133,7 +153,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                 Partner p;
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     p = new Partner();
-                    p.setCategory((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_CATEGORY).getValue());
+                    p.setSubcategory((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_SUBCATEGORY).getValue());
                     p.setName((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_NAME).getValue());
                     p.setUrlLogo((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_URL_LOGO).getValue());
                     p.setDescription((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_DESCRIPTION).getValue());
@@ -142,7 +162,10 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     p.setSite((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_SITE).getValue());
                     p.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE).getValue());
                     p.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE).getValue());
-                    partners.add(p);
+
+                    if(p.getSubcategory().contains(subcategory)) {
+                        partners.add(p);
+                    }
                 }
             }
 
@@ -185,74 +208,27 @@ public class PartnerCategoryActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
 
+        if (actionBar!=null) {
+            actionBar.setDefaultDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         category = getIntent().getStringExtra(Utility.CATEGORY);
+
+        subcategory = getIntent().getStringExtra(Utility.SUBCATEGORY);
 
         banner = (ImageView) findViewById(R.id.partner_category_banner);
 
         if(actionBar!=null) {
             switch (category) {
-                case Utility.CLINIC:
-                    actionBar.setTitle(R.string.screen_clinic);
+                case Utility.FOOD:
+                    actionBar.setTitle(R.string.screen_food);
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_clinica_hosp, getApplicationContext().getTheme()));
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_alimentacao_0006_banner_parceiros, getApplicationContext().getTheme()));
                     } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_clinica_hosp);
+                        banner.setImageResource(R.drawable.parceiros_alimentacao_0006_banner_parceiros);
                     }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLINIC).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
-                    break;
-                case Utility.ADVOCACY:
-                    actionBar.setTitle(R.string.screen_advocacy);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_advocacia, getApplicationContext().getTheme()));
-                    } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_advocacia);
-                    }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_ADVOCACY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
-                    break;
-                case Utility.VETERINARY:
-                    actionBar.setTitle(R.string.screen_veterinary);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_veterinaria, getApplicationContext().getTheme()));
-                    } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_veterinaria);
-                    }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_VETERINARY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
-                    break;
-                case Utility.LABORATORY:
-                    actionBar.setTitle(R.string.screen_lab);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_lab, getApplicationContext().getTheme()));
-                    } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_lab);
-                    }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_LAB).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
-                    break;
-                case Utility.TRADE:
-                    actionBar.setTitle(R.string.screen_trade);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_comercio, getApplicationContext().getTheme()));
-                    } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_comercio);
-                    }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_TRADE).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
-                    break;
-                case Utility.DENTISTRY:
-                    actionBar.setTitle(R.string.screen_dentistry);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_odonto, getApplicationContext().getTheme()));
-                    } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_odonto);
-                    }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_DENTISTRY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
-                    break;
-                case Utility.FUNERAL:
-                    actionBar.setTitle(R.string.screen_funeral);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_funeraria, getApplicationContext().getTheme()));
-                    } else {
-                        banner.setImageResource(R.drawable.parceiros_0006_banner_funeraria);
-                    }
-                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_FUNERAL).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_FOOD).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
             }
         }

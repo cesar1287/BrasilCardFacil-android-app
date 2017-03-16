@@ -136,4 +136,9 @@
     <string name="screen_education">Educação</string>
     <string name="screen_sport">Esporte</string>
     <string name="screen_clothing">Vestuário</string>
+    <string name="screen_entertainment">Entretenimento</string>
+    <string name="screen_home">Lar e Construção</string>
+    <string name="screen_tourism">Turismo</string>
+    <string name="screen_health">Saúde</string>
+    <string name="screen_tech">Tecnologia</string>
 </resources>

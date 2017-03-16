@@ -19,8 +19,9 @@ public class FirebaseHelper {
     public static final String FIREBASE_DATABASE_USERS = "users";
     public static final String FIREBASE_DATABASE_PARTNERS_LOCALIZATION = "parceiros_localizacao";
     public static final String FIREBASE_DATABASE_ACTIVE_HEALTH = "saude_ativa";
+    public static final String FIREBASE_DATABASE_FOOD = "alimentacao";
 
-    public static final String FIREBASE_DATABASE_PARTNER_CATEGORY = "category";
+    public static final String FIREBASE_DATABASE_PARTNER_SUBCATEGORY = "subcategory";
     public static final String FIREBASE_DATABASE_PARTNER_NAME = "name";
     public static final String FIREBASE_DATABASE_PARTNER_URL_LOGO = "url_logo";
     public static final String FIREBASE_DATABASE_PARTNER_DESCRIPTION = "description";
