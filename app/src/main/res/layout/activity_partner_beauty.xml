@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/beauty_barber_shop"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,31 +31,31 @@
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/beauty_aesthetics"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/beauty_barber_shop"
             android:background="@drawable/parceiros_beleza_0010_estetica"
             android:layout_margin="8sp"
             android:scaleX="0.25"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/beauty_make_up"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_pub_coffee"
+            android:layout_below="@id/beauty_aesthetics"
             android:background="@drawable/parceiros_beleza_0011_maquiagem"
             android:layout_margin="8sp"
             android:scaleX="0.4"/>
 
         <ImageButton
-            android:id="@+id/food_bakery"
+            android:id="@+id/beauty_beauty_salon"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_distributor"
+            android:layout_below="@id/beauty_make_up"
             android:background="@drawable/parceiros_beleza_0012_salao_beleza"
             android:layout_margin="8sp"
             android:scaleX="0.52"/>

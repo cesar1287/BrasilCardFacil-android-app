@@ -230,6 +230,42 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     }
                     partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_FOOD).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
+                case Utility.ART_DESIGN:
+                    actionBar.setTitle(R.string.screen_art_design);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_arte_design_0006_banner_pareiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_arte_design_0006_banner_pareiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_ART_DESIGN).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.BEAUTY:
+                    actionBar.setTitle(R.string.screen_beauty);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_beleza_0006_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_beleza_0006_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_BEAUTY).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.CONSULTING:
+                    actionBar.setTitle(R.string.screen_consulting);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_consultoria_0006_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_consultoria_0006_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CONSULTING).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.EDUCATION:
+                    actionBar.setTitle(R.string.screen_education);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_educacao_0006_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_educacao_0006_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_EDUCATION).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
             }
         }
     }

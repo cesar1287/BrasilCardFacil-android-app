@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/consulting_business"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,11 +31,11 @@
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/consulting_legal"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/consulting_business"
             android:background="@drawable/parceiros_consultoria_0009_juridica"
             android:layout_margin="8sp"
             android:scaleX="0.25"/>
