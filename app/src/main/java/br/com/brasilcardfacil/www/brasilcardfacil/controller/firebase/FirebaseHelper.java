@@ -15,9 +15,14 @@ public class FirebaseHelper {
 
     public static final String FIREBASE_DATABASE_FOOD = "alimentacao";
     public static final String FIREBASE_DATABASE_ART_DESIGN = "arte_design";
+    public static final String FIREBASE_DATABASE_AUTO = "auto";
     public static final String FIREBASE_DATABASE_BEAUTY = "beleza";
     public static final String FIREBASE_DATABASE_CONSULTING = "consultoria";
     public static final String FIREBASE_DATABASE_EDUCATION = "educacao";
+    public static final String FIREBASE_DATABASE_SPORT = "esporte";
+    public static final String FIREBASE_DATABASE_CLOTHING = "vestuario";
+    public static final String FIREBASE_DATABASE_TOURISM = "turismo";
+    public static final String FIREBASE_DATABASE_TECH = "tecnologia";
 
     public static final String FIREBASE_DATABASE_PARTNER_SUBCATEGORY = "subcategory";
     public static final String FIREBASE_DATABASE_PARTNER_NAME = "name";

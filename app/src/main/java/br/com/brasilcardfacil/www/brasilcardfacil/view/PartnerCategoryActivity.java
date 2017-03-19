@@ -266,6 +266,51 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     }
                     partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_EDUCATION).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
+                case Utility.SPORT:
+                    actionBar.setTitle(R.string.screen_sport);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_esporte_0010_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_esporte_0010_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_SPORT).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.CLOTHING:
+                    actionBar.setTitle(R.string.screen_clothing);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_vestuario_0010_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_vestuario_0010_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_CLOTHING).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.TOURISM:
+                    actionBar.setTitle(R.string.screen_tourism);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_turismo_0011_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_turismo_0011_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_TOURISM).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.AUTO:
+                    actionBar.setTitle(R.string.screen_auto);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_auto_0006_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_auto_0006_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_AUTO).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.TECH:
+                    actionBar.setTitle(R.string.screen_tech);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_tecnologia_0012_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_tecnologia_0012_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_TECH).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
             }
         }
     }
