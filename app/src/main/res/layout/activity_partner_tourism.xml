@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/tourism_travel_agency"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,41 +31,41 @@
             android:scaleX="0.7"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/tourism_guide"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/tourism_travel_agency"
             android:background="@drawable/parceiros_turismo_0007_guia"
             android:layout_margin="8sp"
             android:scaleX="0.15"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/tourism_hostel"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_pub_coffee"
+            android:layout_below="@id/tourism_guide"
             android:background="@drawable/parceiros_turismo_0008_hostel"
             android:layout_margin="8sp"
             android:scaleX="0.2"/>
 
         <ImageButton
-            android:id="@+id/food_bakery"
+            android:id="@+id/tourism_hotel"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_distributor"
+            android:layout_below="@id/tourism_hostel"
             android:background="@drawable/parceiros_turismo_0009_hotel"
             android:layout_margin="8sp"
             android:scaleX="0.17"/>
 
         <ImageButton
-            android:id="@+id/entertainment_dj"
+            android:id="@+id/tourism_transport"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_bakery"
+            android:layout_below="@id/tourism_hotel"
             android:background="@drawable/parceiros_turismo_0010_transporte"
             android:layout_margin="8sp"
             android:scaleX="0.35"/>
