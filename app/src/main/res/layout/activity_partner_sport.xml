@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/sport_gym"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,31 +31,31 @@
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/sport_personal"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/sport_gym"
             android:background="@drawable/parceiros_esporte_0007_personal"
             android:layout_margin="8sp"
             android:scaleX="0.3"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/sport_supplement"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_pub_coffee"
+            android:layout_below="@id/sport_personal"
             android:background="@drawable/parceiros_esporte_0008_suplemento"
             android:layout_margin="8sp"
             android:scaleX="0.41"/>
 
         <ImageButton
-            android:id="@+id/food_bakery"
+            android:id="@+id/sport_clothing"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_distributor"
+            android:layout_below="@id/sport_supplement"
             android:background="@drawable/parceiros_esporte_0009_vestuario"
             android:layout_margin="8sp"
             android:scaleX="0.33"/>
