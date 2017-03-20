@@ -15,6 +15,9 @@ public class Utility {
     public static final String TOURISM = "turismo";
     public static final String AUTO = "auto";
     public static final String TECH = "tecnologia";
+    public static final String HEALTH = "saude";
+    public static final String HOME = "lar_construcao";
+    public static final String ENTERTAINMENT = "entretenimento";
 
     public static final String KEY_CONTENT_EXTRA_PLANS = "link";
     public static final String KEY_CONTENT_EXTRA_PARTNER = "partner";
@@ -36,6 +39,38 @@ public class Utility {
     public static final String TECH_SUBCATEGORY_COMPUTING = "informatica";
     public static final String TECH_SUBCATEGORY_INTERNET = "internet";
     public static final String TECH_SUBCATEGORY_TV_VIDEO = "tv_video";
+
+    public static final String ENTERTAINMENT_SUBCATEGORY_ART = "arte";
+    public static final String ENTERTAINMENT_SUBCATEGORY_TOY = "brinquedo";
+    public static final String ENTERTAINMENT_SUBCATEGORY_MOVIE_THEATER = "cinema";
+    public static final String ENTERTAINMENT_SUBCATEGORY_DECORATION = "decoracao";
+    public static final String ENTERTAINMENT_SUBCATEGORY_DJ = "dj";
+    public static final String ENTERTAINMENT_SUBCATEGORY_LIGHTING = "iluminacao";
+    public static final String ENTERTAINMENT_SUBCATEGORY_NEWSPAPER = "jornal";
+    public static final String ENTERTAINMENT_SUBCATEGORY_PARK = "parque";
+    public static final String ENTERTAINMENT_SUBCATEGORY_RADIO = "radio";
+    public static final String ENTERTAINMENT_SUBCATEGORY_PARTY_HALL = "salao_festa";
+    public static final String ENTERTAINMENT_SUBCATEGORY_SOUND = "som";
+
+    public static final String HOME_SUBCATEGORY_ARCHITECTURE = "arquitetura";
+    public static final String HOME_SUBCATEGORY_DECORATION = "decoracao";
+    public static final String HOME_SUBCATEGORY_ENGINEERING = "engenharia";
+    public static final String HOME_SUBCATEGORY_HARDWARE = "ferragens";
+    public static final String HOME_SUBCATEGORY_TIMBER = "madeireira";
+    public static final String HOME_SUBCATEGORY_CONSTRUCTION_MATERIAL = "material_construcao";
+    public static final String HOME_SUBCATEGORY_FURNITURE = "moveis";
+    public static final String HOME_SUBCATEGORY_PROVISION_SERVICES = "prestacao_servico";
+    public static final String HOME_SUBCATEGORY_INK = "tinta";
+    public static final String HOME_SUBCATEGORY_GLASSES = "vidros";
+
+    public static final String HEALTH_SUBCATEGORY_CLINIC = "clinica";
+    public static final String HEALTH_SUBCATEGORY_EXAMS = "exames";
+    public static final String HEALTH_SUBCATEGORY_PHYSIOTHERAPY = "fisioterapia";
+    public static final String HEALTH_SUBCATEGORY_HOSPITAL = "hospital";
+    public static final String HEALTH_SUBCATEGORY_DOCTOR = "medico";
+    public static final String HEALTH_SUBCATEGORY_NUTRITIONIST = "nutricionista";
+    public static final String HEALTH_SUBCATEGORY_DENTISTRY = "odontologia";
+    public static final String HEALTH_SUBCATEGORY_PSYCHOLOGY = "psicologia";
 
     public static final String AUTO_SUBCATEGORY_ACCESSORIES = "agencia";
     public static final String AUTO_SUBCATEGORY_AUTO_PARTS = "arte";

@@ -23,6 +23,9 @@ public class FirebaseHelper {
     public static final String FIREBASE_DATABASE_CLOTHING = "vestuario";
     public static final String FIREBASE_DATABASE_TOURISM = "turismo";
     public static final String FIREBASE_DATABASE_TECH = "tecnologia";
+    public static final String FIREBASE_DATABASE_HEALTH = "saude";
+    public static final String FIREBASE_DATABASE_HOME = "lar_construcao";
+    public static final String FIREBASE_DATABASE_ENTERTAINMENT = "entretenimento";
 
     public static final String FIREBASE_DATABASE_PARTNER_SUBCATEGORY = "subcategory";
     public static final String FIREBASE_DATABASE_PARTNER_NAME = "name";

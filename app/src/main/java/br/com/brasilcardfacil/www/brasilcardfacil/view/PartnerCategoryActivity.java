@@ -311,6 +311,33 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     }
                     partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_TECH).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
                     break;
+                case Utility.HEALTH:
+                    actionBar.setTitle(R.string.screen_health);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_saude_0014_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_saude_0014_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_HEALTH).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.HOME:
+                    actionBar.setTitle(R.string.screen_home);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_lar_construcao_0016_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_lar_construcao_0016_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_HOME).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
+                case Utility.ENTERTAINMENT:
+                    actionBar.setTitle(R.string.screen_entertainment);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_entretenimento_0006_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_entretenimento_0006_banner_parceiros);
+                    }
+                    partner = mDatabase.child(FirebaseHelper.FIREBASE_DATABASE_ENTERTAINMENT).orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY);
+                    break;
             }
         }
     }
