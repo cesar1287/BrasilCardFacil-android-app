@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/health_clinic"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,71 +31,71 @@
             android:scaleX="0.23"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/health_exams"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/health_clinic"
             android:background="@drawable/parceiros_saude_0007_exames"
             android:layout_margin="8sp"
             android:scaleX="0.24"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/health_physiotherapy"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_pub_coffee"
+            android:layout_below="@id/health_exams"
             android:background="@drawable/parceiros_saude_0008_fisioterapia"
             android:layout_margin="8sp"
             android:scaleX="0.37"/>
 
         <ImageButton
-            android:id="@+id/food_bakery"
+            android:id="@+id/health_hospital"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_distributor"
+            android:layout_below="@id/health_physiotherapy"
             android:background="@drawable/parceiros_saude_0009_hospital"
             android:layout_margin="8sp"
             android:scaleX="0.25"/>
 
         <ImageButton
-            android:id="@+id/entertainment_dj"
+            android:id="@+id/health_doctor"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_bakery"
+            android:layout_below="@id/health_hospital"
             android:background="@drawable/parceiros_saude_0010_medico"
             android:layout_margin="8sp"
             android:scaleX="0.22"/>
 
         <ImageButton
-            android:id="@+id/entertainment_lighting"
+            android:id="@+id/health_nutritionist"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_dj"
+            android:layout_below="@id/health_doctor"
             android:background="@drawable/parceiros_saude_0011_nutricionista"
             android:layout_margin="8sp"
             android:scaleX="0.38"/>
 
         <ImageButton
-            android:id="@+id/entertainment_newspaper"
+            android:id="@+id/health_dentistry"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_lighting"
+            android:layout_below="@id/health_nutritionist"
             android:background="@drawable/parceiros_saude_0012_odontologia"
             android:layout_margin="8sp"
             android:scaleX="0.38"/>
 
         <ImageButton
-            android:id="@+id/entertainment_park"
+            android:id="@+id/health_psychology"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_newspaper"
+            android:layout_below="@id/health_dentistry"
             android:background="@drawable/parceiros_saude_0013_psicologia"
             android:layout_margin="8sp"
             android:scaleX="0.3"/>
