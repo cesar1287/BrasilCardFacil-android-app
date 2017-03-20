@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/entertainment_art"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,31 +31,31 @@
             android:scaleX="0.15"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/entertainment_toy"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/entertainment_art"
             android:background="@drawable/parceiros_entretenimento_0010_brinquedo"
             android:layout_margin="8sp"
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/entertainment_movie_theater"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_pub_coffee"
+            android:layout_below="@id/entertainment_toy"
             android:background="@drawable/parceiros_entretenimento_0011_cinema"
             android:layout_margin="8sp"
             android:scaleX="0.27"/>
 
         <ImageButton
-            android:id="@+id/food_bakery"
+            android:id="@+id/entertainment_decoration"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_distributor"
+            android:layout_below="@id/entertainment_movie_theater"
             android:background="@drawable/parceiros_entretenimento_0012_decoracao"
             android:layout_margin="8sp"
             android:scaleX="0.37"/>
@@ -65,7 +65,7 @@
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_bakery"
+            android:layout_below="@id/entertainment_decoration"
             android:background="@drawable/parceiros_entretenimento_0013_dj"
             android:layout_margin="8sp"
             android:scaleX="0.08"/>
