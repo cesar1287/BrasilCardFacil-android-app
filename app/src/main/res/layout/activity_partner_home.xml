@@ -21,7 +21,7 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/food_water_gas"
+            android:id="@+id/home_architecture"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,91 +31,91 @@
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/food_pub_coffee"
+            android:id="@+id/home_decoration"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_water_gas"
+            android:layout_below="@id/home_architecture"
             android:background="@drawable/parceiros_lar_construcao_0007_decoracao_paisagismo"
             android:layout_margin="8sp"
             android:scaleX="0.8"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/home_engineering"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_pub_coffee"
+            android:layout_below="@id/home_decoration"
             android:background="@drawable/parceiros_lar_construcao_0008_engenharia"
             android:layout_margin="8sp"
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/food_bakery"
+            android:id="@+id/home_hardware"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_distributor"
+            android:layout_below="@id/home_engineering"
             android:background="@drawable/parceiros_lar_construcao_0009_ferragens"
             android:layout_margin="8sp"
             android:scaleX="0.3"/>
 
         <ImageButton
-            android:id="@+id/entertainment_dj"
+            android:id="@+id/home_timber"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/food_bakery"
+            android:layout_below="@id/home_hardware"
             android:background="@drawable/parceiros_lar_construcao_0010_madeireira"
             android:layout_margin="8sp"
             android:scaleX="0.35"/>
 
         <ImageButton
-            android:id="@+id/entertainment_lighting"
+            android:id="@+id/home_construction_material"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_dj"
+            android:layout_below="@id/home_timber"
             android:background="@drawable/parceiros_lar_construcao_0011_material_construcao"
             android:layout_margin="8sp"
             android:scaleX="0.75"/>
 
         <ImageButton
-            android:id="@+id/entertainment_newspaper"
+            android:id="@+id/home_furniture"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_lighting"
+            android:layout_below="@id/home_construction_material"
             android:background="@drawable/parceiros_lar_construcao_0012_moveis"
             android:layout_margin="8sp"
             android:scaleX="0.22"/>
 
         <ImageButton
-            android:id="@+id/entertainment_park"
+            android:id="@+id/home_provision_services"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_newspaper"
+            android:layout_below="@id/home_furniture"
             android:background="@drawable/parceiros_lar_construcao_0013_prestacao_servico"
             android:layout_margin="8sp"
             android:scaleX="0.6"/>
 
         <ImageButton
-            android:id="@+id/entertainment_radio"
+            android:id="@+id/home_ink"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_park"
+            android:layout_below="@id/home_provision_services"
             android:background="@drawable/parceiros_lar_construcao_0014_tinta"
             android:layout_margin="8sp"
             android:scaleX="0.15"/>
 
         <ImageButton
-            android:id="@+id/entertainment_party_hall"
+            android:id="@+id/home_glasses"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_radio"
+            android:layout_below="@id/home_ink"
             android:background="@drawable/parceiros_lar_construcao_0015_vidros"
             android:layout_margin="8sp"
             android:scaleX="0.2"/>
