@@ -185,16 +185,21 @@
             android:name=".view.PartnerTourismActivity"
             android:label="@string/screen_tourism"
             android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnerHealthActivity"
             android:label="@string/screen_health"
             android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnerTechActivity"
             android:label="@string/screen_tech"
             android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerSelectionLocalActivity"
+            android:label="@string/screen_selection_local"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
     </application>
 

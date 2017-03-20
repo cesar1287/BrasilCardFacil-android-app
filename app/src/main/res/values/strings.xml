@@ -141,4 +141,5 @@
     <string name="screen_tourism">Turismo</string>
     <string name="screen_health">Saúde</string>
     <string name="screen_tech">Tecnologia</string>
+    <string name="screen_selection_local">Selecione o local</string>
 </resources>
