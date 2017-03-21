@@ -67,6 +67,7 @@ public class Utility {
     public static final String HOME_SUBCATEGORY_GLASSES = "vidros";
 
     public static final String HEALTH_SUBCATEGORY_CLINIC = "clinica";
+    public static final String HEALTH_SUBCATEGORY_DRUGSTORE = "farmacia";
     public static final String HEALTH_SUBCATEGORY_EXAMS = "exames";
     public static final String HEALTH_SUBCATEGORY_PHYSIOTHERAPY = "fisioterapia";
     public static final String HEALTH_SUBCATEGORY_HOSPITAL = "hospital";
@@ -76,7 +77,9 @@ public class Utility {
     public static final String HEALTH_SUBCATEGORY_PSYCHOLOGY = "psicologia";
 
     public static final String AUTO_SUBCATEGORY_ACCESSORIES = "acessorios";
+    public static final String AUTO_SUBCATEGORY_DRIVING_SCHOOL = "auto_escola";
     public static final String AUTO_SUBCATEGORY_AUTO_PARTS = "auto_pecas";
+    public static final String AUTO_SUBCATEGORY_BATTERIE = "bateria";
     public static final String AUTO_SUBCATEGORY_FUEL = "combustivel";
     public static final String AUTO_SUBCATEGORY_ESCAPEMENT = "escapamento";
     public static final String AUTO_SUBCATEGORY_PARKING = "estacionamento";
