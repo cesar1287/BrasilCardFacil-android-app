@@ -28,6 +28,16 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_auto_0009_acessorios"
             android:layout_margin="8sp"
+            android:scaleX="0.38"/>
+
+        <ImageButton
+            android:id="@+id/auto_driving_school"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auto_accessories"
+            android:background="@drawable/parceiros_auto_0010_auto_escola"
+            android:layout_margin="8sp"
             android:scaleX="0.4"/>
 
         <ImageButton
@@ -35,17 +45,27 @@
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/auto_accessories"
+            android:layout_below="@id/auto_driving_school"
             android:background="@drawable/parceiros_auto_0010_autopecas"
             android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:scaleX="0.37"/>
+
+        <ImageButton
+            android:id="@+id/auto_batterie"
+            android:contentDescription="@string/dentistry_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auto_auto_parts"
+            android:background="@drawable/parceiros_auto_0010_bateria"
+            android:layout_margin="8sp"
+            android:scaleX="0.25"/>
 
         <ImageButton
             android:id="@+id/auto_fuel"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/auto_auto_parts"
+            android:layout_below="@id/auto_batterie"
             android:background="@drawable/parceiros_auto_0011_combustivel"
             android:layout_margin="8sp"
             android:scaleX="0.42"/>

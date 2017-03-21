@@ -32,6 +32,17 @@ public class PartnerAutoActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btDrivingSchool = (ImageButton) findViewById(R.id.auto_driving_school);
+        btDrivingSchool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.AUTO);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_DRIVING_SCHOOL);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btAutoParts = (ImageButton) findViewById(R.id.auto_auto_parts);
         btAutoParts.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +50,17 @@ public class PartnerAutoActivity extends AppCompatActivity {
                 Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
                 intent.putExtra(Utility.CATEGORY, Utility.AUTO);
                 intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_AUTO_PARTS);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btBatterie = (ImageButton) findViewById(R.id.auto_batterie);
+        btBatterie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.AUTO);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_BATTERIE);
                 startActivity(intent);
             }
         });
