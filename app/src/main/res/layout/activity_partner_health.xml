@@ -31,11 +31,21 @@
             android:scaleX="0.23"/>
 
         <ImageButton
+            android:id="@+id/health_drugstore"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/health_clinic"
+            android:background="@drawable/parceiros_saude_0006_drogaria_farmacia"
+            android:layout_margin="8sp"
+            android:scaleX="0.7"/>
+
+        <ImageButton
             android:id="@+id/health_exams"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/health_clinic"
+            android:layout_below="@id/health_drugstore"
             android:background="@drawable/parceiros_saude_0007_exames"
             android:layout_margin="8sp"
             android:scaleX="0.24"/>

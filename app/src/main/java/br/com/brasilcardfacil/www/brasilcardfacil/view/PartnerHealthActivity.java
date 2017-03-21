@@ -32,6 +32,17 @@ public class PartnerHealthActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btDrugstore = (ImageButton) findViewById(R.id.health_drugstore);
+        btDrugstore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerHealthActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.HEALTH);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.HEALTH_SUBCATEGORY_DRUGSTORE);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btExams = (ImageButton) findViewById(R.id.health_exams);
         btExams.setOnClickListener(new View.OnClickListener() {
             @Override
