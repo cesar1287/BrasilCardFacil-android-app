@@ -91,7 +91,7 @@
         <activity
             android:name=".view.PartnerActivity"
             android:label="@string/screen_partners"
-            android:parentActivityName=".view.MainActivity"
+            android:parentActivityName=".view.PartnerSelectionLocalActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.PartnerDetailsActivity"

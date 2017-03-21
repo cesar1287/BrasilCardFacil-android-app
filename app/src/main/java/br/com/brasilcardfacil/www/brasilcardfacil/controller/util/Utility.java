@@ -2,6 +2,9 @@ package br.com.brasilcardfacil.www.brasilcardfacil.controller.util;
 
 public class Utility {
 
+    public static String STATE = "Estado";
+    public static String CITY = "Cidade";
+
     public static final String CATEGORY = "category";
     public static final String SUBCATEGORY = "subcategory";
 
@@ -72,14 +75,14 @@ public class Utility {
     public static final String HEALTH_SUBCATEGORY_DENTISTRY = "odontologia";
     public static final String HEALTH_SUBCATEGORY_PSYCHOLOGY = "psicologia";
 
-    public static final String AUTO_SUBCATEGORY_ACCESSORIES = "agencia";
-    public static final String AUTO_SUBCATEGORY_AUTO_PARTS = "arte";
-    public static final String AUTO_SUBCATEGORY_FUEL = "graficas";
-    public static final String AUTO_SUBCATEGORY_ESCAPEMENT = "design";
-    public static final String AUTO_SUBCATEGORY_PARKING = "decoracao";
-    public static final String AUTO_SUBCATEGORY_WASH = "decoracao";
-    public static final String AUTO_SUBCATEGORY_MECHANICAL = "decoracao";
-    public static final String AUTO_SUBCATEGORY_TIRES = "decoracao";
+    public static final String AUTO_SUBCATEGORY_ACCESSORIES = "acessorios";
+    public static final String AUTO_SUBCATEGORY_AUTO_PARTS = "auto_pecas";
+    public static final String AUTO_SUBCATEGORY_FUEL = "combustivel";
+    public static final String AUTO_SUBCATEGORY_ESCAPEMENT = "escapamento";
+    public static final String AUTO_SUBCATEGORY_PARKING = "estacionamento";
+    public static final String AUTO_SUBCATEGORY_WASH = "lavagem";
+    public static final String AUTO_SUBCATEGORY_MECHANICAL = "mecanica";
+    public static final String AUTO_SUBCATEGORY_TIRES = "pneus";
 
     public static final String CLOTHING_SUBCATEGORY_SHOES = "calcados";
     public static final String CLOTHING_SUBCATEGORY_CHILDLIKE = "infantil";

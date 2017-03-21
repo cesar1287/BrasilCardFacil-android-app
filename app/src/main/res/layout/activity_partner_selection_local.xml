@@ -7,12 +7,44 @@
 
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10sp"
-        android:layout_marginRight="10sp"
-        android:layout_marginStart="10sp"
-        android:layout_marginLeft="10sp"
-        android:layout_centerVertical="true" />
+        android:layout_marginEnd="40sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginStart="40sp"
+        android:layout_marginLeft="40sp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/spinner_border"/>
+
+    <ImageView
+        android:id="@+id/imageViewSelectionRede"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/spinner_state"
+        android:layout_marginBottom="25sp"
+        android:background="@drawable/selection_local_0007_rede" />
+
+    <Spinner
+        android:id="@+id/spinner_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginStart="40sp"
+        android:layout_marginLeft="40sp"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/spinner_state"
+        android:background="@drawable/spinner_border"/>
+
+    <ImageButton
+        android:id="@+id/SelectionLocalSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/spinner_city"
+        android:layout_marginTop="25sp"
+        android:background="@drawable/selection_local_0002_entrar_button" />
 </RelativeLayout>

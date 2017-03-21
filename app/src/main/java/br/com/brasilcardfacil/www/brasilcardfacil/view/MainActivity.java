@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity
         btPartners.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PartnerActivity.class));
+                startActivity(new Intent(MainActivity.this, PartnerSelectionLocalActivity.class));
             }
         });
 
