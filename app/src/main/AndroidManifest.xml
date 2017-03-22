@@ -200,6 +200,11 @@
             android:name=".view.PartnerSelectionLocalActivity"
             android:label="@string/screen_selection_local"
             android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerWorldAnimalActivity"
+            android:label="@string/screen_world_animal"
+            android:parentActivityName=".view.PartnerActivity"
             android:screenOrientation="portrait"/>
     </application>
 

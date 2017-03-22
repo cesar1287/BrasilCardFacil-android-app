@@ -21,6 +21,7 @@ public class Utility {
     public static final String HEALTH = "saude";
     public static final String HOME = "lar_construcao";
     public static final String ENTERTAINMENT = "entretenimento";
+    public static final String WORLD_ANIMAL = "mundo_animal";
 
     public static final String KEY_CONTENT_EXTRA_PLANS = "link";
     public static final String KEY_CONTENT_EXTRA_PARTNER = "partner";
@@ -86,6 +87,11 @@ public class Utility {
     public static final String AUTO_SUBCATEGORY_WASH = "lavagem";
     public static final String AUTO_SUBCATEGORY_MECHANICAL = "mecanica";
     public static final String AUTO_SUBCATEGORY_TIRES = "pneus";
+
+    public static final String WORLD_ANIMAL_SUBCATEGORY_CLINIC = "clinica";
+    public static final String WORLD_ANIMAL_SUBCATEGORY_HOTEL = "hotel";
+    public static final String WORLD_ANIMAL_SUBCATEGORY_LAB = "lab";
+    public static final String WORLD_ANIMAL_SUBCATEGORY_VETERINARY = "veterinaria";
 
     public static final String CLOTHING_SUBCATEGORY_SHOES = "calcados";
     public static final String CLOTHING_SUBCATEGORY_CHILDLIKE = "infantil";

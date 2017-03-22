@@ -111,13 +111,23 @@
             android:layout_margin="8sp"
             android:scaleX="0.68"/>
 
+        <ImageButton
+            android:id="@+id/partner_world_animal"
+            android:contentDescription="@string/funeral_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/partner_home"
+            android:background="@drawable/parceiros_0012_mundo_animal"
+            android:layout_margin="8sp"
+            android:scaleX="0.64"/>
+
 
         <ImageButton
             android:id="@+id/partner_health"
             android:contentDescription="@string/funeral_image_screen_partner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_home"
+            android:layout_below="@id/partner_world_animal"
             android:background="@drawable/parceiros_0016_saude"
             android:layout_margin="8sp"
             android:scaleX="0.34"/>

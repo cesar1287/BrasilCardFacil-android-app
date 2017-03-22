@@ -377,6 +377,18 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                             .orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY)
                             .equalTo(Utility.CITY);
                     break;
+                case Utility.WORLD_ANIMAL:
+                    actionBar.setTitle(R.string.screen_world_animal);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_mundo_animal_0006_banner_parceiros, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_mundo_animal_0006_banner_parceiros);
+                    }
+                    partner = mDatabase
+                            .child(FirebaseHelper.FIREBASE_DATABASE_WORLD_ANIMAL)
+                            .orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY)
+                            .equalTo(Utility.CITY);
+                    break;
             }
         }
     }

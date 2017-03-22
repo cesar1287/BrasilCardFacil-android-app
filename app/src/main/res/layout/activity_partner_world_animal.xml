@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.PartnerWorldAnimalActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/main_banner"
+            android:contentDescription="@string/banner_screen_partners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/parceiros_mundo_animal_0006_banner_parceiros"
+            android:scaleX="1.02"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="8sp"/>
+
+        <ImageButton
+            android:id="@+id/world_animal_clinic"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_banner"
+            android:background="@drawable/parceiros_mundo_animal_0007_clinica"
+            android:layout_margin="8sp"
+            android:scaleX="0.25"/>
+
+        <ImageButton
+            android:id="@+id/world_animal_hotel"
+            android:contentDescription="@string/dentistry_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/world_animal_clinic"
+            android:background="@drawable/parceiros_mundo_animal_0008_hotel"
+            android:layout_margin="8sp"
+            android:scaleX="0.2"/>
+
+        <ImageButton
+            android:id="@+id/world_animal_lab"
+            android:contentDescription="@string/veterinary_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/world_animal_hotel"
+            android:background="@drawable/parceiros_mundo_animal_0009_laboratorio"
+            android:layout_margin="8sp"
+            android:scaleX="0.41"/>
+
+        <ImageButton
+            android:id="@+id/world_animal_veterinary"
+            android:contentDescription="@string/lab_image_screen_partner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/world_animal_lab"
+            android:background="@drawable/parceiros_mundo_animal_0010_veterinaria"
+            android:layout_margin="8sp"
+            android:scaleX="0.4"/>
+    </RelativeLayout>
+</ScrollView>

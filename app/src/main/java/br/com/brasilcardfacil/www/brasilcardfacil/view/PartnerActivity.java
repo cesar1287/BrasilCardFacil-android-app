@@ -93,6 +93,15 @@ public class PartnerActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btWorldAnimal = (ImageButton) findViewById(R.id.partner_world_animal);
+        btWorldAnimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerWorldAnimalActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btTourism = (ImageButton) findViewById(R.id.partner_tourism);
         btTourism.setOnClickListener(new View.OnClickListener() {
             @Override
