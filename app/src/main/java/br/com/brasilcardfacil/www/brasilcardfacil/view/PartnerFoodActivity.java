@@ -43,6 +43,17 @@ public class PartnerFoodActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btDelivery = (ImageButton) findViewById(R.id.food_delivery);
+        btDelivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerFoodActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.FOOD);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.FOOD_SUBCATEGORY_DELIVERY);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btAuto = (ImageButton) findViewById(R.id.food_pub_coffee);
         btAuto.setOnClickListener(new View.OnClickListener() {
             @Override

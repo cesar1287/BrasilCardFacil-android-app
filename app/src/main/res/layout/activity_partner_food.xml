@@ -43,11 +43,22 @@
             android:layout_alignStart="@+id/food_water_gas"/>
 
         <ImageButton
-            android:id="@+id/food_distributor"
+            android:id="@+id/food_delivery"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/food_pub_coffee"
+            android:background="@drawable/parceiros_alimentacao_0014_delivery"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/food_water_gas"
+            android:layout_alignStart="@+id/food_water_gas"/>
+
+        <ImageButton
+            android:id="@+id/food_distributor"
+            android:contentDescription="@string/veterinary_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_delivery"
             android:background="@drawable/parceiros_alimentacao_0011_distribuidor"
             android:layout_marginTop="12dp"
             android:layout_alignLeft="@+id/food_water_gas"

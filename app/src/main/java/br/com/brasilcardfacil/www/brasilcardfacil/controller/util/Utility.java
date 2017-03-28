@@ -128,6 +128,7 @@ public class Utility {
     public static final String FOOD_SUBCATEGORY_WATER = "agua";
     public static final String FOOD_SUBCATEGORY_SUPERMARKET = "supermercado";
     public static final String FOOD_SUBCATEGORY_DISTRIBUTOR = "distribuidor";
+    public static final String FOOD_SUBCATEGORY_DELIVERY = "delivery";
 
     public static final String LOGIN_SHARED_PREF_NAME = "LoginActivityPreferences";
     public static final String WARNING_SHARED_PREF_NAME = "WarningActivityPreferences";
