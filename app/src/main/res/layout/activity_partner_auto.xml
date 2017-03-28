@@ -21,104 +21,104 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/auto_accessories"
-            android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/main_banner"
-            android:background="@drawable/parceiros_auto_0009_acessorios"
-            android:layout_margin="8sp"
-            android:scaleX="0.38"/>
-
-        <ImageButton
             android:id="@+id/auto_driving_school"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/auto_accessories"
+            android:layout_below="@id/main_banner"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0010_auto_escola"
-            android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_auto_parts"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_driving_school"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0010_autopecas"
-            android:layout_margin="8sp"
-            android:scaleX="0.37"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_batterie"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_auto_parts"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0010_bateria"
-            android:layout_margin="8sp"
-            android:scaleX="0.25"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_fuel"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_batterie"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0011_combustivel"
-            android:layout_margin="8sp"
-            android:scaleX="0.42"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_escapement"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_fuel"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0012_escapamento"
-            android:layout_margin="8sp"
-            android:scaleX="0.45"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_parking"
             android:contentDescription="@string/trade_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_escapement"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0013_estacionamento"
-            android:layout_margin="8sp"
-            android:scaleX="0.54"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_wash"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_parking"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0014_lavagem"
-            android:layout_margin="8sp"
-            android:scaleX="0.3"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_mechanical"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_wash"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0015_mecanica"
-            android:layout_margin="8sp"
-            android:scaleX="0.32"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/auto_tire"
             android:contentDescription="@string/trade_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/auto_mechanical"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0016_pneus"
-            android:layout_margin="8sp"
-            android:scaleX="0.2"/>
+            android:layout_margin="8sp"/>
+
+        <ImageButton
+            android:id="@+id/auto_accessories"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auto_tire"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/parceiros_auto_0009_acessorios"
+            android:layout_margin="8sp"/>
     </RelativeLayout>
 
 </ScrollView>
