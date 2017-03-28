@@ -32,17 +32,6 @@ public class PartnerEducationActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton btCourse = (ImageButton) findViewById(R.id.education_course);
-        btCourse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PartnerEducationActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.EDUCATION);
-                intent.putExtra(Utility.SUBCATEGORY, Utility.EDUCATION_SUBCATEGORY_COURSE);
-                startActivity(intent);
-            }
-        });
-
         ImageButton btTechnician = (ImageButton) findViewById(R.id.education_technician);
         btTechnician.setOnClickListener(new View.OnClickListener() {
             @Override
