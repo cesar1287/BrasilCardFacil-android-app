@@ -23,52 +23,52 @@
         <ImageButton
             android:id="@+id/art_design_agency"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_arte_design_0009_agencia"
-            android:layout_margin="8sp"
-            android:scaleX="0.25"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/art_design_art"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/art_design_agency"
             android:background="@drawable/parceiros_arte_design_0010_arte"
-            android:layout_margin="8sp"
-            android:scaleX="0.15"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/art_design_graphics"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/art_design_art"
             android:background="@drawable/parceiros_arte_design_0011_graficas"
-            android:layout_margin="8sp"
-            android:scaleX="0.3"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/art_design_design"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/art_design_graphics"
             android:background="@drawable/parceiros_arte_design_0012_design"
-            android:layout_margin="8sp"
-            android:scaleX="0.22"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/art_design_decoration"
             android:contentDescription="@string/trade_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/art_design_design"
             android:background="@drawable/parceiros_arte_design_0013_decoracao"
-            android:layout_margin="8sp"
-            android:scaleX="0.35"/>
+            android:layout_margin="8sp"/>
     </RelativeLayout>
 
 </ScrollView>
