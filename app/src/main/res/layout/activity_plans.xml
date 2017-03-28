@@ -25,15 +25,15 @@
 
         <Button
             android:id="@+id/plan_total"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight=".33"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/planos_0007_total"
-            android:scaleY="0.46"
-            android:scaleX="0.72"/>
+            android:scaleY="0.46"/>
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight=".01"
             android:background="@color/divisor"
@@ -42,15 +42,15 @@
 
         <Button
             android:id="@+id/plan_cheers"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight=".33"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/planos_0008_saude"
-            android:scaleY="0.46"
-            android:scaleX="0.72"/>
+            android:scaleY="0.46"/>
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight=".01"
             android:background="@color/divisor"
@@ -59,12 +59,12 @@
 
         <Button
             android:id="@+id/plan_funeral"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight=".33"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/planos_0009_credito_vida"
-            android:scaleY="0.46"
-            android:scaleX="0.72"/>
+            android:scaleY="0.46" />
     </LinearLayout>
 
 </RelativeLayout>
