@@ -49,7 +49,6 @@ public class Utility {
     public static final String ENTERTAINMENT_SUBCATEGORY_MOVIE_THEATER = "cinema";
     public static final String ENTERTAINMENT_SUBCATEGORY_DECORATION = "decoracao";
     public static final String ENTERTAINMENT_SUBCATEGORY_DJ = "dj";
-    public static final String ENTERTAINMENT_SUBCATEGORY_LIGHTING = "iluminacao";
     public static final String ENTERTAINMENT_SUBCATEGORY_NEWSPAPER = "jornal";
     public static final String ENTERTAINMENT_SUBCATEGORY_PARK = "parque";
     public static final String ENTERTAINMENT_SUBCATEGORY_RADIO = "radio";
@@ -92,6 +91,7 @@ public class Utility {
     public static final String WORLD_ANIMAL_SUBCATEGORY_HOTEL = "hotel";
     public static final String WORLD_ANIMAL_SUBCATEGORY_LAB = "lab";
     public static final String WORLD_ANIMAL_SUBCATEGORY_VETERINARY = "veterinaria";
+    public static final String WORLD_ANIMAL_SUBCATEGORY_PET_SHOP = "pet_shop";
 
     public static final String CLOTHING_SUBCATEGORY_SHOES = "calcados";
     public static final String CLOTHING_SUBCATEGORY_CHILDLIKE = "infantil";
@@ -99,12 +99,12 @@ public class Utility {
     public static final String CLOTHING_SUBCATEGORY_GARMENT = "roupas";
 
     public static final String SPORT_SUBCATEGORY_GYM = "academia";
+    public static final String SPORT_SUBCATEGORY_EQUIPMENT = "equipamentos";
     public static final String SPORT_SUBCATEGORY_PERSONAL = "personal";
     public static final String SPORT_SUBCATEGORY_SUPPLEMENT = "suplemento";
     public static final String SPORT_SUBCATEGORY_CLOTHING = "vestuario";
 
     public static final String EDUCATION_SUBCATEGORY_SCHOOL = "colegio";
-    public static final String EDUCATION_SUBCATEGORY_COURSE = "curso";
     public static final String EDUCATION_SUBCATEGORY_TECHNICIAN = "tecnico";
     public static final String EDUCATION_SUBCATEGORY_UNIVERSITY = "universidade";
 

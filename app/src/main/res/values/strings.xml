@@ -8,8 +8,10 @@
     <string-array name="cities">
         <item>Cidade</item>
         <item>Belo Horizonte</item>
+        <item>Betim</item>
         <item>Contagem</item>
         <item>Formiga</item>
+        <item>Ibirité</item>
     </string-array>
 
     <string name="app_name">BrasilCard fácil</string>
@@ -156,4 +158,5 @@
     <string name="screen_tech">Tecnologia</string>
     <string name="screen_selection_local">Selecione o local</string>
     <string name="screen_world_animal">Mundo Animal</string>
+    <string name="search_title">Buscar por tag</string>
 </resources>
