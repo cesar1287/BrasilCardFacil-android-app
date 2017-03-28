@@ -43,6 +43,17 @@ public class PartnerWorldAnimalActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btPetShop = (ImageButton) findViewById(R.id.world_animal_pet_shop);
+        btPetShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerWorldAnimalActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.WORLD_ANIMAL);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.WORLD_ANIMAL_SUBCATEGORY_PET_SHOP);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btLab = (ImageButton) findViewById(R.id.world_animal_lab);
         btLab.setOnClickListener(new View.OnClickListener() {
             @Override
