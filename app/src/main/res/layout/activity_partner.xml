@@ -10,157 +10,316 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/main_banner"
             android:contentDescription="@string/banner_screen_partners"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/parceiros_0006_banner_parceiros"
+            android:background="@drawable/parceiros_0006_banner_parceiros"
             android:scaleX="1.02"
             android:scaleType="fitStart"
             android:adjustViewBounds="true"
-            android:layout_marginTop="8sp"/>
+            android:layout_marginTop="12sp"/>
+
+        <ImageButton
+            android:id="@+id/partner_food_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="71dp"
+            android:layout_marginLeft="71dp"
+            android:background="@drawable/parceiros_0009_alimentacao_icon"
+            android:layout_alignTop="@+id/partner_food"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <ImageButton
             android:id="@+id/partner_food"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
+            android:layout_toRightOf="@id/partner_food_icon"
+            android:layout_toEndOf="@id/partner_food_icon"
             android:background="@drawable/parceiros_0009_alimentacao"
-            android:layout_margin="8sp"
-            android:scaleX="0.55"/>
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginStart="30sp"/>
+
+        <ImageButton
+            android:id="@+id/partner_art_design_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0010_arte_design_icon"
+            android:layout_below="@id/partner_food_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="80sp"
+            android:layout_marginStart="80sp"/>
 
         <ImageButton
             android:id="@+id/partner_art_design"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_food"
             android:background="@drawable/parceiros_0010_arte_design"
-            android:layout_margin="8sp"
-            android:scaleX="0.5"/>
+            android:layout_below="@+id/partner_food"
+            android:layout_marginTop="12sp"
+            android:layout_alignLeft="@+id/partner_food"
+            android:layout_alignStart="@+id/partner_food" />
+
+        <ImageButton
+            android:id="@+id/partner_auto_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0011_auto_icon"
+            android:layout_below="@+id/partner_art_design"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="75sp"
+            android:layout_marginStart="75sp"/>
 
         <ImageButton
             android:id="@+id/partner_auto"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_art_design"
             android:background="@drawable/parceiros_0011_auto"
-            android:layout_margin="8sp"
-            android:scaleX="0.3"/>
+            android:layout_toRightOf="@id/partner_auto_icon"
+            android:layout_toEndOf="@id/partner_auto_icon"
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_art_design"
+            android:layout_alignLeft="@+id/partner_art_design"
+            android:layout_alignStart="@+id/partner_art_design" />
+
+        <ImageButton
+            android:id="@+id/partner_beauty_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0012_beleza_icon"
+            android:layout_below="@+id/partner_auto_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="72sp"
+            android:layout_marginStart="72sp"/>
 
         <ImageButton
             android:id="@+id/partner_beauty"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_auto"
             android:background="@drawable/parceiros_0012_beleza"
-            android:layout_margin="8sp"
-            android:scaleX="0.37"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_auto"
+            android:layout_alignLeft="@+id/partner_auto"
+            android:layout_alignStart="@+id/partner_auto" />
+
+        <ImageButton
+            android:id="@+id/partner_consulting_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0013_consultoria_icon"
+            android:layout_below="@+id/partner_beauty"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="74sp"
+            android:layout_marginStart="74sp"/>
 
         <ImageButton
             android:id="@+id/partner_consulting"
             android:contentDescription="@string/trade_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_beauty"
             android:background="@drawable/parceiros_0013_consultoria"
-            android:layout_margin="8sp"
-            android:scaleX="0.5"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_beauty"
+            android:layout_alignLeft="@+id/partner_beauty"
+            android:layout_alignStart="@+id/partner_beauty" />
+
+        <ImageButton
+            android:id="@+id/partner_education_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0014_educacao_icon"
+            android:layout_below="@+id/partner_consulting_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="72sp"
+            android:layout_marginStart="72sp"/>
 
         <ImageButton
             android:id="@+id/partner_education"
             android:contentDescription="@string/advocacy_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_consulting"
             android:background="@drawable/parceiros_0014_educacao"
-            android:layout_margin="8sp"
-            android:scaleX="0.45"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_consulting"
+            android:layout_alignLeft="@+id/partner_consulting"
+            android:layout_alignStart="@+id/partner_consulting" />
+
+        <ImageButton
+            android:id="@+id/partner_entertainment_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0020_entretenimento_icon"
+            android:layout_below="@+id/partner_education_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="72sp"
+            android:layout_marginStart="72sp"/>
 
         <ImageButton
             android:id="@+id/partner_entertainment"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_education"
             android:background="@drawable/parceiros_0020_entretenimento"
-            android:layout_margin="8sp"
-            android:scaleX="0.61"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_education"
+            android:layout_alignLeft="@+id/partner_education"
+            android:layout_alignStart="@+id/partner_education" />
+
+        <ImageButton
+            android:id="@+id/partner_sport_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0015_esporte_icon"
+            android:layout_below="@+id/partner_entertainment_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="70sp"
+            android:layout_marginStart="70sp"/>
 
         <ImageButton
             android:id="@+id/partner_sport"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_entertainment"
             android:background="@drawable/parceiros_0015_esporte"
-            android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_entertainment"
+            android:layout_alignLeft="@+id/partner_entertainment"
+            android:layout_alignStart="@+id/partner_entertainment" />
+
+        <ImageButton
+            android:id="@+id/partner_home_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0000_lar_construcao_icon"
+            android:layout_below="@+id/partner_sport_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="72sp"
+            android:layout_marginStart="72sp"/>
 
         <ImageButton
             android:id="@+id/partner_home"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_sport"
             android:background="@drawable/parceiros_0000_lar_construcao"
-            android:layout_margin="8sp"
-            android:scaleX="0.68"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_sport"
+            android:layout_alignLeft="@+id/partner_sport"
+            android:layout_alignStart="@+id/partner_sport" />
+
+        <ImageButton
+            android:id="@+id/partner_world_animal_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0012_mundo_animal_icon"
+            android:layout_below="@+id/partner_home_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="75sp"
+            android:layout_marginStart="75sp"/>
 
         <ImageButton
             android:id="@+id/partner_world_animal"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_home"
             android:background="@drawable/parceiros_0012_mundo_animal"
-            android:layout_margin="8sp"
-            android:scaleX="0.64"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_home"
+            android:layout_alignLeft="@+id/partner_home"
+            android:layout_alignStart="@+id/partner_home" />
 
+        <ImageButton
+            android:id="@+id/partner_health_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0016_saude_icon"
+            android:layout_below="@+id/partner_world_animal_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="77sp"
+            android:layout_marginStart="77sp"/>
 
         <ImageButton
             android:id="@+id/partner_health"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_world_animal"
             android:background="@drawable/parceiros_0016_saude"
-            android:layout_margin="8sp"
-            android:scaleX="0.34"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_world_animal"
+            android:layout_alignRight="@+id/partner_beauty"
+            android:layout_alignEnd="@+id/partner_beauty" />
+
+        <ImageButton
+            android:id="@+id/partner_tech_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0017_tecnologia_icon"
+            android:layout_below="@+id/partner_health_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="72sp"
+            android:layout_marginStart="72sp"/>
 
         <ImageButton
             android:id="@+id/partner_tech"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_health"
             android:background="@drawable/parceiros_0017_tecnologia"
-            android:layout_margin="8sp"
-            android:scaleX="0.55"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_health"
+            android:layout_alignLeft="@+id/partner_world_animal"
+            android:layout_alignStart="@+id/partner_world_animal" />
+
+        <ImageButton
+            android:id="@+id/partner_tourism_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0018_turismo_icon"
+            android:layout_below="@+id/partner_tech_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="75sp"
+            android:layout_marginStart="75sp"/>
 
         <ImageButton
             android:id="@+id/partner_tourism"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_tech"
             android:background="@drawable/parceiros_0018_turismo"
-            android:layout_margin="8sp"
-            android:scaleX="0.45"/>
+            android:layout_marginTop="12sp"
+            android:layout_below="@+id/partner_tech"
+            android:layout_alignLeft="@+id/partner_tech"
+            android:layout_alignStart="@+id/partner_tech" />
+
+        <ImageButton
+            android:id="@+id/partner_clothing_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parceiros_0019_vestuario_icon"
+            android:layout_below="@+id/partner_tourism_icon"
+            android:layout_marginTop="12sp"
+            android:layout_marginLeft="75sp"
+            android:layout_marginStart="75sp"/>
 
         <ImageButton
             android:id="@+id/partner_clothing"
             android:contentDescription="@string/funeral_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/partner_tourism"
             android:background="@drawable/parceiros_0019_vestuario"
-            android:layout_margin="8sp"
-            android:scaleX="0.5"/>
+            android:layout_marginTop="12sp"
+            android:layout_marginBottom="12sp"
+            android:layout_below="@+id/partner_tourism"
+            android:layout_alignLeft="@+id/partner_tourism"
+            android:layout_alignStart="@+id/partner_tourism" />
 
     </RelativeLayout>
 
