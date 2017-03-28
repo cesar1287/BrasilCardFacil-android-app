@@ -23,21 +23,24 @@
         <ImageButton
             android:id="@+id/consulting_business"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_consultoria_0010_empresarial"
-            android:layout_margin="8sp"
-            android:scaleX="0.35"/>
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="90sp"
+            android:layout_marginLeft="90sp"/>
 
         <ImageButton
             android:id="@+id/consulting_legal"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/consulting_business"
             android:background="@drawable/parceiros_consultoria_0009_juridica"
-            android:layout_margin="8sp"
-            android:scaleX="0.25"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignLeft="@+id/consulting_business"
+            android:layout_alignStart="@+id/consulting_business"/>
     </RelativeLayout>
 </ScrollView>

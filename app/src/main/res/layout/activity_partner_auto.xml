@@ -26,9 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0010_auto_escola"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="90sp"
+            android:layout_marginLeft="90sp"/>
 
         <ImageButton
             android:id="@+id/auto_auto_parts"
@@ -38,7 +39,9 @@
             android:layout_below="@id/auto_driving_school"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0010_autopecas"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_batterie"
@@ -48,7 +51,9 @@
             android:layout_below="@id/auto_auto_parts"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0010_bateria"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_fuel"
@@ -58,7 +63,9 @@
             android:layout_below="@id/auto_batterie"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0011_combustivel"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_escapement"
@@ -68,7 +75,9 @@
             android:layout_below="@id/auto_fuel"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0012_escapamento"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_parking"
@@ -78,7 +87,9 @@
             android:layout_below="@id/auto_escapement"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0013_estacionamento"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_wash"
@@ -88,7 +99,9 @@
             android:layout_below="@id/auto_parking"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0014_lavagem"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_mechanical"
@@ -98,7 +111,9 @@
             android:layout_below="@id/auto_wash"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0015_mecanica"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_tire"
@@ -108,7 +123,9 @@
             android:layout_below="@id/auto_mechanical"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0016_pneus"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
             android:id="@+id/auto_accessories"
@@ -118,7 +135,10 @@
             android:layout_below="@id/auto_tire"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0009_acessorios"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
     </RelativeLayout>
 
 </ScrollView>

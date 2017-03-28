@@ -23,41 +23,46 @@
         <ImageButton
             android:id="@+id/clothing_shoes"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_vestuario_0006_calcados"
-            android:layout_margin="8sp"
-            android:scaleX="0.3"/>
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="90sp"
+            android:layout_marginLeft="90sp"/>
 
         <ImageButton
             android:id="@+id/clothing_childlike"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/clothing_shoes"
             android:background="@drawable/parceiros_vestuario_0007_infantil"
-            android:layout_margin="8sp"
-            android:scaleX="0.22"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/clothing_shoes"
+            android:layout_alignStart="@+id/clothing_shoes"/>
 
         <ImageButton
             android:id="@+id/clothing_beach"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/clothing_childlike"
             android:background="@drawable/parceiros_vestuario_0008_praia"
-            android:layout_margin="8sp"
-            android:scaleX="0.16"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/clothing_shoes"
+            android:layout_alignStart="@+id/clothing_shoes"/>
 
         <ImageButton
             android:id="@+id/clothing_garment"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/clothing_beach"
             android:background="@drawable/parceiros_vestuario_0009_roupas"
-            android:layout_margin="8sp"
-            android:scaleX="0.23"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignLeft="@+id/clothing_shoes"
+            android:layout_alignStart="@+id/clothing_shoes"/>
     </RelativeLayout>
 </ScrollView>

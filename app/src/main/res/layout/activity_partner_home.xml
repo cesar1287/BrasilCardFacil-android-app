@@ -25,10 +25,11 @@
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_lar_construcao_0006_arquitetura"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"/>
 
         <ImageButton
             android:id="@+id/home_decoration"
@@ -38,7 +39,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_architecture"
             android:background="@drawable/parceiros_lar_construcao_0007_decoracao_paisagismo"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_engineering"
@@ -48,7 +51,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_decoration"
             android:background="@drawable/parceiros_lar_construcao_0008_engenharia"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_hardware"
@@ -58,7 +63,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_engineering"
             android:background="@drawable/parceiros_lar_construcao_0009_ferragens"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_timber"
@@ -68,7 +75,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_hardware"
             android:background="@drawable/parceiros_lar_construcao_0010_madeireira"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_construction_material"
@@ -78,7 +87,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_timber"
             android:background="@drawable/parceiros_lar_construcao_0011_material_construcao"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_furniture"
@@ -88,7 +99,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_construction_material"
             android:background="@drawable/parceiros_lar_construcao_0012_moveis"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_provision_services"
@@ -98,7 +111,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_furniture"
             android:background="@drawable/parceiros_lar_construcao_0013_prestacao_servico"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_ink"
@@ -108,7 +123,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_provision_services"
             android:background="@drawable/parceiros_lar_construcao_0014_tinta"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
             android:id="@+id/home_glasses"
@@ -118,6 +135,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_ink"
             android:background="@drawable/parceiros_lar_construcao_0015_vidros"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
     </RelativeLayout>
 </ScrollView>

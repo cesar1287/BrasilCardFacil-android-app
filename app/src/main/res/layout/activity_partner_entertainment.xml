@@ -25,10 +25,11 @@
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_entretenimento_0009_arte"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="90sp"
+            android:layout_marginLeft="90sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_toy"
@@ -38,7 +39,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_art"
             android:background="@drawable/parceiros_entretenimento_0010_brinquedo"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_movie_theater"
@@ -48,7 +51,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_toy"
             android:background="@drawable/parceiros_entretenimento_0011_cinema"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_decoration"
@@ -58,7 +63,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_movie_theater"
             android:background="@drawable/parceiros_entretenimento_0012_decoracao"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_dj"
@@ -68,7 +75,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_decoration"
             android:background="@drawable/parceiros_entretenimento_0013_dj"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_newspaper"
@@ -78,7 +87,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_dj"
             android:background="@drawable/parceiros_entretenimento_0015_jornal"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_park"
@@ -88,7 +99,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_newspaper"
             android:background="@drawable/parceiros_entretenimento_0016_parque"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_radio"
@@ -98,7 +111,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_park"
             android:background="@drawable/parceiros_entretenimento_0017_radio"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_party_hall"
@@ -108,7 +123,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_radio"
             android:background="@drawable/parceiros_entretenimento_0018_salao_festa"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
 
         <ImageButton
             android:id="@+id/entertainment_sound"
@@ -118,6 +135,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_party_hall"
             android:background="@drawable/parceiros_entretenimento_0019_som"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignLeft="@+id/entertainment_art"
+            android:layout_alignStart="@+id/entertainment_art"/>
     </RelativeLayout>
 </ScrollView>

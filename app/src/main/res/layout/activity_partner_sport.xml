@@ -26,9 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0006_academia"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"/>
 
         <ImageButton
             android:id="@+id/sport_equipment"
@@ -38,7 +39,9 @@
             android:layout_below="@id/sport_gym"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0006_equipamentos"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/sport_gym"
+            android:layout_alignStart="@+id/sport_gym"/>
 
         <ImageButton
             android:id="@+id/sport_personal"
@@ -48,7 +51,9 @@
             android:layout_below="@id/sport_equipment"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0007_personal"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/sport_gym"
+            android:layout_alignStart="@+id/sport_gym"/>
 
         <ImageButton
             android:id="@+id/sport_supplement"
@@ -58,7 +63,9 @@
             android:layout_below="@id/sport_personal"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0008_suplemento"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/sport_gym"
+            android:layout_alignStart="@+id/sport_gym"/>
 
         <ImageButton
             android:id="@+id/sport_clothing"
@@ -68,6 +75,8 @@
             android:layout_below="@id/sport_supplement"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0009_vestuario"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/sport_gym"
+            android:layout_alignStart="@+id/sport_gym"/>
     </RelativeLayout>
 </ScrollView>

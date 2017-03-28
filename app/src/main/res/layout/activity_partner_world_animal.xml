@@ -25,20 +25,22 @@
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_mundo_animal_0007_clinica"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"/>
 
         <ImageButton
             android:id="@+id/world_animal_lab"
             android:contentDescription="@string/veterinary_image_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/world_animal_clinic"
             android:background="@drawable/parceiros_mundo_animal_0009_laboratorio"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/world_animal_clinic"
+            android:layout_alignStart="@+id/world_animal_clinic"/>
 
         <ImageButton
             android:id="@+id/world_animal_hotel"
@@ -48,7 +50,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/world_animal_lab"
             android:background="@drawable/parceiros_mundo_animal_0008_hotel"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/world_animal_clinic"
+            android:layout_alignStart="@+id/world_animal_clinic"/>
 
         <ImageButton
             android:id="@+id/world_animal_pet_shop"
@@ -58,7 +62,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/world_animal_hotel"
             android:background="@drawable/parceiros_mundo_animal_0008_pet_shop"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/world_animal_clinic"
+            android:layout_alignStart="@+id/world_animal_clinic"/>
 
         <ImageButton
             android:id="@+id/world_animal_veterinary"
@@ -68,6 +74,8 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/world_animal_pet_shop"
             android:background="@drawable/parceiros_mundo_animal_0010_veterinaria"
-            android:layout_margin="8sp"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/world_animal_clinic"
+            android:layout_alignStart="@+id/world_animal_clinic"/>
     </RelativeLayout>
 </ScrollView>

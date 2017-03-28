@@ -23,62 +23,68 @@
         <ImageButton
             android:id="@+id/food_water_gas"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_alimentacao_0009_agua_gas"
-            android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"/>
 
         <ImageButton
             android:id="@+id/food_pub_coffee"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/food_water_gas"
             android:background="@drawable/parceiros_alimentacao_0010_bar_cafe"
-            android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/food_water_gas"
+            android:layout_alignStart="@+id/food_water_gas"/>
 
         <ImageButton
             android:id="@+id/food_distributor"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/food_pub_coffee"
             android:background="@drawable/parceiros_alimentacao_0011_distribuidor"
-            android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/food_water_gas"
+            android:layout_alignStart="@+id/food_water_gas"/>
 
         <ImageButton
             android:id="@+id/food_bakery"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/food_distributor"
             android:background="@drawable/parceiros_alimentacao_0012_padaria"
-            android:layout_margin="8sp"
-            android:scaleX="0.25"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/food_water_gas"
+            android:layout_alignStart="@+id/food_water_gas"/>
 
         <ImageButton
             android:id="@+id/food_restaurant"
             android:contentDescription="@string/trade_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/food_bakery"
             android:background="@drawable/parceiros_alimentacao_0013_restaurante_lanchonete"
-            android:layout_margin="8sp"
-            android:scaleX="0.8"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/food_water_gas"
+            android:layout_alignStart="@+id/food_water_gas"/>
 
         <ImageButton
             android:id="@+id/food_supermarket"
             android:contentDescription="@string/advocacy_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/food_restaurant"
             android:background="@drawable/parceiros_alimentacao_0014_supermercado"
-            android:layout_margin="8sp"
-            android:scaleX="0.43"/>
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/food_water_gas"
+            android:layout_alignStart="@+id/food_water_gas"/>
     </RelativeLayout>
 
 </ScrollView>
