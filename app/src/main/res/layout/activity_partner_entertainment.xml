@@ -23,111 +23,101 @@
         <ImageButton
             android:id="@+id/entertainment_art"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_entretenimento_0009_arte"
-            android:layout_margin="8sp"
-            android:scaleX="0.15"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_toy"
             android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_art"
             android:background="@drawable/parceiros_entretenimento_0010_brinquedo"
-            android:layout_margin="8sp"
-            android:scaleX="0.35"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_movie_theater"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_toy"
             android:background="@drawable/parceiros_entretenimento_0011_cinema"
-            android:layout_margin="8sp"
-            android:scaleX="0.27"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_decoration"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_movie_theater"
             android:background="@drawable/parceiros_entretenimento_0012_decoracao"
-            android:layout_margin="8sp"
-            android:scaleX="0.37"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_dj"
             android:contentDescription="@string/image_clinic_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_decoration"
             android:background="@drawable/parceiros_entretenimento_0013_dj"
-            android:layout_margin="8sp"
-            android:scaleX="0.08"/>
-
-        <ImageButton
-            android:id="@+id/entertainment_lighting"
-            android:contentDescription="@string/dentistry_image_screen_partner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_dj"
-            android:background="@drawable/parceiros_entretenimento_0014_iluminacao"
-            android:layout_margin="8sp"
-            android:scaleX="0.4"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_newspaper"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/entertainment_lighting"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/entertainment_dj"
             android:background="@drawable/parceiros_entretenimento_0015_jornal"
-            android:layout_margin="8sp"
-            android:scaleX="0.21"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_park"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_newspaper"
             android:background="@drawable/parceiros_entretenimento_0016_parque"
-            android:layout_margin="8sp"
-            android:scaleX="0.24"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_radio"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_park"
             android:background="@drawable/parceiros_entretenimento_0017_radio"
-            android:layout_margin="8sp"
-            android:scaleX="0.2"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_party_hall"
             android:contentDescription="@string/lab_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_radio"
             android:background="@drawable/parceiros_entretenimento_0018_salao_festa"
-            android:layout_margin="8sp"
-            android:scaleX="0.5"/>
+            android:layout_margin="8sp"/>
 
         <ImageButton
             android:id="@+id/entertainment_sound"
             android:contentDescription="@string/veterinary_image_screen_partner"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_below="@id/entertainment_party_hall"
             android:background="@drawable/parceiros_entretenimento_0019_som"
-            android:layout_margin="8sp"
-            android:scaleX="0.15"/>
+            android:layout_margin="8sp"/>
     </RelativeLayout>
 </ScrollView>
