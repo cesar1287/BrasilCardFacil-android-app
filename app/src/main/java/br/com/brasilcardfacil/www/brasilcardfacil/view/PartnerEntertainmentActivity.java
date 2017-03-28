@@ -76,17 +76,6 @@ public class PartnerEntertainmentActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton btConstructionMaterial = (ImageButton) findViewById(R.id.entertainment_lighting);
-        btConstructionMaterial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PartnerEntertainmentActivity.this, PartnerCategoryActivity.class);
-                intent.putExtra(Utility.CATEGORY, Utility.ENTERTAINMENT);
-                intent.putExtra(Utility.SUBCATEGORY, Utility.ENTERTAINMENT_SUBCATEGORY_LIGHTING);
-                startActivity(intent);
-            }
-        });
-
         ImageButton btFurniture = (ImageButton) findViewById(R.id.entertainment_newspaper);
         btFurniture.setOnClickListener(new View.OnClickListener() {
             @Override
