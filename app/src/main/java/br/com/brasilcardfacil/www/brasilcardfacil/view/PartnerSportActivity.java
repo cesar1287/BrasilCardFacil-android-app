@@ -32,6 +32,17 @@ public class PartnerSportActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btEquipment = (ImageButton) findViewById(R.id.sport_equipment);
+        btEquipment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerSportActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.SPORT);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.SPORT_SUBCATEGORY_EQUIPMENT);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btPersonal = (ImageButton) findViewById(R.id.sport_personal);
         btPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
