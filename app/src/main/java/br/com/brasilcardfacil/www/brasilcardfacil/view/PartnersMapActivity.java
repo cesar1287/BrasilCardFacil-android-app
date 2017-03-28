@@ -4,6 +4,9 @@ import android.app.ProgressDialog;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -15,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
@@ -28,6 +32,7 @@ public class PartnersMapActivity extends AppCompatActivity {
     PartnersMapViewFragment frag;
 
     List<Partner> partners = new ArrayList<>();
+    List<Partner> partners_aux = new ArrayList<>();
 
     private ProgressDialog dialog;
 
@@ -35,6 +40,8 @@ public class PartnersMapActivity extends AppCompatActivity {
 
     ValueEventListener valueEventListener;
     ValueEventListener singleValueEventListener;
+
+    String name_partner, category_partner, search_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,69 @@ public class PartnersMapActivity extends AppCompatActivity {
         dialog = ProgressDialog.show(this,"", this.getResources().getString(R.string.loading_partners_pls_wait), true, false);
 
         loadList();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        //Carrega o arquivo de menu.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search, menu);
+
+        //Pega o Componente.
+        SearchView mSearchView = (SearchView) menu.findItem(R.id.search)
+                .getActionView();
+        //Define um texto de ajuda:
+        mSearchView.setQueryHint("Buscar por tag");
+
+        // exemplos de utilização:
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                partners = new ArrayList<>(partners_aux);
+
+                if(newText.length()!=0){
+                    for (Iterator<Partner> i = partners.iterator(); i.hasNext();) {
+                        Partner partner = i.next();
+                        name_partner = partner.getName().toLowerCase();
+                        //category_partner = partner.getCategory().toLowerCase();
+                        search_name = String.valueOf(newText).toLowerCase();
+                        /*if (!name_partner.contains(search_name) && !category_partner.contains(search_name)) {
+                            i.remove();
+                        }*/
+                        if (!name_partner.contains(search_name)) {
+                            i.remove();
+                        }
+                    }
+
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.detach(frag);
+                    ft.attach(frag);
+                    ft.commit();
+
+                    /*frag.mList.clear();
+                    frag.mList.addAll(getPartnersList());
+                    frag.adapter.notifyDataSetChanged();*/
+                }else{
+
+                    /*frag.mList.clear();
+                    frag.mList.addAll(getPartnersList());
+                    frag.adapter.notifyDataSetChanged();*/
+                }
+
+                return false;
+            }
+        });
+
+        return true;
     }
 
     public void loadList(){
@@ -75,6 +145,8 @@ public class PartnersMapActivity extends AppCompatActivity {
 
         singleValueEventListener = new ValueEventListener() {
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                partners_aux = new ArrayList<>(partners);
 
                 frag = (PartnersMapViewFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAP_FRAGMENT);
                 if(frag == null) {
