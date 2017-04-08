@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
+import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class PartnerActivity extends AppCompatActivity {
 
@@ -88,6 +89,26 @@ public class PartnerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PartnerActivity.this, PartnerBeautyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btTrade = (ImageButton) findViewById(R.id.partner_trade);
+        btTrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.TRADE);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btTradeIcon = (ImageButton) findViewById(R.id.partner_trade_icon);
+        btTradeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.TRADE);
                 startActivity(intent);
             }
         });
@@ -214,6 +235,26 @@ public class PartnerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PartnerActivity.this, PartnerHealthActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btServices = (ImageButton) findViewById(R.id.partner_services);
+        btServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.SERVICES);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btServicesIcon = (ImageButton) findViewById(R.id.partner_services_icon);
+        btServicesIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.SERVICES);
                 startActivity(intent);
             }
         });
