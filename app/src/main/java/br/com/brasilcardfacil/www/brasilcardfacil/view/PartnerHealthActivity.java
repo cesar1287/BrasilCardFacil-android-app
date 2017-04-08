@@ -109,6 +109,17 @@ public class PartnerHealthActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btPilates = (ImageButton) findViewById(R.id.health_pilates);
+        btPilates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerHealthActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.HEALTH);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.HEALTH_SUBCATEGORY_PILATES);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btPsychology = (ImageButton) findViewById(R.id.health_psychology);
         btPsychology.setOnClickListener(new View.OnClickListener() {
             @Override
