@@ -22,6 +22,8 @@ public class Utility {
     public static final String HOME = "lar_construcao";
     public static final String ENTERTAINMENT = "entretenimento";
     public static final String WORLD_ANIMAL = "mundo_animal";
+    public static final String TRADE = "trade";
+    public static final String SERVICES = "servicos";
 
     public static final String KEY_CONTENT_EXTRA_PLANS = "link";
     public static final String KEY_CONTENT_EXTRA_PARTNER = "partner";
@@ -43,6 +45,7 @@ public class Utility {
     public static final String TECH_SUBCATEGORY_COMPUTING = "informatica";
     public static final String TECH_SUBCATEGORY_INTERNET = "internet";
     public static final String TECH_SUBCATEGORY_TV_VIDEO = "tv_video";
+    public static final String TECH_SUBCATEGORY_TECNICIANS = "tecnicos";
 
     public static final String ENTERTAINMENT_SUBCATEGORY_ART = "arte";
     public static final String ENTERTAINMENT_SUBCATEGORY_TOY = "brinquedo";
@@ -75,6 +78,7 @@ public class Utility {
     public static final String HEALTH_SUBCATEGORY_NUTRITIONIST = "nutricionista";
     public static final String HEALTH_SUBCATEGORY_DENTISTRY = "odontologia";
     public static final String HEALTH_SUBCATEGORY_PSYCHOLOGY = "psicologia";
+    public static final String HEALTH_SUBCATEGORY_PILATES = "pilates";
 
     public static final String AUTO_SUBCATEGORY_ACCESSORIES = "acessorios";
     public static final String AUTO_SUBCATEGORY_DRIVING_SCHOOL = "auto_escola";
@@ -97,16 +101,20 @@ public class Utility {
     public static final String CLOTHING_SUBCATEGORY_CHILDLIKE = "infantil";
     public static final String CLOTHING_SUBCATEGORY_BEACH = "praia";
     public static final String CLOTHING_SUBCATEGORY_GARMENT = "roupas";
+    public static final String CLOTHING_SUBCATEGORY_FITNESS = "fitness";
 
     public static final String SPORT_SUBCATEGORY_GYM = "academia";
     public static final String SPORT_SUBCATEGORY_EQUIPMENT = "equipamentos";
     public static final String SPORT_SUBCATEGORY_PERSONAL = "personal";
     public static final String SPORT_SUBCATEGORY_SUPPLEMENT = "suplemento";
     public static final String SPORT_SUBCATEGORY_CLOTHING = "vestuario";
+    public static final String SPORT_SUBCATEGORY_BIKES = "bikes";
+    public static final String SPORT_SUBCATEGORY_SWIMMING = "natacao";
 
     public static final String EDUCATION_SUBCATEGORY_SCHOOL = "colegio";
     public static final String EDUCATION_SUBCATEGORY_TECHNICIAN = "tecnico";
     public static final String EDUCATION_SUBCATEGORY_UNIVERSITY = "universidade";
+    public static final String EDUCATION_SUBCATEGORY_COURSES = "cursos";
 
     public static final String TOURISM_SUBCATEGORY_TRAVEL_AGENCY = "agencia_viagem";
     public static final String TOURISM_SUBCATEGORY_GUIDE = "guia";
@@ -114,7 +122,7 @@ public class Utility {
     public static final String TOURISM_SUBCATEGORY_HOTEL = "hotel";
     public static final String TOURISM_SUBCATEGORY_TRANSPORT = "transporte";
 
-    public static final String BEAUTY_SUBCATEGORY_AESTHETICS = "agencia";
+    public static final String BEAUTY_SUBCATEGORY_AESTHETICS = "estetica";
     public static final String BEAUTY_SUBCATEGORY_BARBER_SHOP = "barbearia";
     public static final String BEAUTY_SUBCATEGORY_MAKE_UP = "maquiagem";
     public static final String BEAUTY_SUBCATEGORY_BEAUTY_SALON = "salao_beleza";
