@@ -43,6 +43,28 @@ public class PartnerSportActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btBikes = (ImageButton) findViewById(R.id.sport_bikes);
+        btBikes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerSportActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.SPORT);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.SPORT_SUBCATEGORY_BIKES);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btSwimming = (ImageButton) findViewById(R.id.sport_swimming);
+        btSwimming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerSportActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.SPORT);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.SPORT_SUBCATEGORY_SWIMMING);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btPersonal = (ImageButton) findViewById(R.id.sport_personal);
         btPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
