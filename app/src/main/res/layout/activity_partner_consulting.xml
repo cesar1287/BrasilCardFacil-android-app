@@ -28,8 +28,8 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_consultoria_0010_empresarial"
             android:layout_marginTop="12sp"
-            android:layout_marginStart="90sp"
-            android:layout_marginLeft="90sp"/>
+            android:layout_marginStart="60sp"
+            android:layout_marginLeft="60sp"/>
 
         <ImageButton
             android:id="@+id/consulting_legal"
