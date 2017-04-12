@@ -28,8 +28,19 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_educacao_0010_colegio"
             android:layout_marginTop="12sp"
-            android:layout_marginStart="90sp"
-            android:layout_marginLeft="90sp"/>
+            android:layout_marginStart="60sp"
+            android:layout_marginLeft="60sp"/>
+
+        <ImageButton
+            android:id="@+id/education_courses"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/education_school"
+            android:background="@drawable/parceiros_educacao_0010_cursos"
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="60sp"
+            android:layout_marginLeft="60sp"/>
 
         <ImageButton
             android:id="@+id/education_technician"
@@ -37,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/education_school"
+            android:layout_below="@id/education_courses"
             android:background="@drawable/parceiros_educacao_0011_tecnico"
             android:layout_marginTop="12dp"
             android:layout_alignLeft="@+id/education_school"
