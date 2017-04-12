@@ -28,8 +28,8 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_mundo_animal_0007_clinica"
             android:layout_marginTop="12dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginLeft="90dp"/>
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"/>
 
         <ImageButton
             android:id="@+id/world_animal_lab"
