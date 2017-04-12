@@ -28,8 +28,8 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_alimentacao_0009_agua_gas"
             android:layout_marginTop="12dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"/>
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"/>
 
         <ImageButton
             android:id="@+id/food_pub_coffee"
