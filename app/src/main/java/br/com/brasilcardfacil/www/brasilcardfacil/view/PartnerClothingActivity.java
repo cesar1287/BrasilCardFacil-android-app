@@ -32,6 +32,17 @@ public class PartnerClothingActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btFitness = (ImageButton) findViewById(R.id.clothing_fitness);
+        btFitness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerClothingActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.CLOTHING);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.CLOTHING_SUBCATEGORY_FITNESS);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btChildlike = (ImageButton) findViewById(R.id.clothing_childlike);
         btChildlike.setOnClickListener(new View.OnClickListener() {
             @Override

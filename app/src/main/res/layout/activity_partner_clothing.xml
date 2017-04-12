@@ -28,15 +28,26 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_vestuario_0006_calcados"
             android:layout_marginTop="12sp"
-            android:layout_marginStart="90sp"
-            android:layout_marginLeft="90sp"/>
+            android:layout_marginStart="60sp"
+            android:layout_marginLeft="60sp"/>
+
+        <ImageButton
+            android:id="@+id/clothing_fitness"
+            android:contentDescription="@string/dentistry_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clothing_shoes"
+            android:background="@drawable/parceiros_vestuario_0007_fitness"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/clothing_shoes"
+            android:layout_alignStart="@+id/clothing_shoes"/>
 
         <ImageButton
             android:id="@+id/clothing_childlike"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/clothing_shoes"
+            android:layout_below="@id/clothing_fitness"
             android:background="@drawable/parceiros_vestuario_0007_infantil"
             android:layout_marginTop="12dp"
             android:layout_alignLeft="@+id/clothing_shoes"
