@@ -12,6 +12,7 @@
         <item>Contagem</item>
         <item>Formiga</item>
         <item>Ibirité</item>
+        <item>Montes Claros</item>
     </string-array>
 
     <string name="app_name">BrasilCard fácil</string>
@@ -159,4 +160,5 @@
     <string name="screen_selection_local">Selecione o local</string>
     <string name="screen_world_animal">Mundo Animal</string>
     <string name="search_title">Buscar por tag</string>
+    <string name="screen_services">Serviços</string>
 </resources>
