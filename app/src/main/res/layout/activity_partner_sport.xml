@@ -28,17 +28,41 @@
             android:layout_below="@id/main_banner"
             android:background="@drawable/parceiros_esporte_0006_academia"
             android:layout_marginTop="12dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginLeft="90dp"/>
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"/>
+
+        <ImageButton
+            android:id="@+id/sport_bikes"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sport_gym"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/parceiros_esporte_0007_bikes"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/sport_gym"
+            android:layout_alignStart="@+id/sport_gym"/>
 
         <ImageButton
             android:id="@+id/sport_equipment"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sport_gym"
+            android:layout_below="@id/sport_bikes"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0006_equipamentos"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/sport_gym"
+            android:layout_alignStart="@+id/sport_gym"/>
+
+        <ImageButton
+            android:id="@+id/sport_swimming"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sport_equipment"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/parceiros_esporte_0007_natacao"
             android:layout_marginTop="12dp"
             android:layout_alignLeft="@+id/sport_gym"
             android:layout_alignStart="@+id/sport_gym"/>
@@ -48,7 +72,7 @@
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sport_equipment"
+            android:layout_below="@id/sport_swimming"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_esporte_0007_personal"
             android:layout_marginTop="12dp"

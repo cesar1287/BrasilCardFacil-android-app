@@ -76,6 +76,17 @@ public class PartnerTechActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btTechnicians = (ImageButton) findViewById(R.id.tech_technicians);
+        btTechnicians.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerTechActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.TECH);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.TECH_SUBCATEGORY_TECNICIANS);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btTvVideo = (ImageButton) findViewById(R.id.tech_tv_video);
         btTvVideo.setOnClickListener(new View.OnClickListener() {
             @Override
