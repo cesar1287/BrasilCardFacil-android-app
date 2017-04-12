@@ -163,7 +163,9 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     p.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE).getValue());
                     p.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE).getValue());
 
-                    if(p.getSubcategory().contains(subcategory)) {
+                    if(category.equals(Utility.TRADE) || category.equals(Utility.SERVICES)) {
+                        partners.add(p);
+                    }else if(p.getSubcategory().contains(subcategory)){
                         partners.add(p);
                     }
                 }
@@ -386,6 +388,30 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     }
                     partner = mDatabase
                             .child(FirebaseHelper.FIREBASE_DATABASE_WORLD_ANIMAL)
+                            .orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY)
+                            .equalTo(Utility.CITY);
+                    break;
+                case Utility.TRADE:
+                    actionBar.setTitle(R.string.screen_trade);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.parceiros_0006_banner_comercio, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.parceiros_0006_banner_comercio);
+                    }
+                    partner = mDatabase
+                            .child(FirebaseHelper.FIREBASE_DATABASE_TRADE)
+                            .orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY)
+                            .equalTo(Utility.CITY);
+                    break;
+                case Utility.SERVICES:
+                    actionBar.setTitle(R.string.screen_services);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        banner.setImageDrawable(getResources().getDrawable(R.drawable.projeto_0006_banner_servicos, getApplicationContext().getTheme()));
+                    } else {
+                        banner.setImageResource(R.drawable.projeto_0006_banner_servicos);
+                    }
+                    partner = mDatabase
+                            .child(FirebaseHelper.FIREBASE_DATABASE_SERVICES)
                             .orderByChild(FirebaseHelper.FIREBASE_DATABASE_ORDERBY)
                             .equalTo(Utility.CITY);
                     break;

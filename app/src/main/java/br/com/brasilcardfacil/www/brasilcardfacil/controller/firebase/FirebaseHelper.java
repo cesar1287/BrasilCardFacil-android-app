@@ -27,6 +27,8 @@ public class FirebaseHelper {
     public static final String FIREBASE_DATABASE_HOME = "lar_construcao";
     public static final String FIREBASE_DATABASE_ENTERTAINMENT = "entretenimento";
     public static final String FIREBASE_DATABASE_WORLD_ANIMAL = "mundo_animal";
+    public static final String FIREBASE_DATABASE_TRADE = "comercio";
+    public static final String FIREBASE_DATABASE_SERVICES = "servicos";
 
     public static final String FIREBASE_DATABASE_PARTNER_SUBCATEGORY = "subcategory";
     public static final String FIREBASE_DATABASE_PARTNER_NAME = "name";
@@ -38,6 +40,7 @@ public class FirebaseHelper {
     public static final String FIREBASE_DATABASE_PARTNER_LATITUDE = "latitude";
     public static final String FIREBASE_DATABASE_PARTNER_LONGITUDE = "longitude";
     public static final String FIREBASE_DATABASE_PARTNER_ID_USER = "id_user";
+    public static final String FIREBASE_DATABASE_PARTNER_TAG = "tag";
 
     public static final String FIREBASE_DATABASE_OFFER_NAME = "name";
     public static final String FIREBASE_DATABASE_OFFER_URL_BANNER = "url_banner";
