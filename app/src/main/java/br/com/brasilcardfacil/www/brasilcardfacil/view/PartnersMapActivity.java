@@ -1,7 +1,14 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
+import android.Manifest;
 import android.app.ProgressDialog;
-import android.support.v4.app.FragmentTransaction;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -9,6 +16,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,36 +31,43 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.domain.Partner;
-import br.com.brasilcardfacil.www.brasilcardfacil.controller.fragment.PartnersMapViewFragment;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.firebase.FirebaseHelper;
-import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
-public class PartnersMapActivity extends AppCompatActivity {
-
-    PartnersMapViewFragment frag;
+public class PartnersMapActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback, LocationListener {
 
     List<Partner> partners = new ArrayList<>();
     List<Partner> partners_aux = new ArrayList<>();
 
     private ProgressDialog dialog;
 
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+
     Query partner;
 
     ValueEventListener valueEventListener;
     ValueEventListener singleValueEventListener;
 
-    String name_partner, category_partner, search_name;
+    String name_partner, tag_partner, search_name;
+
+    MapView mMapView;
+    private GoogleMap googleMap;
+
+    Bundle savedInstanceState;
+
+    boolean showed = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.savedInstanceState = savedInstanceState;
+
         setContentView(R.layout.activity_partners_map);
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -69,7 +91,7 @@ public class PartnersMapActivity extends AppCompatActivity {
         SearchView mSearchView = (SearchView) menu.findItem(R.id.search)
                 .getActionView();
         //Define um texto de ajuda:
-        mSearchView.setQueryHint("Buscar por tag");
+        mSearchView.setQueryHint("Buscar");
 
         // exemplos de utilização:
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -88,29 +110,18 @@ public class PartnersMapActivity extends AppCompatActivity {
                     for (Iterator<Partner> i = partners.iterator(); i.hasNext();) {
                         Partner partner = i.next();
                         name_partner = partner.getName().toLowerCase();
-                        //category_partner = partner.getCategory().toLowerCase();
+                        tag_partner = partner.getTag().toLowerCase();
                         search_name = String.valueOf(newText).toLowerCase();
-                        /*if (!name_partner.contains(search_name) && !category_partner.contains(search_name)) {
-                            i.remove();
-                        }*/
-                        if (!name_partner.contains(search_name)) {
+                        if (!name_partner.contains(search_name) && !tag_partner.contains(search_name)) {
                             i.remove();
                         }
                     }
 
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.detach(frag);
-                    ft.attach(frag);
-                    ft.commit();
+                    drawMarkers();
 
-                    /*frag.mList.clear();
-                    frag.mList.addAll(getPartnersList());
-                    frag.adapter.notifyDataSetChanged();*/
                 }else{
 
-                    /*frag.mList.clear();
-                    frag.mList.addAll(getPartnersList());
-                    frag.adapter.notifyDataSetChanged();*/
+                    drawMarkers();
                 }
 
                 return false;
@@ -132,6 +143,7 @@ public class PartnersMapActivity extends AppCompatActivity {
                     p.setName((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_NAME).getValue());
                     p.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE).getValue());
                     p.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE).getValue());
+                    p.setTag((String)postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_TAG).getValue());
                     partners.add(p);
                 }
             }
@@ -148,18 +160,10 @@ public class PartnersMapActivity extends AppCompatActivity {
 
                 partners_aux = new ArrayList<>(partners);
 
-                frag = (PartnersMapViewFragment) getSupportFragmentManager().findFragmentByTag(Utility.KEY_MAP_FRAGMENT);
-                if(frag == null) {
-                    frag = new PartnersMapViewFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable(Utility.KEY_CONTENT_EXTRA_ACTIVE_PARTNERS_NEARBY, (Serializable) partners);
-                    frag.setArguments(bundle);
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.partners_map_fragment_container, frag, Utility.KEY_MAP_FRAGMENT);
-                    ft.commit();
-                }
-
                 dialog.dismiss();
+
+                setupMap();
+
             }
 
             @Override
@@ -174,11 +178,120 @@ public class PartnersMapActivity extends AppCompatActivity {
         partner.addListenerForSingleValueEvent(singleValueEventListener);
     }
 
+    public void setupMap(){
+
+        mMapView = (MapView) findViewById(R.id.mapView);
+        mMapView.onCreate(savedInstanceState);
+
+        mMapView.onResume(); // needed to get the map to display immediately
+
+        try {
+            MapsInitializer.initialize(getApplicationContext());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        mMapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap mMap) {
+                googleMap = mMap;
+
+                googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+                enableMyLocation();
+            }
+        });
+    }
+
+    private void enableMyLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission to access the location is missing.
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    LOCATION_PERMISSION_REQUEST_CODE);
+        } else if (googleMap != null) {
+            // Access to the location has been granted to the app.
+            googleMap.setMyLocationEnabled(true);
+
+            // Getting LocationManager object from System Service LOCATION_SERVICE
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+            // Creating a criteria object to retrieve provider
+            Criteria criteria = new Criteria();
+
+            // Getting the name of the best provider
+            String provider = locationManager.getBestProvider(criteria, true);
+
+            // Getting Current Location
+            Location location = locationManager.getLastKnownLocation(provider);
+
+            if (location != null) {
+                onLocationChanged(location);
+            }
+            locationManager.requestLocationUpdates(provider, 20000, 0, this);
+        }
+    }
+
+    public void drawMarkers(){
+
+        googleMap.clear();
+
+        assert partners != null;
+        for (Partner p: partners){
+            // For dropping a marker at a point on the Map
+            LatLng address = new LatLng(p.getLatitude(), p.getLongitude());
+            googleMap.addMarker(new MarkerOptions().position(address).title(p.getName()).snippet(p.getName()));
+        }
+    }
+
+    public void setupUI(LatLng latLng){
+
+        drawMarkers();
+
+        // For zooming automatically to the location of the marker
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(14.45f).build();
+        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
         partner.removeEventListener(valueEventListener);
         partner.removeEventListener(singleValueEventListener);
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+        if(showed) {
+            // Getting latitude of the current location
+            double latitude = location.getLatitude();
+
+            // Getting longitude of the current location
+            double longitude = location.getLongitude();
+
+            // Creating a LatLng object for the current location
+            LatLng latLng = new LatLng(latitude, longitude);
+
+            setupUI(latLng);
+
+            showed = false;
+        }
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
     }
 }

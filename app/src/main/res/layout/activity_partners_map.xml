@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context="br.com.brasilcardfacil.www.brasilcardfacil.view.PartnersMapActivity">
 
-    <RelativeLayout
-        android:id="@+id/partners_map_fragment_container"
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
