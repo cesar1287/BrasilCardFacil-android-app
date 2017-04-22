@@ -28,7 +28,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE, getIntent().getExtras()
                             .getString(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE));
                     intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD, getIntent().getExtras()
-                            .getString(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE));
+                            .getString(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD));
                     startActivity(intent);
                     showed = true;
                     finish();
@@ -38,7 +38,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE, getIntent().getExtras()
                             .getString(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE));
                     intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD, getIntent().getExtras()
-                            .getString(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE));
+                            .getString(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD));
                     startActivity(intent);
                     showed = true;
                     finish();
@@ -48,7 +48,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE, getIntent().getExtras()
                             .getString(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE));
                     intent.putExtra(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD, getIntent().getExtras()
-                            .getString(FirebaseHelper.FIREBASE_NOTIFICATION_DATABASE));
+                            .getString(FirebaseHelper.FIREBASE_NOTIFICATION_CHILD));
                     startActivity(intent);
                     showed = true;
                     finish();
