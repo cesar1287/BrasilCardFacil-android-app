@@ -1,22 +1,56 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 import br.com.brasilcardfacil.www.brasilcardfacil.R;
 import br.com.brasilcardfacil.www.brasilcardfacil.controller.util.Utility;
 
 public class PartnerActivity extends AppCompatActivity {
 
+    RelativeLayout relativeLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partner);
 
+        relativeLayout = (RelativeLayout) findViewById(R.id.snackbar_partners);
+
         setupListeners();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        setupSnackBar();
+    }
+
+    public void setupSnackBar(){
+        Snackbar snackbar = Snackbar
+                .make(relativeLayout, "Cadastre-se como Parceiro Comercial!", Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction("IR", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerActivity.this, WebViewPlansActivity.class);
+                intent.putExtra(Utility.KEY_CONTENT_EXTRA_PLANS, Utility.LINK_BE_PARTNER);
+                startActivity(intent);
+            }
+        });
+        snackbar.setActionTextColor(this.getResources().getColor(R.color.BrasilCardFacil));
+
+        View sbView = snackbar.getView();
+        sbView.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+
+        snackbar.show();
     }
 
     public void setupListeners(){

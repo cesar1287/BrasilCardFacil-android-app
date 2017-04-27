@@ -8,6 +8,8 @@ public class Utility {
     public static final String CATEGORY = "category";
     public static final String SUBCATEGORY = "subcategory";
 
+    public static final String LINK_BE_PARTNER = "http://www.brasilcardfacil.com.br/modalidade-parceria.html";
+
     public static final String FOOD = "alimentacao";
     public static final String ART_DESIGN = "art_design";
     public static final String BEAUTY = "beleza";

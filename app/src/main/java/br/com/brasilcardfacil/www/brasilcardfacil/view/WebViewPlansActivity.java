@@ -22,6 +22,12 @@ public class WebViewPlansActivity extends AppCompatActivity {
 
         link = getIntent().getStringExtra(Utility.KEY_CONTENT_EXTRA_PLANS);
 
+        if(link.equals(Utility.LINK_BE_PARTNER)){
+            if(getSupportActionBar()!=null) {
+                getSupportActionBar().setTitle("Seja um parceiro comercial");
+            }
+        }
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

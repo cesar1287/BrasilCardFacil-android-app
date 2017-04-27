@@ -1,8 +1,11 @@
 package br.com.brasilcardfacil.www.brasilcardfacil.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,10 +43,14 @@ public class AccountActivity extends AppCompatActivity {
 
     FirebaseUser user;
 
+    LinearLayout linearLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        linearLayout = (LinearLayout) findViewById(R.id.activity_account);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -53,6 +61,32 @@ public class AccountActivity extends AppCompatActivity {
         setupUI();
 
         setupListeners();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        setupSnackBar();
+    }
+
+    public void setupSnackBar(){
+        Snackbar snackbar = Snackbar
+                .make(linearLayout, "Cadastre-se como Parceiro Comercial!", Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction("IR", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, WebViewPlansActivity.class);
+                intent.putExtra(Utility.KEY_CONTENT_EXTRA_PLANS, Utility.LINK_BE_PARTNER);
+                startActivity(intent);
+            }
+        });
+        snackbar.setActionTextColor(this.getResources().getColor(R.color.BrasilCardFacil));
+
+        View sbView = snackbar.getView();
+        sbView.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+
+        snackbar.show();
     }
 
     public void setupUI(){
