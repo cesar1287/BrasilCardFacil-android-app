@@ -71,8 +71,19 @@
             android:layout_height="wrap_content"
             android:background="@drawable/parceiros_arte_design_0013_decoracao"
             android:layout_marginTop="12sp"
-            android:layout_marginBottom="12sp"
             android:layout_below="@+id/art_design_design"
+            android:layout_alignLeft="@+id/art_design_design"
+            android:layout_alignStart="@+id/art_design_design" />
+
+        <ImageButton
+            android:id="@+id/art_design_tatto"
+            android:contentDescription="@string/trade_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/projeto_0006_tattoo_piercing"
+            android:layout_marginTop="12sp"
+            android:layout_marginBottom="12sp"
+            android:layout_below="@+id/art_design_decoration"
             android:layout_alignLeft="@+id/art_design_design"
             android:layout_alignStart="@+id/art_design_design" />
     </RelativeLayout>

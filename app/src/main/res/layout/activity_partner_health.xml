@@ -21,11 +21,22 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/health_clinic"
+            android:id="@+id/health_acupuncture"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
+            android:background="@drawable/projeto_0009_acupuntura"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"/>
+
+        <ImageButton
+            android:id="@+id/health_clinic"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/health_acupuncture"
             android:background="@drawable/parceiros_saude_0006_clinica"
             android:layout_marginTop="12dp"
             android:layout_marginStart="60dp"
@@ -43,11 +54,22 @@
             android:layout_alignStart="@+id/health_clinic"/>
 
         <ImageButton
-            android:id="@+id/health_exams"
+            android:id="@+id/health_aesthetics"
             android:contentDescription="@string/dentistry_image_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/health_drugstore"
+            android:background="@drawable/projeto_0010_estetica"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/health_clinic"
+            android:layout_alignStart="@+id/health_clinic"/>
+
+        <ImageButton
+            android:id="@+id/health_exams"
+            android:contentDescription="@string/dentistry_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/health_aesthetics"
             android:background="@drawable/parceiros_saude_0007_exames"
             android:layout_marginTop="12dp"
             android:layout_alignLeft="@+id/health_clinic"

@@ -31,7 +31,7 @@ public class PartnerActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        setupSnackBar();
+        //setupSnackBar();
     }
 
     public void setupSnackBar(){
@@ -131,7 +131,7 @@ public class PartnerActivity extends AppCompatActivity {
         btTrade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                Intent intent = new Intent(PartnerActivity.this, PartnerTradeActivity.class);
                 intent.putExtra(Utility.CATEGORY, Utility.TRADE);
                 startActivity(intent);
             }
@@ -141,7 +141,7 @@ public class PartnerActivity extends AppCompatActivity {
         btTradeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PartnerActivity.this, PartnerCategoryActivity.class);
+                Intent intent = new Intent(PartnerActivity.this, PartnerTradeActivity.class);
                 intent.putExtra(Utility.CATEGORY, Utility.TRADE);
                 startActivity(intent);
             }

@@ -67,7 +67,7 @@ public class AccountActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        setupSnackBar();
+        //setupSnackBar();
     }
 
     public void setupSnackBar(){

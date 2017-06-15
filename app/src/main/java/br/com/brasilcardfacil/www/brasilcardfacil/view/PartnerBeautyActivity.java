@@ -32,6 +32,17 @@ public class PartnerBeautyActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btPerfumery = (ImageButton) findViewById(R.id.beauty_perfumery);
+        btPerfumery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerBeautyActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.BEAUTY);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.BEAUTY_SUBCATEGORY_PERFUMERY);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btBarberShop = (ImageButton) findViewById(R.id.beauty_barber_shop);
         btBarberShop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +61,17 @@ public class PartnerBeautyActivity extends AppCompatActivity {
                 Intent intent = new Intent(PartnerBeautyActivity.this, PartnerCategoryActivity.class);
                 intent.putExtra(Utility.CATEGORY, Utility.BEAUTY);
                 intent.putExtra(Utility.SUBCATEGORY, Utility.BEAUTY_SUBCATEGORY_BEAUTY_SALON);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btManicure = (ImageButton) findViewById(R.id.beauty_manicure);
+        btManicure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerBeautyActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.BEAUTY);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.BEAUTY_SUBCATEGORY_MANICURE);
                 startActivity(intent);
             }
         });

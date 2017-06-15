@@ -40,6 +40,7 @@ public class Utility {
     public static final String ART_DESIGN_SUBCATEGORY_GRAPHICS = "graficas";
     public static final String ART_DESIGN_SUBCATEGORY_DESIGN = "design";
     public static final String ART_DESIGN_SUBCATEGORY_DECORATION = "decoracao";
+    public static final String ART_DESIGN_SUBCATEGORY_TATTO = "tatto";
 
     public static final String TECH_SUBCATEGORY_CELLPHONE = "celular";
     public static final String TECH_SUBCATEGORY_PHOTOGRAPHY = "fotografia";
@@ -70,6 +71,7 @@ public class Utility {
     public static final String HOME_SUBCATEGORY_PROVISION_SERVICES = "prestacao_servico";
     public static final String HOME_SUBCATEGORY_INK = "tinta";
     public static final String HOME_SUBCATEGORY_GLASSES = "vidros";
+    public static final String HOME_SUBCATEGORY_TOOLS = "ferramentas";
 
     public static final String HEALTH_SUBCATEGORY_CLINIC = "clinica";
     public static final String HEALTH_SUBCATEGORY_DRUGSTORE = "farmacia";
@@ -81,8 +83,11 @@ public class Utility {
     public static final String HEALTH_SUBCATEGORY_DENTISTRY = "odontologia";
     public static final String HEALTH_SUBCATEGORY_PSYCHOLOGY = "psicologia";
     public static final String HEALTH_SUBCATEGORY_PILATES = "pilates";
+    public static final String HEALTH_SUBCATEGORY_ACUPUNCTURE = "acupuntura";
+    public static final String HEALTH_SUBCATEGORY_AESTHETICS = "estetica";
 
     public static final String AUTO_SUBCATEGORY_ACCESSORIES = "acessorios";
+    public static final String AUTO_SUBCATEGORY_AIR_CONDITIONING = "ar_condicionado";
     public static final String AUTO_SUBCATEGORY_DRIVING_SCHOOL = "auto_escola";
     public static final String AUTO_SUBCATEGORY_AUTO_PARTS = "auto_pecas";
     public static final String AUTO_SUBCATEGORY_BATTERIE = "bateria";
@@ -92,6 +97,8 @@ public class Utility {
     public static final String AUTO_SUBCATEGORY_WASH = "lavagem";
     public static final String AUTO_SUBCATEGORY_MECHANICAL = "mecanica";
     public static final String AUTO_SUBCATEGORY_TIRES = "pneus";
+    public static final String AUTO_SUBCATEGORY_CARS_FOR_SALE = "concessionarias";
+    public static final String AUTO_SUBCATEGORY_RESALE = "revendas";
 
     public static final String WORLD_ANIMAL_SUBCATEGORY_CLINIC = "clinica";
     public static final String WORLD_ANIMAL_SUBCATEGORY_HOTEL = "hotel";
@@ -128,6 +135,8 @@ public class Utility {
     public static final String BEAUTY_SUBCATEGORY_BARBER_SHOP = "barbearia";
     public static final String BEAUTY_SUBCATEGORY_MAKE_UP = "maquiagem";
     public static final String BEAUTY_SUBCATEGORY_BEAUTY_SALON = "salao_beleza";
+    public static final String BEAUTY_SUBCATEGORY_MANICURE = "manicure";
+    public static final String BEAUTY_SUBCATEGORY_PERFUMERY = "perfumaria";
 
     public static final String CONSULTING_SUBCATEGORY_BUSINESS = "empresarial";
     public static final String CONSULTING_SUBCATEGORY_LEGAL = "legal";
@@ -139,6 +148,16 @@ public class Utility {
     public static final String FOOD_SUBCATEGORY_SUPERMARKET = "supermercado";
     public static final String FOOD_SUBCATEGORY_DISTRIBUTOR = "distribuidor";
     public static final String FOOD_SUBCATEGORY_DELIVERY = "delivery";
+    public static final String FOOD_SUBCATEGORY_STEAK_HOUSE = "churrascaria";
+    public static final String FOOD_SUBCATEGORY_SKEWER = "espetinhos";
+
+    public static final String TRADE_SUBCATEGORY_HOME = "cama";
+    public static final String TRADE_SUBCATEGORY_DEPARTAMENT = "departamento";
+    public static final String TRADE_SUBCATEGORY_FLORICULTURE = "floricultura";
+    public static final String TRADE_SUBCATEGORY_JEWELRY = "joias";
+    public static final String TRADE_SUBCATEGORY_OPTICAL = "oticas";
+    public static final String TRADE_SUBCATEGORY_SECURITY = "seguranca";
+    public static final String TRADE_SUBCATEGORY_STATIONERY = "papelaria";
 
     public static final String LOGIN_SHARED_PREF_NAME = "LoginActivityPreferences";
     public static final String WARNING_SHARED_PREF_NAME = "WarningActivityPreferences";

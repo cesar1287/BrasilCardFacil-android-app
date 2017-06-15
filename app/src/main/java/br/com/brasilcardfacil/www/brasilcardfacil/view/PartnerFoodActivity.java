@@ -21,6 +21,28 @@ public class PartnerFoodActivity extends AppCompatActivity {
 
     public void setupListeners(){
 
+        ImageButton btSteakHouse = (ImageButton) findViewById(R.id.food_steak_house);
+        btSteakHouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerFoodActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.FOOD);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.FOOD_SUBCATEGORY_STEAK_HOUSE);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btSkewer = (ImageButton) findViewById(R.id.food_skewer);
+        btSkewer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerFoodActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.FOOD);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.FOOD_SUBCATEGORY_SKEWER);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btFood = (ImageButton) findViewById(R.id.food_bakery);
         btFood.setOnClickListener(new View.OnClickListener() {
             @Override

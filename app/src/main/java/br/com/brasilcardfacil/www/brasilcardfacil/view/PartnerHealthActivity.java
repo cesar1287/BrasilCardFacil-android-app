@@ -21,6 +21,17 @@ public class PartnerHealthActivity extends AppCompatActivity {
 
     private void setupListeners() {
 
+        ImageButton btAcupuncture = (ImageButton) findViewById(R.id.health_acupuncture);
+        btAcupuncture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerHealthActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.HEALTH);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.HEALTH_SUBCATEGORY_ACUPUNCTURE);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btClinic = (ImageButton) findViewById(R.id.health_clinic);
         btClinic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +50,17 @@ public class PartnerHealthActivity extends AppCompatActivity {
                 Intent intent = new Intent(PartnerHealthActivity.this, PartnerCategoryActivity.class);
                 intent.putExtra(Utility.CATEGORY, Utility.HEALTH);
                 intent.putExtra(Utility.SUBCATEGORY, Utility.HEALTH_SUBCATEGORY_DRUGSTORE);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btAesthetics = (ImageButton) findViewById(R.id.health_aesthetics);
+        btAesthetics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerHealthActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.HEALTH);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.HEALTH_SUBCATEGORY_AESTHETICS);
                 startActivity(intent);
             }
         });

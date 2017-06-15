@@ -21,11 +21,22 @@
             android:layout_marginTop="8sp"/>
 
         <ImageButton
-            android:id="@+id/auto_driving_school"
+            android:id="@+id/auto_air_conditioning"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_banner"
+            android:background="@drawable/projeto_0006_ar_condicionado"
+            android:layout_marginTop="12sp"
+            android:layout_marginStart="60sp"
+            android:layout_marginLeft="60sp"/>
+
+        <ImageButton
+            android:id="@+id/auto_driving_school"
+            android:contentDescription="@string/image_clinic_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auto_air_conditioning"
             android:background="@drawable/parceiros_auto_0010_auto_escola"
             android:layout_marginTop="12sp"
             android:layout_marginStart="60sp"
@@ -68,11 +79,23 @@
             android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
+            android:id="@+id/auto_cars_for_sale"
+            android:contentDescription="@string/veterinary_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auto_fuel"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/projeto_0006_concessionarias"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
+
+        <ImageButton
             android:id="@+id/auto_escapement"
             android:contentDescription="@string/lab_image_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/auto_fuel"
+            android:layout_below="@id/auto_cars_for_sale"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0012_escapamento"
             android:layout_marginTop="12dp"
@@ -128,11 +151,23 @@
             android:layout_alignStart="@+id/auto_driving_school"/>
 
         <ImageButton
+            android:id="@+id/auto_resale"
+            android:contentDescription="@string/trade_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auto_tire"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/projeto_0007_revendas"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/auto_driving_school"
+            android:layout_alignStart="@+id/auto_driving_school"/>
+
+        <ImageButton
             android:id="@+id/auto_accessories"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/auto_tire"
+            android:layout_below="@id/auto_resale"
             android:layout_centerHorizontal="true"
             android:background="@drawable/parceiros_auto_0009_acessorios"
             android:layout_marginTop="12dp"

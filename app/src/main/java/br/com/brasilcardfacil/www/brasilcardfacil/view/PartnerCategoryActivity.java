@@ -163,7 +163,7 @@ public class PartnerCategoryActivity extends AppCompatActivity {
                     p.setLatitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LATITUDE).getValue());
                     p.setLongitude((Double) postSnapshot.child(FirebaseHelper.FIREBASE_DATABASE_PARTNER_LONGITUDE).getValue());
 
-                    if(category.equals(Utility.TRADE) || category.equals(Utility.SERVICES)) {
+                    if(category.equals(Utility.SERVICES)) {
                         partners.add(p);
                     }else if(p.getSubcategory().contains(subcategory)){
                         partners.add(p);

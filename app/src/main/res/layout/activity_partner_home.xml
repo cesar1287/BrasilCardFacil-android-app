@@ -68,12 +68,24 @@
             android:layout_alignStart="@+id/home_architecture"/>
 
         <ImageButton
+            android:id="@+id/home_tools"
+            android:contentDescription="@string/lab_image_screen_partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/home_hardware"
+            android:background="@drawable/projeto_0006_ferramentas"
+            android:layout_marginTop="12dp"
+            android:layout_alignLeft="@+id/home_architecture"
+            android:layout_alignStart="@+id/home_architecture"/>
+
+        <ImageButton
             android:id="@+id/home_timber"
             android:contentDescription="@string/image_clinic_screen_partner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/home_hardware"
+            android:layout_below="@id/home_tools"
             android:background="@drawable/parceiros_lar_construcao_0010_madeireira"
             android:layout_marginTop="12dp"
             android:layout_alignLeft="@+id/home_architecture"

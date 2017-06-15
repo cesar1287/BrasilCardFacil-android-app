@@ -205,7 +205,12 @@
             android:name=".view.PartnerWorldAnimalActivity"
             android:label="@string/screen_world_animal"
             android:parentActivityName=".view.PartnerActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PartnerTradeActivity"
+            android:label="@string/screen_trade"
+            android:parentActivityName=".view.PartnerActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

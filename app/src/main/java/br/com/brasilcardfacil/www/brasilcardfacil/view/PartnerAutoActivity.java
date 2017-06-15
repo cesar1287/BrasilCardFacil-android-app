@@ -21,6 +21,17 @@ public class PartnerAutoActivity extends AppCompatActivity {
 
     private void setupListeners() {
 
+        ImageButton btAirConditioning = (ImageButton) findViewById(R.id.auto_air_conditioning);
+        btAirConditioning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.AUTO);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_AIR_CONDITIONING);
+                startActivity(intent);
+            }
+        });
+
         ImageButton btAccessories = (ImageButton) findViewById(R.id.auto_accessories);
         btAccessories.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +39,28 @@ public class PartnerAutoActivity extends AppCompatActivity {
                 Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
                 intent.putExtra(Utility.CATEGORY, Utility.AUTO);
                 intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_ACCESSORIES);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btCarsForSale = (ImageButton) findViewById(R.id.auto_cars_for_sale);
+        btCarsForSale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.AUTO);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_CARS_FOR_SALE);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btResale = (ImageButton) findViewById(R.id.auto_resale);
+        btResale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerAutoActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.AUTO);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.AUTO_SUBCATEGORY_RESALE);
                 startActivity(intent);
             }
         });

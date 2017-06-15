@@ -21,6 +21,18 @@ public class PartnerHomeActivity extends AppCompatActivity {
 
     private void setupListeners() {
 
+        ImageButton btTools = (ImageButton) findViewById(R.id.home_tools);
+        btTools.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerHomeActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.HOME);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.HOME_SUBCATEGORY_TOOLS);
+                startActivity(intent);
+            }
+        });
+
+
         ImageButton btArchitecture = (ImageButton) findViewById(R.id.home_architecture);
         btArchitecture.setOnClickListener(new View.OnClickListener() {
             @Override

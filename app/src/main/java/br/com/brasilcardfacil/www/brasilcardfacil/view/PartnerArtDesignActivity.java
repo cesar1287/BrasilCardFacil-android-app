@@ -75,5 +75,16 @@ public class PartnerArtDesignActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageButton btTatto = (ImageButton) findViewById(R.id.art_design_tatto);
+        btTatto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PartnerArtDesignActivity.this, PartnerCategoryActivity.class);
+                intent.putExtra(Utility.CATEGORY, Utility.ART_DESIGN);
+                intent.putExtra(Utility.SUBCATEGORY, Utility.ART_DESIGN_SUBCATEGORY_TATTO);
+                startActivity(intent);
+            }
+        });
     }
 }
